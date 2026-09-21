@@ -1,0 +1,15 @@
+name: Palomar full mechanical preflight
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@3561d237dcc4b28482558ad28a64d767d7cc8615
+    with:
+      repository: shaikidris/CollatzConvergencePositiveDensity
+      commit: 9f15b521bac3a9a319d0be7d0935efa5683e899c
+      pipeline_commit: 3561d237dcc4b28482558ad28a64d767d7cc8615
+      request_id: collatz-positive-density-9f15b52
+      mode: full
+      options: '{"comparator_config_path":"comparator.json"}'

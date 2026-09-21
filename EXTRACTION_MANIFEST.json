@@ -5696,6 +5696,10 @@
     {
       "path": "PALOMAR_PREPARATION.md",
       "sha256": "5f2d2964e1779c582114a82701d3551801d3fe71c5cc5a43e61ab72359512770"
+    },
+    {
+      "path": ".github/workflows/palomar-full-preflight.yml",
+      "sha256": "87a5ce3f01dc0ea11d0ea8dea9449f390849372b23aff061cb0e9cbb51e1e5d2"
     }
   ],
   "selected_declarations": 18,
@@ -5726,7 +5730,7 @@
   },
   "validation": {
     "scope": "Metadata-only publication synchronization; all Lean, Comparator, dependency and CI bytes unchanged from 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b",
-    "linux_build": "RUNNING_AT_LAST_OBSERVATION; exact receipt pending for 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b",
+    "linux_build": "PASS: run 35577519347, commit 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b, 4893 jobs, full build 2:48:33, fresh 18-theorem standard-axiom report passed. Metadata commit 9f15b52 preserves all proof/build inputs.",
     "comparator": "PENDING",
     "nanoda": "PENDING",
     "registry": "PENDING",
