@@ -1,4 +1,4 @@
-# Collatz Convergence Positive Density
+# Positive density of Collatz convergence at every rate above 3/log(4/3)
 
 This local Palomar-format EXTRACTION contains eighteen selected statements in
 Challenge.lean, their proofs in Solution.lean, and exactly 1402 reachable
@@ -28,14 +28,20 @@ The previous private snapshot passed direct Lean, an eighteen-theorem
 standard-axiom audit, semantic lint and explicit nonempty style checks.
 The presentation pass also passes fresh Challenge/Solution compilation, all
 eighteen axiom reports, semantic lint and explicit style checks.
-A proof-identical pre-documentation Solution passed its Lake owner build.
-The final aggregate Lake build hit the bounded host's resource limits and
-remains pending alongside Comparator, NanoDa and clean Linux replay.
-Source-matched cache reuse is recorded. No expanded public release or registry
-verification is claimed.
+The private Linux build and fresh axiom report are running against `52f2559e0475d80d3f1fdefa4e7d6f17f796b38b`.
+This metadata-only publication update leaves every Lean source, dependency pin,
+Comparator configuration and workflow unchanged. Comparator, NanoDa and official
+Palomar verification remain pending; the package is not yet registration-ready.
 
-Current manuscript snapshot: sources/manuscript-source-2026-09-21-b45f544d.md
-SHA-256: b45f544d320f4cc780d3aaff369417b2fff6b712501b313ef7a6d6ff7917b87c
+## Paper and source snapshot
+
+- Published preprint v1.0.0: https://doi.org/10.5281/zenodo.22871622
+- SSRN submission 7497758: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7497758
+  (submission received; screening completion is not claimed).
+- Source: [sources/manuscript-v1.0.0-d4cf2a4b.md](sources/manuscript-v1.0.0-d4cf2a4b.md)
+- Reading PDF: [sources/manuscript-v1.0.0.pdf](sources/manuscript-v1.0.0.pdf)
+- Source SHA-256: `d4cf2a4be67dff8934cd67c68fe9055eaa2a99ad3a760bbaf84b8644d160778e`
+- Paper license: CC BY 4.0. Lean code license: Apache-2.0.
 
 See PALOMAR_RELEASE_CONE.md, SOURCE_PROVENANCE.md and EXTRACTION_MANIFEST.json.
 

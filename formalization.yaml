@@ -1,6 +1,6 @@
 version: v0.4
 project:
-  name: Word-Certificate Density for Collatz Hitting Times (Phase 1)
+  name: Positive density of Collatz convergence at every rate above 3/log(4/3)
   description: A Lean 4 extraction of eighteen selected Phase 1 statements on lower natural density for
     ordinary Collatz hitting times, exact finite fan allocation and real-moment comparison, profile density
     for canonical and admissible targets, and bounded actual reference entropy with explicit tail and
@@ -20,17 +20,19 @@ classification:
   - 11B83
   - 37P99
 sources:
-- title: Word-Certificate Density for Collatz Hitting Times
+- title: Positive density of Collatz convergence at every rate above 3/log(4/3)
   authors:
   - Idris Ali Shaik
-  id: local:manuscript-source-2026-09-21-b45f544d
+  id: doi:10.5281/zenodo.22871622
   type: paper
-  location: sources/manuscript-source-2026-09-21-b45f544d.md
+  location: Introduction (I.main), (I.targets); selected Appendix D and primitive-decay results; see THEOREM_MAP.md
   relationship: formalizes
-  note: Source snapshot SHA-256 b45f544d320f4cc780d3aaff369417b2fff6b712501b313ef7a6d6ff7917b87c. Eighteen
-    selected declarations are supplied by Release.PhaseOne and Release.AnalyticExtensions. Existential
-    and individual-root differences and excluded wider manuscript claims are described under fidelity.
-  license: Apache-2.0
+  note: 'Published preprint version 1.0.0 (21 September 2026), https://doi.org/10.5281/zenodo.22871622.
+    SSRN submission 7497758: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7497758 (receipt confirmed;
+    screening not claimed complete). Bundled source sources/manuscript-v1.0.0-d4cf2a4b.md, SHA-256 d4cf2a4be67dff8934cd67c68fe9055eaa2a99ad3a760bbaf84b8644d160778e.
+    Eighteen selected declarations only; optimized bounds and other divergences remain explicitly excluded
+    under fidelity.'
+  license: CC-BY-4.0
   author_endorsement: participated
 related_formalizations:
 - id: local:WordCertDensity-research-tree
@@ -39,13 +41,13 @@ related_formalizations:
     cone and restricted AX-I2 entropy/profile extensions. See SOURCE_PROVENANCE.md and EXTRACTION_MANIFEST.json
     for exact content hashes and roles.
 status:
-  scope: Eighteen selected statements. The original eleven mathematical statements are preserved under public renaming. Seven companions expose
-    the actual geometric reference law, full-group fan, exact profile, actual residual and complete local
-    mixing recipe. Profiles cover exact allocation/hinge identity, each real-moment lower bound and existential
-    paid-level density for canonical and admissible targets. Entropy covers positive-index increments,
-    a finite monotone limit with explicit tail, and zero normalized growth and positive-index infimum.
-    No complementary-capacity comparison, Renyi-order right limit, deeper certificate, optimized recipe
-    or amplified-root family is claimed.
+  scope: Eighteen selected statements. The original eleven mathematical statements are preserved under
+    public renaming. Seven companions expose the actual geometric reference law, full-group fan, exact
+    profile, actual residual and complete local mixing recipe. Profiles cover exact allocation/hinge identity,
+    each real-moment lower bound and existential paid-level density for canonical and admissible targets.
+    Entropy covers positive-index increments, a finite monotone limit with explicit tail, and zero normalized
+    growth and positive-index infimum. No complementary-capacity comparison, Renyi-order right limit,
+    deeper certificate, optimized recipe or amplified-root family is claimed.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -238,8 +240,9 @@ automation:
   notes: AI tools assisted extraction and packaging. Idris Ali Shaik directed the work and accepts responsibility
     for all claims.
 fidelity:
-  divergences: The baseline mathematical statements are preserved under descriptive public renaming; the main density quantifiers are written directly. Their depth-eleven formulas match production
-    closed forms; the original fractional statements use an existential p satisfying W/2 < p <= W, witnessed
+  divergences: The baseline mathematical statements are preserved under descriptive public renaming; the
+    main density quantifiers are written directly. Their depth-eleven formulas match production closed
+    forms; the original fractional statements use an existential p satisfying W/2 < p <= W, witnessed
     by the actual residual. The individual-root statement omits seed-pool membership and score details.
     The seven new companions expose the actual law and exact mixing recipe and identify them by structural
     equivalence proofs. Profile density specializes the fixed-level paper theorem to one existential positive
@@ -251,8 +254,9 @@ fidelity:
 review:
   status: self-assessed
   reviewers: []
-  notes: Author-directed local review of eighteen statements and their exact source cone. Research owners
-    passed. The previous private snapshot passed direct Lean, its eighteen-theorem standard-axiom
-    audit, semantic lint and explicit nonempty style checks. A proof-identical pre-documentation Solution
-    passed Lake. The final aggregate Lake build hit bounded host resources; Comparator, NanoDa, clean
-    Linux replay, publication and registry actions remain pending. The presentation migration passes fresh Challenge/Solution compilation, all eighteen standard-axiom reports, semantic lint and explicit style checks.
+  notes: Author-directed local review of eighteen selected statements. Challenge/Solution compilation,
+    eighteen standard-axiom reports, semantic lint and style checks passed locally. The private Linux
+    build and fresh axiom-report workflow runs against 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b. This
+    publication-metadata update changes no Lean source, dependency, Comparator configuration or workflow.
+    Comparator, NanoDa and official Palomar verification remain pending; no whole-paper formalization
+    or registry acceptance is claimed.
