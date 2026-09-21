@@ -5659,7 +5659,7 @@
     },
     {
       "path": "formalization.yaml",
-      "sha256": "5a53cdbfb7c54e1a77477fe826410918e3336073dec549f2f9f38cc964467cb3"
+      "sha256": "b9f1130bdd0e3610b1ae04144c83c49a1f03bb337bb03188a93c164699841c6c"
     },
     {
       "path": "lake-manifest.json",
@@ -5695,11 +5695,19 @@
     },
     {
       "path": "PALOMAR_PREPARATION.md",
-      "sha256": "c39267ec0272ac6e403e2de855f4ccf1fde5f535699930b4b2ea90b75161b097"
+      "sha256": "d892be574fd1f143cf3aefa337c05f3b0717e4ad661273e4307bd3585d3ff6f8"
     },
     {
       "path": ".github/workflows/palomar-full-preflight.yml",
-      "sha256": "b7d5b141b6482f8d74460c98438a887478d3e51cb9841501ebf6f6f4cdab394d"
+      "sha256": "04de5713b117db8b3aed5b439134dadef8bc615819e3c6aa8371fb16f8ed45ae"
+    },
+    {
+      "path": "scripts/palomar_guard.py",
+      "sha256": "d36506b70545ed2c28323356f67d39d946e41e5615321d68d42ef3557dc3d998"
+    },
+    {
+      "path": "scripts/test_palomar_guard.py",
+      "sha256": "d3bbd03a07fd3ce4aa87948d4de56c2c5b10b964c50c9892aaa6949bde22f80e"
     }
   ],
   "selected_declarations": 18,
@@ -5735,7 +5743,8 @@
     "nanoda": "PENDING",
     "registry": "PENDING",
     "metadata_schema": "PASS: https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/v0.4.schema.json SHA-256 25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
-    "protected_files_unchanged": 1410
+    "protected_files_unchanged": 1410,
+    "palomar_metadata": "PASS: strict load_formalization_metadata at pipeline 3561d237dcc4b28482558ad28a64d767d7cc8615; author and maintainer use separate ORCID fields."
   },
   "publication": {
     "title": "Positive density of Collatz convergence at every rate above 3/log(4/3)",
