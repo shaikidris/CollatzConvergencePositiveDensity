@@ -1,6 +1,6 @@
 {
   "schema": "wordcert-density-analytic-extension-extraction-v1",
-  "source_manuscript_sha256": "b45f544d320f4cc780d3aaff369417b2fff6b712501b313ef7a6d6ff7917b87c",
+  "source_manuscript_sha256": "d4cf2a4be67dff8934cd67c68fe9055eaa2a99ad3a760bbaf84b8644d160778e",
   "project_modules": 1402,
   "external_modules": 0,
   "missing_imports": [],
@@ -31,11 +31,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "ee2dd0c0114ed77f56b090484dd5f78f4bb55af5f25662504e7cece09e2f89c9"
+      "sha256": "62fdfcbb8b801b7f89715349cdb3614c5b1bc5f4a2e493e9dee179494750ac00"
     },
     {
       "path": "SOURCE_PROVENANCE.md",
-      "sha256": "2e57aa88ca5a225068704787110bd9fd9db8e581f720f4f28961b9e5d67fdb9e"
+      "sha256": "7fc70c6a568f48c0568246936c4f78b81c24617b8a6200b81017a269e6f4baae"
     },
     {
       "path": "Solution.lean",
@@ -5659,7 +5659,7 @@
     },
     {
       "path": "formalization.yaml",
-      "sha256": "4054e1fc6de4997567b3cc015c797f608d15a670c0726ae3504ebb6ed46e28b4"
+      "sha256": "5a53cdbfb7c54e1a77477fe826410918e3336073dec549f2f9f38cc964467cb3"
     },
     {
       "path": "lake-manifest.json",
@@ -5674,23 +5674,43 @@
       "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
     },
     {
-      "path": "sources/manuscript-reading-2026-09-21.pdf",
-      "sha256": "0fe86ba04eeca04e52da9dace2d7acec220ac9ff0b9abdfbabccf56c1b1d7d1b"
-    },
-    {
-      "path": "sources/manuscript-source-2026-09-21-b45f544d.md",
-      "sha256": "b45f544d320f4cc780d3aaff369417b2fff6b712501b313ef7a6d6ff7917b87c"
-    },
-    {
       "path": "third_party/mazur/LICENSE",
       "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
     },
     {
       "path": "third_party/mazur/NOTICE",
       "sha256": "a42c24fb15a8cde899a4b76a0ca3f9ace85b1e085dfd48eebc57baedba647319"
+    },
+    {
+      "path": "sources/manuscript-v1.0.0-d4cf2a4b.md",
+      "sha256": "d4cf2a4be67dff8934cd67c68fe9055eaa2a99ad3a760bbaf84b8644d160778e"
+    },
+    {
+      "path": "sources/manuscript-v1.0.0.pdf",
+      "sha256": "f5473445f19e7fd97a57c3a1a2011dcccf59d5542b3c602b0e0434ec7058e742"
+    },
+    {
+      "path": "sources/README.md",
+      "sha256": "a0e1aa0548fe9bd8065e7f4bde531ed4d0c167701a5e43ea0a9e1a93825e01ba"
+    },
+    {
+      "path": "PALOMAR_PREPARATION.md",
+      "sha256": "5f2d2964e1779c582114a82701d3551801d3fe71c5cc5a43e61ab72359512770"
     }
   ],
-  "validation": {
+  "selected_declarations": 18,
+  "status": "PUBLICATION_METADATA_PREPARED_REPLAY_PENDING",
+  "unreachable_modules": [],
+  "source_snapshot": "Byte-identical Lean sources from reviewed WordCertDensity-Palomar-E8 working tree; fresh repository with no inherited Git history.",
+  "local_lean_lines": 138342,
+  "source_extraction_manifest_sha256": "ef91a7281906e196e7caf1f8fe04aaf21261831b0618bc3096d9e2298e597b5e",
+  "excluded_archival_files": [
+    "sources/manuscript-source-2026-09-20-2b5bf909.md"
+  ],
+  "relocated_notices": {
+    "research/sources/mazur_830b9d3f38f2/": "third_party/mazur/"
+  },
+  "historical_validation": {
     "build": "PASS: lake build Challenge Solution Audit (4885 jobs)",
     "axioms": [
       "propext",
@@ -5704,16 +5724,20 @@
     "proof_evidence_scope": "Build and axiom evidence inherited from committed E-L8; all Lean source hashes unchanged by metadata correction.",
     "release_preflight": "PASS 2026-09-20: exact exporter exists; read-only canonical Mathlib ancestry, pinned manifest closure and toolchain checks. Comparator/NanoDa not yet run."
   },
-  "selected_declarations": 18,
-  "status": "CLEAN_LOCAL_EXTRACTION_BUILD_CHECKED_REPLAY_PENDING",
-  "unreachable_modules": [],
-  "source_snapshot": "Byte-identical Lean sources from reviewed WordCertDensity-Palomar-E8 working tree; fresh repository with no inherited Git history.",
-  "local_lean_lines": 138342,
-  "source_extraction_manifest_sha256": "ef91a7281906e196e7caf1f8fe04aaf21261831b0618bc3096d9e2298e597b5e",
-  "excluded_archival_files": [
-    "sources/manuscript-source-2026-09-20-2b5bf909.md"
-  ],
-  "relocated_notices": {
-    "research/sources/mazur_830b9d3f38f2/": "third_party/mazur/"
+  "validation": {
+    "scope": "Metadata-only publication synchronization; all Lean, Comparator, dependency and CI bytes unchanged from 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b",
+    "linux_build": "RUNNING_AT_LAST_OBSERVATION; exact receipt pending for 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b",
+    "comparator": "PENDING",
+    "nanoda": "PENDING",
+    "registry": "PENDING",
+    "metadata_schema": "PASS: https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/v0.4.schema.json SHA-256 25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+    "protected_files_unchanged": 1410
+  },
+  "publication": {
+    "title": "Positive density of Collatz convergence at every rate above 3/log(4/3)",
+    "zenodo_doi": "10.5281/zenodo.22871622",
+    "ssrn_abstract_id": "7497758",
+    "paper_license": "CC-BY-4.0",
+    "pdf_sha256": "f5473445f19e7fd97a57c3a1a2011dcccf59d5542b3c602b0e0434ec7058e742"
   }
 }

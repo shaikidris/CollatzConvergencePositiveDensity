@@ -4,11 +4,14 @@
 |---|---|
 | Research source | `collatz/approaches/WordCertDensity` |
 | Lean milestone | E-L7 local primitive migration plus AX-I2 restricted analytic extensions |
-| Manuscript snapshot | `sources/manuscript-source-2026-09-21-b45f544d.md` |
-| Manuscript SHA-256 | `b45f544d320f4cc780d3aaff369417b2fff6b712501b313ef7a6d6ff7917b87c` |
+| Manuscript snapshot | `sources/manuscript-v1.0.0-d4cf2a4b.md` |
+| Manuscript SHA-256 | `d4cf2a4be67dff8934cd67c68fe9055eaa2a99ad3a760bbaf84b8644d160778e` |
 | Project modules | 1402 exact reachable modules |
 | External non-Mathlib modules | 0 |
-| License | Apache-2.0 |
+| Lean code license | Apache-2.0 |
+| Paper license | CC-BY-4.0 |
+| Published paper | https://doi.org/10.5281/zenodo.22871622 |
+| SSRN submission | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7497758 |
 
 The proof architecture retains attribution to Tao and Mazur. The independence
 claim is limited to the primitive input: this cone does not assume Mazur's
@@ -37,8 +40,8 @@ evaluating the enormous coefficient. The baseline eleven mathematical statements
 | `0bffa2591ad90706eadb1ac274689c8a362cf6c3` | Historical research baseline for the completed local primitive migration. |
 | `db584cd6d46c92f209a44c0f1c829460d327499d` | Pinned Mathlib dependency; not a project proof-source revision. |
 
-The current expansion is identified locally by EXTRACTION_MANIFEST.json file
-hashes. It is not frozen or published. For any eventual intake, the authoritative
+The current extraction is identified locally by EXTRACTION_MANIFEST.json file
+hashes. The Lean repository remains private; the manuscript is published separately. For any eventual intake, the authoritative
 substantive snapshot is the immutable commit supplied to that intake, which must
 match a clean checked-out HEAD and the authorized pushed remote commit. None of
 the historical commits above is the authoritative revision of this expansion.
@@ -49,4 +52,11 @@ old manuscript snapshot is included. All 1402 production proof modules remain by
 candidate. Challenge, Solution and Audit have a presentation-only name and
 notation migration recorded in THEOREM_MAP.md. The initial private snapshot
 is commit `d98194f7565627b6eb34ac56a055380e28f81e8d`; the presentation
-revision has not yet been committed or pushed.
+revision was committed and privately pushed as `52f2559e0475d80d3f1fdefa4e7d6f17f796b38b`.
+The publication-metadata synchronization is a later revision and does not change that running CI snapshot.
+
+The published version 1.0.0 supersedes the earlier bundled b45f544d manuscript.
+The old file remains recoverable from the prior Git commit. The final editorial
+pass preserved mathematical displays; its last change identifies the ten-term
+logarithm bounds and positive margins in Section 6. The selected Lean scope and
+all proof-source bytes are unchanged. Publication does not imply Palomar acceptance.

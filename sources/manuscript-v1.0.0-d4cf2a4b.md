@@ -1,26 +1,43 @@
 # Positive density of Collatz convergence at every rate above \(3/\log(4/3)\)
 
+Idris Ali Shaik\
+Independent researcher (unaffiliated)\
+[shaikidris@apache.org](mailto:shaikidris@apache.org)\
+[ORCID: 0009-0009-9699-9712](https://orcid.org/0009-0009-9699-9712)\
+Preprint, version 1.0.0, 21 September 2026\
+[doi:10.5281/zenodo.22871622](https://doi.org/10.5281/zenodo.22871622)\
+© 2026 Idris Ali Shaik. Licensed under CC BY 4.0.
+
 ## Abstract
 
-We prove that a single positive lower natural-density constant bounds the
-proportion of positive integers reaching \(1\) within \(c\log x\) ordinary
-Collatz steps for every fixed \(c>3/\log(4/3)\). For each fixed positive target
-coprime to three, the same range of clocks holds with a target-dependent
-constant, irrespective of its subsequent orbit. The proof constructs weighted
-inverse trajectories from a fixed finite family of roots and preserves a
-positive weighted mass at every sufficiently large scale. We derive an
-explicit primitive Fourier-decay estimate using the exact binomial
-first-passage law of paired geometric valuations. At order \(6409\), its
-coefficient \(C\) satisfies \(\log_2\log_2\log_2 C<176\), compared with
-\(>2^{172}\) for the coefficient specified in [3]. This estimate controls
-the variation of the root weights and their transfer to integer sources.
-A product inequality for all real moment orders \(p\ge1\) propagates finite
-reference-density bounds; direct \(3/2\)-moment certificates and complementary
-residue capacity give explicit density estimates after harmonic and dyadic
-counting. A residue-completion construction increases the root score while
-preserving the indexed root-to-one clocks. Finally, diagonalization gives a
-single positive-density set with an unspecified vanishing loss above the
-limiting clock.
+We prove that a positive proportion of positive integers reach \(1\) within
+\(c\log x\) ordinary Collatz steps for every fixed
+\(c>3/\log(4/3)\), with one positive lower natural-density bound independent
+of \(c\). For each fixed positive target not divisible by three, the same
+range of times holds with a target-dependent bound, irrespective of its
+subsequent orbit. Targets divisible by three have predecessor basins of
+natural density zero. Diagonalization gives one positive-density set with
+a vanishing excess above the limiting time coefficient.
+
+The proof extends weighted inverse trajectories from a fixed finite family
+of roots and preserves positive weighted mass at every sufficiently large
+scale. We derive an explicit Fourier-decay estimate, at frequencies not
+divisible by three, for an auxiliary distribution on residue classes. Its
+proof uses paired geometric valuations and their exact binomial
+first-passage law. At order \(6409\), the coefficient \(C\) satisfies
+\(\log_2\log_2\log_2 C<176\), compared with \(>2^{172}\) for the explicit
+coefficient in Mazur's work. Fractional-moment certificates, residue-capacity
+bounds, and an enlarged family of roots give explicit density estimates
+after harmonic and dyadic counting.
+
+The primitive-decay theorem and the main qualitative density conclusions
+are formalized in Lean 4. The coefficient-size comparison and the complete
+optimized density bounds remain paper proofs.
+
+**Keywords:** Collatz problem; hitting times; lower natural density; inverse
+trajectories; Fourier decay; formal verification.
+
+**2020 Mathematics Subject Classification:** 11B83, 37P99.
 
 ## Introduction and main results
 
@@ -57,11 +74,14 @@ its lower natural density is
  \underline d(S)=\liminf_{X\to\infty}\frac{\#(S\cap[1,X])}{X}.
 \]
 Our results count both even and odd integers and give lower bounds at every
-sufficiently large cutoff.
+sufficiently large cutoff. A positive lower natural density is weaker than
+density one and does not assert that the natural density exists. For a starting
+integer greater than one, reaching one also witnesses descent; our conclusions
+control the time to reach one, rather than only a drop below the starting value.
 
 ### Main results
 
-**Theorem (positive density at every rate above \(c_0\)).** There is an
+**Theorem I.1 (positive density at every rate above \(c_0\)).** There is an
 explicitly computable constant \(c_*>0\) such that, for every real
 \(c>c_0\),
 \[
@@ -73,7 +93,7 @@ explicitly computable constant \(c_*>0\) such that, for every real
 The constant \(c_*\) is independent of \(c\). For each fixed \(c>c_0\) and
 \(0<d<c_*\), the proportion is at least \(d\) at every sufficiently large
 cutoff; that cutoff may depend on \(c\) and \(d\). The finite certificates
-and terminating optimization defining \(c_*\) are given in
+and effective finite-search approximation defining \(c_*\) are given in
 (D.densityrecipe).
 
 The ratio \(c_0\approx10.42817849\) arises from geometric valuations with
@@ -85,7 +105,7 @@ weighted inverse construction connect this ratio to the counting theorem.
 The [endpoint discussion](#endpoint_scope) describes the role of the
 strict inequality \(c>c_0\).
 
-**Theorem (every fixed target coprime to three).** For every positive
+**Theorem I.2 (every fixed target coprime to three).** For every positive
 integer \(y\) with \(3\nmid y\), there is an effectively defined \(d_y>0\)
 such that
 \[
@@ -218,6 +238,14 @@ terminal parameters gives every fixed \(c>c_0\) with this same score;
 
 ### Relation to previous work
 
+Classical stopping-time and density results include the work of Terras [9],
+Everett [10], and Korec [11]. These concern descent along an orbit, whereas
+reaching a prescribed fixed target is the stronger event considered here.
+Lagarias [12] surveys the problem and its generalizations; Inselmann [13]
+studies approximation of the map and average total stopping time. These
+provide context for the distinction between a descent witness, a hitting-time
+bound, and a counting theorem for convergence.
+
 Krasikov and Lagarias [6] use difference inequalities and a computer-assisted
 argument to obtain at least \(X^{0.84}\) predecessors below \(X\) for each
 fixed positive target coprime to three, once \(X\) is sufficiently large.
@@ -241,10 +269,21 @@ formulas with the bound in [3], including its distinct finite-cutoff recipe.
 Appendix A compares the two seed constructions at a common analytic coefficient.
 
 Mazur [4] also proves positive lower natural density of predecessors for each
-fixed positive target coprime to three. Theorem (I.targets) supplies ordinary
+fixed positive target coprime to three. Theorem I.2 supplies ordinary
 hitting times throughout \(c>c_0\), with one effective target-dependent
 constant. Its root construction applies independently of the orbit after the
 target is reached.
+
+The author's earlier preprints treat two related descent questions.
+The polylogarithmic-descent paper [7] gives natural-density-one conclusions
+with a common landing for the shortcut and ordinary orbits, logarithmic
+passage times, and control of the preceding trajectories. The endpoint-transport
+paper [8] proves an exceptional-set pullback estimate and applies it to
+stretched-logarithmic descent. Their target scales still grow with the
+starting value, so those results do not by themselves imply convergence to
+one. Here the target is fixed and the conclusion is positive lower natural
+density, rather than density one. The earlier papers are comparisons, not
+inputs to the proof below.
 
 ### Terminology and recurring notation {#notation_overview}
 
@@ -306,6 +345,20 @@ give the moment and counting arguments, and Section 11 compares their explicit
 bounds. The forward references from the construction are thus discharged
 before its final application.
 
+The principal dependencies are summarized below. Equations retain their
+mnemonic labels; theorem numbers follow the section numbers, with I and R
+for the introduction and the preliminary reduction.
+
+| Conclusion | Inputs used | Proof location |
+|---|---|---|
+| Primitive decay | Exact pair law, first passage, phase geometry | Appendix E |
+| Reference mixing | Primitive decay and finite Fourier decomposition | Section 6 |
+| Persistent positive root score | Mixing, seed survival, finite root period | Sections 7–8 |
+| Sources at every large scale | Exact word laws, persistent score, finite graft | Sections 1–5 |
+| Common-clock convergence and fixed-target hitting | Source families, capacity bounds, harmonic and dyadic counting | Section 10 |
+| Quantitative improvements | Direct moment certificates, coefficient comparison, larger root scores | Sections 9–11; Appendices B–C |
+| Profile and entropy consequences | Affine mixtures, projectivity, summable mixing | Appendix D |
+
 Appendix A compares fixed-depth and first-crossing seeds. Appendix B proves
 monotonicity in the analytic coefficient. [Appendix C](#appendix_roots)
 establishes the root refinement; [Appendix D](#appendix_reference_consequences)
@@ -349,7 +402,7 @@ so \(\langle H_m\rangle_m=8/9=:\mu\). The
 [reference-moment section](#chapter09) proves its exact relation to
 \(f_{m+1}\) and its moment estimates.
 
-**Theorem (all-scale source families).** The root construction supplies a
+**Theorem R.1 (all-scale source families).** The root construction supplies a
 fixed rational score \(W_*>0\). For every fixed \(c>c_0\), every
 \(\eta>0\) and every fixed \(\Lambda>16\), a single finite extension
 of the construction works at all sufficiently large real \(X\). It gives
@@ -432,7 +485,7 @@ Thus each of the long construction's inputs has a specific role:
 the root score supplies marked mass, mixing bounds the error in changing level,
 and concentration bounds force enough actual source mass to be counted.
 
-**Corollary (a simple rational density bound).** For a rational source-family
+**Corollary R.2 (a simple rational density bound).** For a rational source-family
 score \(0<W\le27/2^{27}\), define
 \[
  m_\circ=\max\left\{2,\left\lceil
@@ -483,7 +536,7 @@ Here a *source* is the starting integer of the forward trajectory, and its
 \(x\equiv r\pmod{2^E}\) is called a *cylinder*. Specifying a value to
 \(e\) bits of precision means fixing its residue modulo \(2^e\).
 
-**Theorem (word invariance, affine endpoint, and precision).** Every positive
+**Theorem 1.1 (word invariance, affine endpoint, and precision).** Every positive
 \(x\equiv r\pmod{2^E}\) has exactly the certified word and satisfies
 \[
  U^j(x)=\frac{3^jx+B_j}{2^{S_j}}\quad(0\le j\le d).      \tag{W.affine}
@@ -508,7 +561,7 @@ nonnegative \(h\)'s give positive sources and endpoints differing by that
 valuation, so no stronger uniform precision is possible. Descent is exactly
 \((2^{S_d}-3^d)x>B_d\). Summing \(k_j+1\) gives the clock. \(\square\)
 
-**Lemma (one source cylinder per word).** Every positive valuation word is
+**Lemma 1.2 (one source cylinder per word).** Every positive valuation word is
 realized by exactly one odd residue class modulo \(2^{S_d+1}\). That
 cylinder has Haar probability \(2^{-S_d}\) among odd 2-adic integers.
 
@@ -594,7 +647,7 @@ distinct such roots. Basin disjointness gives the aggregate weight bound
 terminal-compression proof must establish unique reduced-history parsing
 before invoking this conclusion.
 
-**Lemma (source weights for a nonrecurrent root family).** Let \(\mathcal P\) be a finite
+**Lemma 1.3 (source weights for a nonrecurrent root family).** Let \(\mathcal P\) be a finite
 set of distinct positive odd roots such that
 \[
  U^j(M)\ne L
@@ -613,7 +666,7 @@ The single visit fixes its valuation word and its parsed history, and
 such a pool whenever none is a forward iterate of another; a root greater
 than one that reaches one cannot recur. The nonrecurrence condition is imposed on the actual orbit. \(\square\)
 
-**Lemma (one-step roots of an arbitrary odd unit).** For \(y>0\) odd,
+**Lemma 1.4 (one-step roots of an arbitrary odd unit).** For \(y>0\) odd,
 \(3\nmid y\), define
 \[
  e(y)=\begin{cases}2,&y\equiv1\pmod3,\\1,&y\equiv2\pmod3,\end{cases}
@@ -631,7 +684,7 @@ Section 2, which also applies to nonnegative indices, shows that every
 \(3^q\) consecutive \(t\)'s give every residue once. Filtering out
 nonunits retains exactly \(2\cdot3^{q-1}\) roots. \(\square\)
 
-**Lemma (removing a possible cycle predecessor).** For any function \(F\)
+**Lemma 1.5 (removing a possible cycle predecessor).** For any function \(F\)
 and fixed \(y\), at most one \(z\) with \(F(z)=y\) is periodic. The
 nonperiodic points in that fiber satisfy the analogue of (W.antichain).
 A periodic predecessor puts \(y\) on its cycle, where there is exactly
@@ -640,7 +693,7 @@ predecessors, then \(F^j(y)=y\) and \(w=F^{j-1}(y)\); thus \(w\) is
 periodic. This also rules out recurrence of one nonperiodic predecessor.
  \(\square\)
 
-**Corollary (the complete finite-depth hierarchy).** Define
+**Corollary 1.6 (the complete finite-depth hierarchy).** Define
 \[
  \mathcal C_0=\{1\},\qquad
  \mathcal C_{d+1}
@@ -745,7 +798,7 @@ define
  \end{cases}                                          \tag{T.operator}
 \]
 
-**Lemma (exact transfer norms).** This operator is linear and positive, and
+**Lemma 2.1 (exact transfer norms).** This operator is linear and positive, and
 
 \[
  \langle\mathcal T_{w,q}g\rangle_q=2^{-A}\langle g\rangle_{q-d},
@@ -787,7 +840,7 @@ therefore \(p(V)\le1\). Put
                   (\rho_k\circ\pi_{q-|w|,k}).          \tag{T.selected}
 \]
 
-**Lemma (selected reference density).** Pointwise \(0\le A_{V,q}\le\rho_q\),
+**Lemma 2.2 (selected reference density).** Pointwise \(0\le A_{V,q}\le\rho_q\),
 and
 
 \[
@@ -806,7 +859,7 @@ proving the pointwise inequality. Its mean and that of \(L\) follow from
 identity. This also covers \(V\) empty or containing the empty word.
 \(\square\)
 
-**Theorem (finite stopping transfer).** For \(1\le\ell\le q\),
+**Theorem 2.3 (finite stopping transfer).** For \(1\le\ell\le q\),
 
 \[
  \left\langle\left|L_{V,q,k}-\rho_\ell\circ\pi_{q,\ell}\right|
@@ -843,7 +896,7 @@ each tag an integer source supports at most one history. Write
  H_q(a)=\sum_{h\in\mathcal H:\,x_h\equiv a\ (3^q)}\omega_h.
 \]
 
-**Theorem (offset-window capacity).** For every \(q\ge0\) and every residue
+**Theorem 2.4 (offset-window capacity).** For every \(q\ge0\) and every residue
 \(a\),
 
 \[
@@ -879,7 +932,7 @@ when the formal residue class contains just one occupied physical source.
 
 ### A finite root period
 
-**Lemma (root residues).** For \(q\ge0\), every interval of \(3^q\)
+**Lemma 2.5 (root residues).** For \(q\ge0\), every interval of \(3^q\)
 consecutive positive indices \(s\) contains exactly one \(R_s=(4^s-1)/3\)
 in each residue modulo \(3^q\). For \(q\ge1\), \(R_s\) is a unit exactly
 when \(3\) does not divide \(s\).
@@ -922,7 +975,7 @@ The set \(V(E)\) is finite because its positive parts sum to at most \(E-1\),
 and prefix-free because a first-crossing word cannot properly extend another.
 It may be empty for small \(E\). Every word in it has slope at most \(\beta\).
 
-**Lemma (stopped exponential moments).** The stopping time is almost surely
+**Lemma 3.1 (stopped exponential moments).** The stopping time is almost surely
 finite, and \(\mathbb E e^{sR}<\infty\) for some \(s>0\). The vector
 \((Y,R)\) has an exponential moment in a neighborhood of zero.
 
@@ -948,7 +1001,7 @@ Summing the geometric majorant proves the claim. Since
 \(|Y|\le(1+\lambda)R\), a sufficiently small joint exponential moment
 follows. \(\square\)
 
-**Lemma (exact stopped means and concentration).** Set
+**Lemma 3.2 (exact stopped means and concentration).** Set
 \(\mu_Y=\mathbb EY\) and \(\mu_R=\mathbb ER\). Then
 
 \[
@@ -989,7 +1042,7 @@ is not used in the density score.
 
 ### An elementary precision tail with a fully fixed range
 
-**Lemma (two-binomial-tail certificate).** For every integer \(E\ge256\),
+**Lemma 3.3 (two-binomial-tail certificate).** For every integer \(E\ge256\),
 
 \[
  \varepsilon(E)\le2e^{-E/75}\le2^{-E/100}.              \tag{S.timeout}
@@ -1235,7 +1288,7 @@ histories. Write \(x_h,\omega_h,C_h\) for source, slope and offset.
 All integral positive odd sources are admitted, including nonunits; markers
 at positive level vanish on the latter.
 
-**Lemma (seed geometry and actual capacity).** Set
+**Lemma 4.1 (seed geometry and actual capacity).** Set
 
 \[
  C_{\rm tag}=20(4b_0+1),\quad
@@ -1577,7 +1630,7 @@ at most \(3K_{\rm var}P_tB_0^{-3}\). The bound is uniform in the splice.
 
 ### The graft theorem and the fixed-root quantifiers
 
-**Theorem (finite graft).** At all sufficiently late splices \(t\), the
+**Theorem 4.2 (finite graft).** At all sufficiently late splices \(t\), the
 construction above is physically realized and, for every \(j\ge0\) and
 every positive odd root \(M\ge16^{b_0}\),
 
@@ -1756,7 +1809,7 @@ proper extension of a selected word already has its eligible crossing.
 Its unnormalized reference mass is
 \(p(b,u,K)=\sum_{v\in\mathcal V(b,u,K)}2^{-A_d}\).
 
-**Lemma (two endpoint tails and overshoot).** Uniformly over the indicated
+**Lemma 5.1 (two endpoint tails and overshoot).** Uniformly over the indicated
 integers \(b,u,K\),
 
 \[
@@ -1842,7 +1895,7 @@ Thus \(H_k(x)\) combines all the reference factors in the fan, with their
 relative weights. Keeping the index of a fan member will preserve the
 identity of the original history during compression.
 
-**Lemma (even overshoot compression).** A physical word with overshoot
+**Lemma 5.2 (even overshoot compression).** A physical word with overshoot
 \(O\le K\) has a unique image consisting of a word with overshoot at most
 one and the integer \(j=\lfloor O/2\rfloor\). Its parent, earlier inverse endpoints, shift
 and depth are unchanged. If \(x\) and \(v\) are the reduced source and
@@ -1875,7 +1928,7 @@ Define
  \mathcal R_b=\frac{16}{1-\eta_b}.                    \tag{N.scales}
 \]
 
-**Lemma (source bounds after compression).** Every compatible terminal
+**Lemma 5.3 (source bounds after compression).** Every compatible terminal
 source with overshoot at most one
 satisfies
 
@@ -1950,7 +2003,7 @@ endpoint: its lower endpoint dominates all \(L_b^\sharp(y)\), and its
 upper endpoint is below all \(2^{2r_b}L_b^\sharp(y)\). The interval (N.common) uses the fixed deterministic bounds for the whole
 pool.
 
-**Lemma (coverage of a half-line).** At all sufficiently late central stages
+**Lemma 5.4 (coverage of a half-line).** At all sufficiently late central stages
 \(I_B\) is nonempty, consecutive intervals overlap, and their union contains
 every sufficiently large real number. A stage chosen for \(X\to\infty\)
 necessarily has \(B\to\infty\).
@@ -2130,7 +2183,7 @@ ordinary step bound \(\tau_1(x)\le(10431/1000)\log x\).
 
 ### The all-scale physical source-family theorem
 
-**Theorem.** Suppose the mixing and finite-pool premises of (G.marks) hold
+**Theorem 5.5.** Suppose the mixing and finite-pool premises of (G.marks) hold
 with certified score \(W>0\), and the pool is a convergent antichain as
 specified at (G.terminalstate). For every \(\varepsilon>0\) and every fixed
 \(\Lambda>16\), one can choose one finite common graft and a threshold
@@ -2171,7 +2224,7 @@ over the cutoffs in each selected interval. The graft is fixed at the chosen pos
 Put \(c_0=3/\log(4/3)\). The fixed numerical construction above
 has a parameterized version with the same incoming pool and score.
 
-**Theorem (parameterized source families).** Under the mixing and
+**Theorem 5.6 (parameterized source families).** Under the mixing and
 persistent-pool hypotheses of (G.marks), with the same convergent
 antichain, for every fixed \(c>c_0\),
 every \(\varepsilon>0\), and every fixed \(\Lambda>16\),
@@ -2319,7 +2372,7 @@ so none depends on \(c\). \(\square\)
 
 ### Sources reaching a fixed target
 
-**Theorem (fixed-target source families).** Let \(y_\star>0\) be a fixed
+**Theorem 5.7 (fixed-target source families).** Let \(y_\star>0\) be a fixed
 integer. Suppose a nonempty finite odd pool satisfies (G.marks) and
 (W.antichain), and each root has a specified finite ordinary path to
 \(y_\star\). Retain the same mixing hypothesis as in (N.everyclock).
@@ -2504,7 +2557,7 @@ unique. The remaining tail keeps its unrestricted law.
 We record explicitly why these families cover every globally typical word
 and why their residue maps are injective at the common cutoff.
 
-**Lemma (common scalar margins).** Throughout \(80\le v\le679/5\) and
+**Lemma 6.1 (common scalar margins).** Throughout \(80\le v\le679/5\) and
 \(n\ge m_0\), one has \(L>4\) and
 
 \[
@@ -2548,7 +2601,7 @@ For \(n\ge2^{80}\), therefore \(L\le\sqrt n\) and
 \]
 prove the result. Also \(L\ge80h>4\). \(\square\)
 
-**Lemma (head location).** Every globally typical word has a unique
+**Lemma 6.2 (head location).** Every globally typical word has a unique
 head in the families above. Every nonempty head family satisfies
 
 \[
@@ -2578,7 +2631,7 @@ use \(\sqrt L\le L/2\), \(L\ge4\), and \(v\ge17\).
 Consequently \(l\le Q+2vL=\lambda n-v(v-2)L<2n\).
 This proves both coverage and the stated finite index ranges. \(\square\)
 
-**Lemma (small cleared offset).** Every head satisfies
+**Lemma 6.3 (small cleared offset).** Every head satisfies
 
 \[
  0<B(w)<3^n.                                        \tag{M.headsmall}
@@ -2616,7 +2669,7 @@ The displayed quadratic is decreasing for \(v\ge80\) and is less than
 \(-672\) at 80. Also \(K_*<17\). Since \(L>4\), the exponent is negative.
 Positivity of every summand proves the lower bound. \(\square\)
 
-**Lemma (head injection and its second moment).** At fixed \(d,l\), the
+**Lemma 6.4 (head injection and its second moment).** At fixed \(d,l\), the
 map from a head to \(C(w)\bmod3^n\) is injective. Let \(p_{k,l}\) be the
 nonnegative sub-probability mass function on \(G_n\) obtained by mapping
 the \((k,l)\) head family with its original iid weights. Then
@@ -2660,7 +2713,7 @@ For real vectors \(p,t\) and convolution
 \((p*t)(x)=\sum_y p(y)t(x-y)\), the following finite
 identity is the precise use of Fourier cancellation.
 
-**Lemma (finite collision bound).** If \(1\le m\le n\) and
+**Lemma 6.5 (finite collision bound).** If \(1\le m\le n\) and
 \(|\widehat t(\xi)|\le\delta\) at every frequency not divisible by
 \(3^{n-m}\), with \(\delta\ge0\), then
 
@@ -2711,7 +2764,7 @@ coefficient of \(\mu_r\), at a unit frequency; hence (M.primitive) yields
 \]
 The conductor bound gives the factor \(20^{6409}\).
 
-**Proposition (general-width high-regime estimate).** For
+**Proposition 6.6 (general-width high-regime estimate).** For
 \(80\le v\le679/5\), \(n\ge m_0\) and \(9n\le10m\le10n\),
 \[
  \operatorname{Osc}(m,n)
@@ -2747,7 +2800,7 @@ The preceding decomposition has isolated the rejected mass. We now bound
 that mass directly under the reference law, without charging all interval
 lengths at their worst common rate.
 
-**Lemma (geometric log-MGF at its pole).** Put \(X=K-2\) and
+**Lemma 6.7 (geometric log-MGF at its pole).** Put \(X=K-2\) and
 \(c=1/h\). Define \(g(s)=\log\mathbb E e^{sX}\) for every real \(s<h\).
 For \(0\le\theta<h\),
 \[
@@ -2776,7 +2829,7 @@ Concavity proves \(F\ge0\), hence \(g''\le H''\). Integrate twice from
 zero. For the other sign, \(g''(-\theta)\le2\) for \(\theta\ge0\);
 the same integration gives \(g(-\theta)\le\theta^2\). \(\square\)
 
-**Lemma (two-sided sum bound).** For \(r\ge1,z>0\) and independent
+**Lemma 6.8 (two-sided sum bound).** For \(r\ge1,z>0\) and independent
 copies \(X_1,\ldots,X_r\),
 \[
  \Pr\{|\textstyle\sum_{i=1}^rX_i|
@@ -2789,7 +2842,7 @@ The log-MGF bound gives exponent
 \(-\theta(2\sqrt{rz}+cz)+r\theta^2/(1-c\theta)=-z\).
 Add the two tails. \(\square\)
 
-**Proposition (length-sensitive failure).** With \(q=vh\) and \(L=\log n\),
+**Proposition 6.9 (length-sensitive failure).** With \(q=vh\) and \(L=\log n\),
 \[
  \Pr(F_{n,v})\le
  \frac{16}{q^2L}n^{1-q}+n^{-q}+n^{-q-1}.              \tag{M.failure}
@@ -2853,7 +2906,7 @@ Since \((11/10)^8>2\),
 \]
 also for the term with \(1/\log x\), which is decreasing.
 
-**Theorem (all high levels).** For every fixed permitted width,
+**Theorem 6.10 (all high levels).** For every fixed permitted width,
 \[
  \operatorname{Osc}(m,n)\le E_v(m)
  \quad(n\ge m\ge m_0).                               \tag{M.allhigh}
@@ -2869,14 +2922,16 @@ to \((m,r)\), the induction hypothesis to \((r,n)\), and then
 The induction uses the geometric sequence of intermediate levels.
 \(\square\)
 
-**Theorem (full quantitative mixing).** The target (M.target) with the
+**Theorem 6.11 (full quantitative mixing).** The target (M.target) with the
 envelope (M.envelope) holds. In particular
 \[
  \operatorname{Osc}(m,n)\le C_6m^{-2314/25}
  \le C_6m^{-92}\le C_6m^{-6}\quad(1\le m\le n).         \tag{M.powers}
 \]
 
-*Proof.* Take \(v_*=6749/50\). The rational bounds in (M.logbounds) give
+*Proof.* Take \(v_*=6749/50\). Use the ten-term rational bounds
+\(H_-\) and \(H_+\) in (M.logbounds); the two margins below exceed
+\(7/1000\) and \(1/1000\), respectively. These give
 \[
  6407-\tfrac12v_*^2H_+>2314/25,\qquad
  v_*H_--1>2314/25.
@@ -2924,7 +2979,7 @@ The finite recipe in (E.recipe) specifies our coefficient:
 \[
  C_{\rm primitive}:=C_{6409}^{\rm loc}\ge1.           \tag{M.canonicalC}
 \]
-**Theorem (primitive input).** This coefficient satisfies (M.primitive).
+**Theorem 6.12 (primitive input).** This coefficient satisfies (M.primitive).
 
 *Proof.* Apply (E.primitive) at \(B=6409\).
 Its law is (T.law), its transform is unnormalized, its frequencies are
@@ -2996,7 +3051,7 @@ Here \(q_N-d=a_N\) for every complete seed word, so the
 payload has exactly the required residual precision. No choice of a physical root occurs in this
 definition, and no family is normalized by its surviving probability.
 
-**Lemma (finite mean and support).** For every \(N\ge0\),
+**Lemma 7.1 (finite mean and support).** For every \(N\ge0\),
 \[
  g_N\ge0,\quad g_N(y)=0\ (3\mid y),\qquad
  \langle g_N\rangle_{q_N}=\frac23\prod_{j<N}p_j,
@@ -3222,7 +3277,7 @@ Indeed \(8^{92}=2^{276}\), \(2\,8^{92}+1<2^{278}\) and
 We retain the displayed conservative coefficient for the startup recipe;
 optimizing that variation coefficient is a separate question.
 
-**Theorem (seed variation uniformly over roots).** With exactly
+**Theorem 7.2 (seed variation uniformly over roots).** With exactly
 \[
  F_b=2^{467}b16^b(C_6+1),
 \]
@@ -3248,7 +3303,7 @@ increments first and then bound by its entire nonnegative tail.
 The same bound holds for the limit. Nonnegativity of that limit does
 not imply it is positive.
 
-### Handoff and provenance
+### Persistent marks for the root construction
 
 The exact finite mark, cap, mean and physical identity are
 (B.mark)--(B.physical). The full later-generation loss is (B.tail).
@@ -3668,7 +3723,7 @@ has the required counting and target-path properties.
 The finite allocation statements below remain valid for every \(q\ge2\)
 and \(0\le p\le1\).
 
-**Proposition (shared allocation and coverage).**
+**Proposition 8.1 (shared allocation and coverage).**
 \[
  W_{\mathcal F}^{\rm joint}(q,p)\ge\sum_iW_i(q,p),
                                                         \tag{R.jointdominance}
@@ -3691,7 +3746,7 @@ equality in their sum requires equality in every summand. The coverage
 bound follows by multiplying its coefficient bound by the total mass.
 \(\square\)
 
-**Lemma (affine block comparison).** Suppose a block uses the baseline indices
+**Lemma 8.2 (affine block comparison).** Suppose a block uses the baseline indices
 \(\mathcal S_q\), is residue-complete, and has
 \[
  M_s=\alpha R_s+\frac{\alpha-1}{3},\quad0<\alpha<1.
@@ -3829,7 +3884,7 @@ For \(p\ge1\) put
 All averages in this section are over the full group, including zero and
 the nonunits. We have \(M_1(n)=1\), \(M_p(0)=A_0=1\).
 
-**Theorem (moment inheritance).** For integers \(u,v\ge0\) and real
+**Theorem 9.1 (moment inheritance).** For integers \(u,v\ge0\) and real
 \(p\ge1\),
 \[
  M_p(u+v)\le M_p(u)M_p(v),\qquad A_{u+v}\le A_uA_v.
@@ -4266,7 +4321,7 @@ The last inequality is (D.harmonic) applied to the nonnegative
 Their validity depends on the source-weight bound (N.charge) established
 before the residue masses were formed.
 
-**Proposition (general moment-to-mass conversion).** Let \(s>1\) and
+**Proposition 10.1 (general moment-to-mass conversion).** Let \(s>1\) and
 \(B_{s,m}\ge\langle H_m^s\rangle_m\), with \(m\ge2\) fixed.
 For a source-family score \(0<W\le27/2^{27}\), set
 \(p_m=(W-\kappa\epsilon_m)_+\). Then
@@ -4309,7 +4364,7 @@ proposition; the optimized formulas here use the direct \(3/2\) tables.
 
 ### Using complementary residue capacity
 
-**Proposition (two-sided moment capacity).** Let \(h_r\ge0\) on a
+**Proposition 10.2 (two-sided moment capacity).** Let \(h_r\ge0\) on a
 set of \(Q\) residues, with full mean \(\mu\) and
 \(\langle h^s\rangle\le B_s\), \(s>1\). Suppose
 \(0\le w_r\le T/Q\) and \(\sum_rw_rh_r\ge p\), where
@@ -4430,7 +4485,7 @@ The strict numerical inequality follows already from
 \(\tfrac12\log(3/2)>1/6\), the latter by integrating \(1/t>2/3\)
 on \([1,3/2)\).
 
-**Lemma (all-scale unmarked mass).** For each fixed \(m\ge2\), each
+**Lemma 10.3 (all-scale unmarked mass).** For each fixed \(m\ge2\), each
 \(u<u_m(W)\) with \(u\ge0\), and each fixed \(\Lambda>16\),
 every sufficiently large real \(X\) has a finite family of odd sources
 in \(\mathcal G_c\cap[X,\Lambda X)\), with
@@ -4487,7 +4542,7 @@ is closed under multiplication by powers of two: for \(r\ge0\),
 \(c\log2>c_0\log2>1\). Thus all the counted towers remain inside the
 same literal logarithmic-time set.
 
-**Theorem (conversion from small harmonic mass to lower density).** Suppose, for every fixed
+**Theorem 10.4 (conversion from small harmonic mass to lower density).** Suppose, for every fixed
 \(R>16\) and every sufficiently large real \(X\), the odd members
 of a dyadically closed set \(G\) in \([X,RX)\) admit weights
 \(0\le a_x\le1/x\) totaling at least \(u\). If
@@ -4578,7 +4633,7 @@ second-order correction.
 
 ### A common positive density without finite moment certificates
 
-**Proposition (elementary common-density bound).** Suppose (T.mix) has
+**Proposition 10.5 (elementary common-density bound).** Suppose (T.mix) has
 \(\epsilon_m\to0\), and a fixed persistent pool supplies a score
 \(0<W\le W_{\max}=27/2^{27}\) for (N.everyclock).
 Choose one fixed \(m\ge2\) such that \(\kappa\epsilon_m<W/2\).
@@ -4648,7 +4703,7 @@ only the fractional-moment branch is omitted from \(c_{\rm MV}\).
 These are the complete optimized formulas, rather than the simpler
 exponential upper bounds used to compare them.
 
-**Theorem (quantitative density at every larger clock).** With the
+**Theorem 10.6 (quantitative density at every larger clock).** With the
 canonical primitive input (M.primitive), survival theorem (R.certificate)
 and finite certificates (F.finitetarget), every source-family score
 \(0<W\le W_{\max}\) from a fixed convergent antichain satisfies
@@ -4701,7 +4756,7 @@ depends on \(c\). Only the graft and eventual cutoffs do. The final
 counting assertion is the definition of lower density. In particular,
 \(c=10431/1000\) gives the certified numerical specialization. \(\square\)
 
-**Corollary (an unspecified vanishing clock loss).** If a constant
+**Corollary 10.7 (an unspecified vanishing clock loss).** If a constant
 \(d_0>0\) satisfies the common-clock conclusion above, there exists
 a nonincreasing \(\eta:[1,\infty)\to(0,\infty)\), with
 \(\eta(x)\to0\), such that
@@ -4726,7 +4781,7 @@ Let \(X\to\infty\). This diagonalization uses the nested fixed-clock sets; the e
 The same proof applies to any fixed target with a common density
 constant throughout \(c>c_0\). \(\square\)
 
-**Theorem (finite-pool transfer to a fixed target).** Under the same
+**Theorem 10.8 (finite-pool transfer to a fixed target).** Under the same
 analytic and moment inputs as (D.everyclock), fix a positive
 target \(y_\star\) and a nonempty finite pool satisfying (G.marks),
 (W.antichain), and the finite root-to-target path hypothesis of
@@ -4752,7 +4807,7 @@ The elementary maximum argument proves the table-free variant. The
 pool, score and coarse estimates precede \(c\), so one constant works
 throughout its stated range. \(\square\)
 
-**Corollary (odd sources in every large shell).** Fix \(c>c_0\),
+**Corollary 10.9 (odd sources in every large shell).** Fix \(c>c_0\),
 \(\Lambda>16\), \(m\ge2\), and \(0<u<u_m(W)\) for a
 score in (D.everyclock). Then for all sufficiently large real \(X\),
 \[
@@ -4768,7 +4823,7 @@ mass below the limiting bound.
 
 Two complete incoming periods suffice for the general target theorem.
 
-**Theorem (every fixed positive unit target).** For every positive
+**Theorem 10.10 (every fixed positive unit target).** For every positive
 integer \(y_\star\), \(3\nmid y_\star\), an effectively defined \(d_{y_\star}>0\)
 satisfies
 \[
@@ -4811,7 +4866,7 @@ without the large moment tables. \(\square\)
 
 This proves (I.targets). It does not assert convergence of the target.
 
-**Corollary (one-period quantitative target score).** Retain the selected
+**Corollary 10.11 (one-period quantitative target score).** Retain the selected
 startup \(q=q_N\), \(K=K_q\), \(B=B_q\), \(P=\Pi-V(N)\) and
 the index \(t_0\) of the preceding proof. Set
 \[
@@ -4860,7 +4915,7 @@ The score is a finite rational recipe; no cycle-decision procedure is
 needed to define it. The two-period construction remains available for
 the qualitative theorem without the scalar cap comparison. \(\square\)
 
-**Corollary (exact obstruction to positive-density hitting).** For every
+**Corollary 10.12 (exact obstruction to positive-density hitting).** For every
 positive integer \(y\) and every fixed \(c>c_0\),
 \[
  \boxed{\underline d(\mathcal G_c(y))>0
@@ -4921,7 +4976,7 @@ after its first odd step every later odd state is below the barrier.
 The persistent vector has positive total mass on this block.
 Apply (D.finitepool) with target \(y\).
 
-**Corollary (qualitative analytic input).** A single positive lower
+**Corollary 10.13 (qualitative analytic input).** A single positive lower
 density bound for all \(c>c_0\) follows from the local primitive theorem
 and the seed, persistent-root, graft and terminal constructions, without
 the large finite moment certificates. Alternatively, Tao's published
@@ -4953,7 +5008,7 @@ The alternative scores depend on their chosen analytic coefficients.
 The explicit density formulas use \(C_{\rm primitive}\) and the finite
 tables of Section 9.
 
-**Corollary (explicit rational specialization).** For rational
+**Corollary 10.14 (explicit rational specialization).** For rational
 \(0<W\le W_{\max}\) satisfying the source-family theorem, let
 \[
  m_\circ=\max\left\{2,\left\lceil
@@ -5156,7 +5211,7 @@ estimates proved above. Both comparisons keep the root score and mixing estimate
 
 ### Improvement from the sixteen-step and complementary bounds
 
-**Theorem (strict refinement at a fixed score).** For
+**Theorem 11.1 (strict refinement at a fixed score).** For
 \(0<W\le2^{-4096}\), with \(a=\log_2(1/W)\),
 \[
  c_{\rm comp}(W)>c_{{\rm FM},16}(W)
@@ -5212,7 +5267,7 @@ proves \(c_{\rm comp}>c_{{\rm FM},16}\). All masses remain in
 
 ### How a larger root score improves the full formula
 
-**Theorem (cubic score comparison).** For the fixed retained envelope
+**Theorem 11.2 (cubic score comparison).** For the fixed retained envelope
 and finite tables, if
 \(0<W_1\le2^{-4096}\) and \(W_1<W_2\le W_{\max}\), then
 \[
@@ -5305,7 +5360,7 @@ accuracy.
 
 ### The absolute scale of the density formulas
 
-**Proposition (score-to-density scale).** Put \(a=\log_2(1/W)\) for
+**Proposition 11.3 (score-to-density scale).** Put \(a=\log_2(1/W)\) for
 \(0<W\le2^{-4096}\), and define
 \[
  m_+(W)=\max\{2,\lceil(3C_6/W)^{25/2314}\rceil\}.
@@ -5423,7 +5478,7 @@ Its printed constant in equations (8.5)--(8.6) is
                                                         \tag{Q.mazrecipe}
 \]
 
-**Proposition (comparison with the printed constant).** The selected score
+**Proposition 11.4 (comparison with the printed constant).** The selected score
 satisfies
 \[
  W_*>\mathcal M^{-1},\qquad
@@ -5800,7 +5855,7 @@ allocation residual.
 
 ### Density bounds
 
-**Corollary (coefficient improvement through the complete formula).**
+**Corollary B.1 (coefficient improvement through the complete formula).**
 For the same reference tables, let \(c_{{\rm FM},C}\) denote the density
 formula with coefficient \(C\). If \(C_1\le C_2\) are valid integer
 primitive coefficients, every term of the mixing envelope for \(C_1\)
@@ -6904,7 +6959,7 @@ in Appendix C.
 The affine mixture (F.mixture), which proves the moment inequality
 (F.inheritance), also permits a general convex test.
 
-**Proposition (convex-order inequality).** For every finite convex function
+**Proposition D.1 (convex-order inequality).** For every finite convex function
 \(\Phi:[0,\infty)\to\mathbb R\) and integers \(u,v\ge0\),
 \[
  \langle\Phi(f_{u+v})\rangle_{u+v}
@@ -6955,7 +7010,7 @@ The moment-to-mass estimate (D.generalp) is one way to use residue capacity. The
 finite optimization records the strongest bound obtained from the
 whole marker distribution and that capacity alone.
 
-**Proposition (optimal capacity bound).** Fix \(m\ge2\), put \(Q=3^m\),
+**Proposition D.2 (optimal capacity bound).** Fix \(m\ge2\), put \(Q=3^m\),
 and let \(0\le p\le L\mu\). Define
 \[
  \mathcal C_m(p)=
@@ -7059,7 +7114,7 @@ relative entropy at order one, by
 \]
 These are normalized using the mean-one density \(f_n\).
 
-**Proposition (rates justified by inheritance).** For every \(s\ge1\),
+**Proposition D.3 (rates justified by inheritance).** For every \(s\ge1\),
 \[
  r_s:=\lim_{n\to\infty}\frac{D_s(n)}n
      =\inf_{n\ge1}\frac{D_s(n)}n\ge0.               \tag{F.divergencerate}
@@ -7103,7 +7158,7 @@ by itself it does not upgrade that remainder to \(O(1)\) at the true
 rate. The block rate \(\bar r_s\) is a certified upper bound. At
 order one, projectivity and the summable mixing envelope give more.
 
-**Proposition (bounded order-one divergence).** For every \(n\ge2\),
+**Proposition D.4 (bounded order-one divergence).** For every \(n\ge2\),
 \[
  0\le D_1(n)-D_1(n-1)\le\min\{\log3,\epsilon_{n-1}\}.             \tag{F.entropyincrement}
 \]
@@ -7247,7 +7302,7 @@ The symbols \(K,R,A,H\) in this appendix are local parameters; in particular
 \]
 This is a finite integer recipe fixed before the level and frequency.
 
-**Theorem (local primitive decay).** For every positive integer \(B\),
+**Theorem E.1 (local primitive decay).** For every positive integer \(B\),
 every \(n\ge1\), and every \(\xi\) with \(3\nmid\xi\),
 \[
  |F_n(\xi)|\le C_B^{\rm loc}n^{-B}.                 \tag{E.primitive}
@@ -7303,7 +7358,7 @@ At a white state the one-step kernel has total mass
 
 ### E.3. Black triangles and separation
 
-**Lemma (geometry).** The black lattice points are partitioned into triangles
+**Lemma E.2 (geometry).** The black lattice points are partitioned into triangles
 \[
  \Delta=\{(j,l):j\ge j_0,\ l\le l_0,
        (j-j_0)\log9+(l_0-l)\log2\le t\},             \tag{E.triangle}
@@ -7746,45 +7801,68 @@ density formula. The clock threshold remains \(c_0\).
 
 ## Formalization and computational data {#formalization_data}
 
-The accompanying Phase 1 Lean development verifies common-clock and
-fixed-target positive density in their existence forms, the exact
-multiple-of-three criterion, a positive individual-root consequence, and
-vanishing-clock-loss results for convergence to one and each admissible fixed
-target. It also verifies the \(10431/1000\) clock specialization and selected
-fixed-level formulas using accepted depth-eleven inputs. Seven analytic
-companions extend the eleven baseline statements: the exact finite fan
-allocation and its hinge dual, domination of each real-moment bound, exact
-profile-density bounds for convergence to one and every admissible fixed
-target at an existential paid level, and the actual reference entropy's
-increment bound, finite monotone limit with explicit tail, and zero normalized
-growth (including the positive-index normalized infimum). The internal proofs
-also compare the profile bound with the accepted depth-eleven second and
-fractional formulas. These additions do not assert the Rényi-order right
-limit or the complementary-capacity comparison.
+### Scope of the Lean formalization
 
-E-L1--E-L7 formalize the Appendix E primitive-decay argument, its
-all-order local coefficient recipe, the order-6409 specialization, and the
-canonical Section 6 consumer migration. The expanded Phase 1 proof cone uses
-`LocalPrimitive.localPrimitiveDecay_order6409`; its transitive cone does not
-use `explicitRenewal_numericalPrimitiveDecay` or the old `Analytic.SourceLaw`
-adapter. The triple-log size bound for the local coefficient, its comparison
-with the historical coefficient, and the resulting optimized-density
-comparisons remain paper proofs. The other divergence-rate results,
-the Rényi-order right limit, complementary capacity, deeper tables, full
-optimized formulas, and amplified root families remain outside this Lean
-release. Local Lean checks are distinct from independent-kernel and registry
-verification; the expanded eighteen-statement package is being prepared for
-those checks.
+A companion Lean 4 development supplies eighteen selected statements. The
+main convergence theorem gives one positive lower natural-density constant
+for every clock strictly above the threshold; the fixed-target theorem gives
+one such constant for each positive target not divisible by three. These are
+existence statements: the formal release does not claim the complete optimized
+density formulas of this paper.
 
-The source package provides the theorem-to-declaration correspondence,
-pinned dependencies, and reproduction instructions for the finite certificates.
-The reference-density tables use exact integer arithmetic, upward rounding,
-and explicit positive-tail bounds. The depth-sixteen cyclic calculation
-covers all \(3^{16}=43{,}046{,}721\) residues. The fractional-moment bounds
-use integer square roots; the entropy values use rational logarithm enclosures.
-Section 9 specifies the transfer recurrences and certificate inequalities.
-The source package also contains the scalar comparisons, root-trajectory certificates,
-and residue-counting calculations used in the explicit bounds.
+The selected results have the following scope.
+
+| Result family | Formalized conclusion |
+|---|---|
+| Collatz convergence to one | Common-clock positive lower density, the rational clock specialization, and selected depth-eleven second-moment and fractional bounds. |
+| Fixed-target hitting | Positive lower density for every positive target not divisible by three, the exact target criterion, and corresponding depth-eleven bounds. |
+| Corollaries | A positive individual-root consequence and vanishing-clock-loss statements for convergence to one and for each admissible target. |
+| Concentration profiles | Exact finite fan allocation and its hinge dual, each real-moment lower bound, and profile-density bounds at an existential positive paid level. |
+| Reference entropy | Increment bounds, a finite monotone limit with an explicit tail, and zero normalized growth, including the positive-index normalized infimum. |
+
+The primitive Fourier-decay argument of Appendix E is proved within the
+formal development, including its all-order coefficient recipe and the
+order-6409 specialization used in Section 6. The selected proof dependencies
+do not assume Mazur's numerical primitive-decay theorem. Adapted probability
+and word constructions retain their original attribution and license notices.
+The coefficient-size estimate, its comparison with the historical coefficient,
+and the resulting optimized-density comparisons remain paper proofs. The
+other divergence-rate results, the Rényi-order right limit, complementary
+capacity, deeper tables, full optimization, and amplified root families are
+outside the selected Lean release.
+
+### Source record and Palomar registration
+
+The companion development defines the ordinary Collatz map, logarithmic
+hitting sets, and lower natural density directly. Its theorem map records
+the correspondence with this paper, and its dependencies are pinned to
+specified Lean and Mathlib versions. The eighteen selected statements have
+passed local compilation and axiom audits.
+
+Public release through the [Palomar registry](https://palomar-registry.org/)
+is pending. No registry identifier or version has yet been assigned, and
+independent registry verification is not claimed in this preprint. The
+scope table above describes the companion development; the manuscript
+proofs stand independently of its eventual registration.
+
+### Computational data and reproducibility
+
+The finite certificates are specified by the recurrences, pseudocode, and
+integer inequalities in Section 9 and the appendices. The reference-density
+tables use exact integer
+arithmetic, upward rounding, and explicit positive-tail bounds. The
+depth-sixteen cyclic calculation covers all \(3^{16}=43{,}046{,}721\)
+residues. Fractional-moment bounds use integer square roots, and entropy
+values use rational logarithm enclosures. Section 9 specifies the transfer
+recurrences and certificate inequalities. The supplementary computations also
+include scalar comparisons, root-trajectory certificates, and residue-counting
+calculations used in the explicit bounds; these broader paper computations
+should be distinguished from the selected formal proof package.
+
+### Use of AI-assisted tools
+
+AI-assisted tools were used in manuscript preparation, Lean proof development,
+code preparation, and editorial revision.
 
 ## References
 
@@ -7812,3 +7890,34 @@ and residue-counting calculations used in the explicit bounds.
    using Difference Inequalities*, Acta Arithmetica 109 (2003), 237--258.
    [Author preprint](https://arxiv.org/abs/math/0205002);
    [published article](https://doi.org/10.4064/aa109-3-4).
+
+7. Idris Ali Shaik, *Polylogarithmic Descent for Almost All Collatz Orbits in
+   Natural Density*, preprint, 6 September 2026.
+   [SSRN 7290240](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7290240),
+   [doi:10.2139/ssrn.7290240](https://doi.org/10.2139/ssrn.7290240).
+
+8. Idris Ali Shaik, *Quantitative Endpoint Transport for the Collatz Map with
+   a Natural-Density Descent Application*, preprint, 6 September 2026.
+   [SSRN 7341398](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7341398),
+   [doi:10.2139/ssrn.7341398](https://doi.org/10.2139/ssrn.7341398).
+
+9. Riho Terras, *A stopping time problem on the positive integers*,
+   Acta Arithmetica 30 (1976), no. 3, 241--252.
+   [doi:10.4064/aa-30-3-241-252](https://doi.org/10.4064/aa-30-3-241-252).
+
+10. C. J. Everett, *Iteration of the number-theoretic function
+    \(f(2n)=n\), \(f(2n+1)=3n+2\)*, Advances in Mathematics 25
+    (1977), no. 1, 42--45.
+    [doi:10.1016/0001-8708(77)90087-1](https://doi.org/10.1016/0001-8708(77)90087-1).
+
+11. Ivan Korec, *A density estimate for the \(3x+1\) problem*,
+    Mathematica Slovaca 44 (1994), no. 1, 85--89.
+    [DML-CZ article record](https://dml.cz/handle/10338.dmlcz/133225).
+
+12. Jeffrey C. Lagarias, *The \(3x+1\) problem and its generalizations*,
+    American Mathematical Monthly 92 (1985), no. 1, 3--23.
+    [Author's article](https://www.cecm.sfu.ca/organics/papers/lagarias/).
+
+13. Manuel Inselmann, *An approximation of the Collatz map and a lower bound
+    for the average total stopping time*, preprint (2024), arXiv:2402.03276.
+    [Author preprint](https://arxiv.org/abs/2402.03276).
