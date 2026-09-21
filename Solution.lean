@@ -25,24 +25,27 @@ open WordCertDensity
 open Filter Construction
 open scoped Topology Finset
 
-/-- Ordinary Collatz map on naturals (zero is totalized and excluded from good sets). -/
-def ordinaryStep (n : ℕ) : ℕ :=
+/-! ## Ordinary Collatz dynamics and lower natural density -/
+
+/-- Ordinary Collatz map on naturals (zero is totalized and excluded from the hitting sets). -/
+def collatzStep (n : ℕ) : ℕ :=
   if Even n then n / 2 else 3 * n + 1
 
 /-- Reaching a target in exactly the specified number of ordinary steps. -/
 def ReachesIn (x target steps : ℕ) : Prop :=
-  (ordinaryStep^[steps]) x = target
+  (collatzStep^[steps]) x = target
 
 /-- Existence of a finite ordinary hitting time within a real budget. -/
 def ReachesWithin (x target : ℕ) (budget : ℝ) : Prop :=
   ∃ steps : ℕ, ReachesIn x target steps ∧ (steps : ℝ) ≤ budget
 
 /-- Positive sources reaching a target within the specified logarithmic clock. -/
-def goodTarget (target : ℕ) (c : ℝ) : Set ℕ :=
+def logarithmicHittingSet (target : ℕ) (c : ℝ) : Set ℕ :=
   {x | 0 < x ∧ ReachesWithin x target (c * Real.log x)}
 
-/-- Positive integers reaching one within a fixed clock. -/
-def good (c : ℝ) : Set ℕ := goodTarget 1 c
+/-- Positive integers reaching one within `c * log x` ordinary Collatz steps.
+Here convergence means reaching the cycle containing one, not a limit of the iterates. -/
+def logarithmicConvergenceSet (c : ℝ) : Set ℕ := logarithmicHittingSet 1 c
 
 /-- Count members of a set in the positive prefix `[1,N]`. -/
 noncomputable def prefixCount (S : Set ℕ) (N : ℕ) : ℕ := by
@@ -53,27 +56,28 @@ noncomputable def prefixCount (S : Set ℕ) (N : ℕ) : ℕ := by
 noncomputable def partialDensity (S : Set ℕ) (N : ℕ) : ℝ :=
   (prefixCount S N : ℝ) / N
 
-/-- Lower natural density along positive integer cutoffs. -/
+/-- Lower natural density: liminf of `#(S ∩ {1, …, N}) / N`.
+This is neither logarithmic density nor an assertion that natural density exists. -/
 noncomputable def lowerNaturalDensity (S : Set ℕ) : ℝ :=
   liminf (partialDensity S) atTop
 
 /-- Reference-model threshold in the ordinary-step convention. -/
-noncomputable def criticalClock : ℝ := 3 / Real.log (4 / 3)
-
-/-- One lower-density constant chosen before every strictly larger clock. -/
-def CommonClockDensity : Prop :=
-  ∃ d : ℝ, 0 < d ∧ ∀ c : ℝ, criticalClock < c → d ≤ lowerNaturalDensity (good c)
+noncomputable def collatzLogarithmicThreshold : ℝ := 3 / Real.log (4 / 3)
 
 /-- Universal clock statement for a specified density constant. -/
-def EveryClockDensityBound (d : ℝ) : Prop :=
-  0 < d ∧ ∀ c : ℝ, criticalClock < c → d ≤ lowerNaturalDensity (good c)
+def CollatzConvergenceDensityBound (d : ℝ) : Prop :=
+  0 < d ∧ ∀ c : ℝ, collatzLogarithmicThreshold < c →
+    d ≤ lowerNaturalDensity (logarithmicConvergenceSet c)
 
 /-- Small-score domain of the counting conversion. -/
 def SmallScore (W : ℝ) : Prop := 0 < W ∧ W ≤ 27 / (2 : ℝ) ^ 27
 
 /-- Positive bound fixed before every permitted clock for a specified target. -/
-def TargetBound (target : ℕ) (d : ℝ) : Prop :=
-  0 < d ∧ ∀ c : ℝ, criticalClock < c → d ≤ lowerNaturalDensity (goodTarget target c)
+def CollatzHittingDensityBound (target : ℕ) (d : ℝ) : Prop :=
+  0 < d ∧ ∀ c : ℝ, collatzLogarithmicThreshold < c →
+    d ≤ lowerNaturalDensity (logarithmicHittingSet target c)
+
+/-! ## Explicit depth-eleven density bounds -/
 
 /-- Harmonic capacity times the fan mean. -/
 noncomputable def kappa : ℝ := (8 / 9) * (2 * Real.log 2)
@@ -131,17 +135,18 @@ private theorem lowerNaturalDensity_eq :
   funext S
   rfl
 
-private theorem goodTarget_eq : goodTarget = WordCertDensity.goodTarget := by
+private theorem goodTarget_eq : logarithmicHittingSet = WordCertDensity.goodTarget := by
   funext target c; rfl
 
-private theorem good_eq : good = WordCertDensity.good := by
+private theorem good_eq : logarithmicConvergenceSet = WordCertDensity.good := by
   funext c; rfl
 
-private theorem criticalClock_eq : criticalClock = WordCertDensity.criticalClock := rfl
+private theorem criticalClock_eq :
+    collatzLogarithmicThreshold = WordCertDensity.criticalClock := rfl
 
 private theorem EveryClockDensityBound_mono {d d' : ℝ}
     (hle : d ≤ d') (hd : 0 < d) (h : WordCertDensity.EveryClockDensityBound d') :
-    EveryClockDensityBound d := by
+    CollatzConvergenceDensityBound d := by
   refine ⟨hd, ?_⟩
   intro c hc
   have := h.2 c (by simpa [criticalClock_eq] using hc)
@@ -150,7 +155,7 @@ private theorem EveryClockDensityBound_mono {d d' : ℝ}
 
 private theorem TargetBound_mono {target : ℕ} {d d' : ℝ}
     (hle : d ≤ d') (hd : 0 < d) (h : Density.TargetBound target d') :
-    TargetBound target d := by
+    CollatzHittingDensityBound target d := by
   refine ⟨hd, ?_⟩
   intro c hc
   have := h.2 c (by simpa [criticalClock_eq] using hc)
@@ -186,46 +191,52 @@ private theorem residual_le {W : ℝ} {m : ℕ} (hW : 0 < W) (hm : 2 ≤ m) :
   unfold Density.residual
   exact max_le (by nlinarith) hW.le
 
-theorem common_density : CommonClockDensity := by
-  simpa [CommonClockDensity, WordCertDensity.CommonClockDensity, criticalClock_eq,
+theorem collatz_convergence_positive_lower_density :
+    ∃ δ : ℝ, 0 < δ ∧ ∀ c : ℝ, collatzLogarithmicThreshold < c →
+      δ ≤ lowerNaturalDensity (logarithmicConvergenceSet c) := by
+  simpa [WordCertDensity.CommonClockDensity, criticalClock_eq,
     lowerNaturalDensity_eq, good_eq] using Release.PhaseOne.common_density
 
-theorem depthEleven_density :
+theorem collatz_convergence_depth_eleven_density_bound :
     ∃ (W : ℝ) (m : ℕ), SmallScore W ∧ 2 ≤ m ∧
-      EveryClockDensityBound (secondElevenDensity W m) := by
+      CollatzConvergenceDensityBound (secondElevenDensity W m) := by
   obtain ⟨m, hm, _, h⟩ := Release.PhaseOne.depthEleven_density
   refine ⟨persistentRootScore, m, Density.canonicalSmallScore, hm, ?_⟩
-  simpa [EveryClockDensityBound, WordCertDensity.EveryClockDensityBound,
+  simpa [CollatzConvergenceDensityBound, WordCertDensity.EveryClockDensityBound,
     criticalClock_eq, lowerNaturalDensity_eq, good_eq, secondElevenDensity_eq] using h
 
-theorem numerical_clock : criticalClock < 10431 / 1000 := by
+theorem collatz_logarithmic_threshold_lt_10431_div_1000 :
+    collatzLogarithmicThreshold < 10431 / 1000 := by
   simpa [criticalClock_eq] using Release.PhaseOne.numerical_clock
 
-theorem every_admissible_target {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
-    ∃ d : ℝ, 0 < d ∧ TargetBound n d := by
+theorem collatz_hitting_positive_lower_density {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+    ∃ d : ℝ, 0 < d ∧ CollatzHittingDensityBound n d := by
   obtain ⟨d, hd, h⟩ := Release.PhaseOne.every_admissible_target hn h3
   exact ⟨d, hd, by
-    simpa [TargetBound, Density.TargetBound, criticalClock_eq, lowerNaturalDensity_eq,
+    simpa [CollatzHittingDensityBound, Density.TargetBound, criticalClock_eq,
+      lowerNaturalDensity_eq,
       goodTarget_eq] using h⟩
 
-theorem every_admissible_target_depthEleven {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+theorem collatz_hitting_depth_eleven_density_bound {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
     ∃ (W : ℝ) (m : ℕ), 0 < W ∧ 2 ≤ m ∧
-      TargetBound n (secondElevenDensity W m) := by
+      CollatzHittingDensityBound n (secondElevenDensity W m) := by
   obtain ⟨W, m, hW, hm, h⟩ :=
     Release.PhaseOne.every_admissible_target_depthEleven hn h3
   refine ⟨W, m, hW, hm, ?_⟩
-  simpa [TargetBound, Density.TargetBound, criticalClock_eq, lowerNaturalDensity_eq,
+  simpa [CollatzHittingDensityBound, Density.TargetBound, criticalClock_eq,
+      lowerNaturalDensity_eq,
     goodTarget_eq, secondElevenDensity_eq] using h
 
-theorem target_criterion (target : ℕ) (htarget : 0 < target) (c : ℝ)
-    (hc : criticalClock < c) :
-    0 < lowerNaturalDensity (goodTarget target c) ↔ ¬ 3 ∣ target := by
+theorem collatz_hitting_positive_density_iff_target_not_divisible_by_three
+    (target : ℕ) (htarget : 0 < target) (c : ℝ)
+    (hc : collatzLogarithmicThreshold < c) :
+    0 < lowerNaturalDensity (logarithmicHittingSet target c) ↔ ¬ 3 ∣ target := by
   simpa [lowerNaturalDensity_eq, goodTarget_eq, criticalClock_eq] using
     Release.PhaseOne.target_criterion target htarget c (by simpa [criticalClock_eq] using hc)
 
-theorem individual_root :
+theorem collatz_canonical_root_reaches_one_with_positive_density :
     ∃ r s : ℕ, 2 ≤ s ∧ 3 * r + 1 = 4 ^ s ∧ ReachesIn r 1 (2 * s + 1) ∧
-      ∃ d : ℝ, TargetBound r d := by
+      ∃ d : ℝ, CollatzHittingDensityBound r d := by
   obtain ⟨r, hr, _, _, _, d, hd⟩ := Release.PhaseOne.individual_root
   obtain ⟨_, i, hi⟩ := Construction.mem_seedRootPool.mp hr
   have hb : 1 ≤ survivalSeedSize := by norm_num [survivalSeedSize]
@@ -234,33 +245,34 @@ theorem individual_root :
     exact Roots.three_mul_value_add_one _
   · rw [← hi, ReachesIn_eq]
     exact Roots.reachesIn_one (by omega)
-  · simpa [TargetBound, Density.TargetBound, criticalClock_eq, lowerNaturalDensity_eq,
+  · simpa [CollatzHittingDensityBound, Density.TargetBound, criticalClock_eq,
+      lowerNaturalDensity_eq,
       goodTarget_eq] using hd
 
-theorem common_vanishing_clock :
+theorem collatz_convergence_density_with_vanishing_clock_loss :
     ∃ d : ℝ, 0 < d ∧ ∃ η : ℕ → ℝ,
       (∀ x, 0 < η x) ∧ Antitone η ∧ Tendsto η atTop (𝓝 0) ∧
       d ≤ lowerNaturalDensity {x : ℕ | 0 < x ∧
-        ReachesWithin x 1 ((criticalClock + η x) * Real.log x)} := by
+        ReachesWithin x 1 ((collatzLogarithmicThreshold + η x) * Real.log x)} := by
   obtain ⟨d, hd, η, hη, hanti, htend, hden⟩ := Release.PhaseOne.common_vanishing_clock
   refine ⟨d, hd, η, hη, hanti, htend, ?_⟩
   simpa [lowerNaturalDensity_eq, ReachesWithin, WordCertDensity.ReachesWithin,
     ReachesIn_eq, criticalClock_eq] using hden
 
-theorem target_vanishing_clock {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+theorem collatz_hitting_density_with_vanishing_clock_loss {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
     ∃ d : ℝ, 0 < d ∧ ∃ η : ℕ → ℝ,
       (∀ x, 0 < η x) ∧ Antitone η ∧ Tendsto η atTop (𝓝 0) ∧
       d ≤ lowerNaturalDensity {x : ℕ | 0 < x ∧
-        ReachesWithin x n ((criticalClock + η x) * Real.log x)} := by
+        ReachesWithin x n ((collatzLogarithmicThreshold + η x) * Real.log x)} := by
   obtain ⟨d, hd, η, hη, hanti, htend, hden⟩ :=
     Release.PhaseOne.target_vanishing_clock hn h3
   refine ⟨d, hd, η, hη, hanti, htend, ?_⟩
   simpa [lowerNaturalDensity_eq, ReachesWithin, WordCertDensity.ReachesWithin,
     ReachesIn_eq, criticalClock_eq] using hden
 
-theorem fractional_density :
+theorem collatz_convergence_fractional_density_bound :
     ∃ (W p : ℝ) (m : ℕ), SmallScore W ∧ 2 ≤ m ∧ W / 2 < p ∧ p ≤ W ∧
-      EveryClockDensityBound (fractionalDensityAt p m) := by
+      CollatzConvergenceDensityBound (fractionalDensityAt p m) := by
   obtain ⟨m, hm, hpaid⟩ := Density.exists_coarseLevel persistentRootScore_domain.1
   have hproj := Density.fractionalElevenDensity_target 1 persistentRootScore
     Density.canonicalSmallScore Sources.canonicalSources m hm hpaid
@@ -269,9 +281,9 @@ theorem fractional_density :
     residual_le persistentRootScore_domain.1 hm,
     EveryClockDensityBound_mono (le_of_eq (fractionalDensityAt_eq _ _)) hproj.1 hproj⟩
 
-theorem every_admissible_target_fractional {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+theorem collatz_hitting_fractional_density_bound {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
     ∃ (W p : ℝ) (m : ℕ), 0 < W ∧ 2 ≤ m ∧ W / 2 < p ∧ p ≤ W ∧
-      TargetBound n (fractionalDensityAt p m) := by
+      CollatzHittingDensityBound n (fractionalDensityAt p m) := by
   obtain ⟨W, hWpos, hWle, hsrc⟩ := Sources.admissibleTargetSources hn h3
   obtain ⟨m, hm, hpaid⟩ := Density.exists_coarseLevel hWpos
   have hproj := Density.fractionalElevenDensity_target n W ⟨hWpos, hWle⟩ hsrc m hm hpaid
@@ -581,25 +593,25 @@ private theorem entropyError_eq (n : ℕ) :
 
 /-- The exact full-group fan profile attains its hinge-dual allocation value, including zero and
 full demand. -/
-theorem profile_allocation (m : Nat) (p : Real) (hp : 0 <= p)
-    (hpaid : p <= (2 * Real.log 2) * (8 / 9)) :
-    (Exists fun w => Counting.feasibleProfile m p w /\
-      (Finset.univ.sum fun r => w r) = Counting.profile m p) /\
-    Counting.profile m p = sSup {a | Exists fun t : Real => 0 < t /\
+theorem fan_profile_eq_optimal_allocation (m : ℕ) (p : ℝ) (hp : 0 ≤ p)
+    (hpaid : p ≤ (2 * Real.log 2) * (8 / 9)) :
+    (∃ w, Counting.feasibleProfile m p w ∧
+      (Finset.univ.sum fun r => w r) = Counting.profile m p) ∧
+    Counting.profile m p = sSup {a | ∃ t : ℝ, 0 < t ∧
       a = max (p - (2 * Real.log 2) * Reference.mean m
-        (fun r => max (Reference.fan m r - t) 0)) 0 / t} /\
-    0 <= Counting.profile m p /\
-      Counting.profile m p <= p / (8 / 9) :=
+        (fun r => max (Reference.fan m r - t) 0)) 0 / t} ∧
+    0 ≤ Counting.profile m p ∧
+      Counting.profile m p ≤ p / (8 / 9) :=
   by
     simpa only [feasibleProfile_eq, profile_eq, mean_eq, fan_eq] using
       WordCertDensity.Release.AnalyticExtensions.profile_allocation m p hp hpaid
 
 /-- Every real fan moment of order greater than one bounds the exact profile from below. -/
-theorem profile_moment_bound (m : Nat) (p s B : Real) (hm : 2 <= m)
-    (hp : 0 <= p) (hpaid : p <= (2 * Real.log 2) * (8 / 9))
+theorem fan_profile_ge_real_moment_bound (m : ℕ) (p s B : ℝ) (hm : 2 ≤ m)
+    (hp : 0 ≤ p) (hpaid : p ≤ (2 * Real.log 2) * (8 / 9))
     (hs : 1 < s) (hB : 0 < B)
-    (hmoment : Reference.mean m (fun r => (Reference.fan m r) ^ s) <= B) :
-    p ^ (s / (s - 1)) / ((2 * Real.log 2 * B) ^ (1 / (s - 1))) <=
+    (hmoment : Reference.mean m (fun r => (Reference.fan m r) ^ s) ≤ B) :
+    p ^ (s / (s - 1)) / ((2 * Real.log 2 * B) ^ (1 / (s - 1))) ≤
       Counting.profile m p :=
   by
     have hmoment' := hmoment
@@ -610,13 +622,13 @@ theorem profile_moment_bound (m : Nat) (p s B : Real) (hm : 2 <= m)
 
 /-- One positive canonical residual and one level supply the exact profile bound for every
 larger clock. -/
-theorem profile_density :
-    Exists fun W : Real => Density.SmallScore W /\
-      Exists fun m : Nat => 2 <= m /\
-        0 < Density.residual W m /\
-        ∀ c : Real, criticalClock < c ->
-          Counting.radial (Counting.profile m (Density.residual W m)) <=
-            lowerNaturalDensity (goodTarget 1 c) :=
+theorem collatz_convergence_profile_density_bound :
+    ∃ W : ℝ, Density.SmallScore W ∧
+      ∃ m : ℕ, 2 ≤ m ∧
+        0 < Density.residual W m ∧
+        ∀ c : ℝ, collatzLogarithmicThreshold < c →
+          Counting.radial (Counting.profile m (Density.residual W m)) ≤
+            lowerNaturalDensity (logarithmicHittingSet 1 c) :=
   by
     simpa only [Density.SmallScore, SmallScore, WordCertDensity.Density.SmallScore,
       residual_eq, profile_eq, Counting.radial, radial, WordCertDensity.Counting.radial,
@@ -625,14 +637,14 @@ theorem profile_density :
 
 /-- Every positive target not divisible by three has a positive residual and one profile level
 for all larger clocks. -/
-theorem target_profile_density {target : Nat} (htarget : 0 < target)
-    (hnotthree : Not (3 ∣ target)) :
-    Exists fun W : Real => Density.SmallScore W /\
-      Exists fun m : Nat => 2 <= m /\
-        0 < Density.residual W m /\
-        ∀ c : Real, criticalClock < c ->
-          Counting.radial (Counting.profile m (Density.residual W m)) <=
-            lowerNaturalDensity (goodTarget target c) :=
+theorem collatz_hitting_profile_density_bound {target : ℕ} (htarget : 0 < target)
+    (hnotthree : ¬ 3 ∣ target) :
+    ∃ W : ℝ, Density.SmallScore W ∧
+      ∃ m : ℕ, 2 ≤ m ∧
+        0 < Density.residual W m ∧
+        ∀ c : ℝ, collatzLogarithmicThreshold < c →
+          Counting.radial (Counting.profile m (Density.residual W m)) ≤
+            lowerNaturalDensity (logarithmicHittingSet target c) :=
   by
     simpa only [Density.SmallScore, SmallScore, WordCertDensity.Density.SmallScore,
       residual_eq, profile_eq, Counting.radial, radial, WordCertDensity.Counting.radial,
@@ -641,31 +653,31 @@ theorem target_profile_density {target : Nat} (htarget : 0 < target)
 
 /-- The actual reference-law entropy increment obeys the compact mixing envelope at each
 positive index. -/
-theorem entropy_increment (n : Nat) (hn : 1 <= n) :
-    0 <= Reference.entropy (n + 1) - Reference.entropy n /\
-    Reference.entropy (n + 1) - Reference.entropy n <=
+theorem reference_entropy_increment_bounds (n : ℕ) (hn : 1 ≤ n) :
+    0 ≤ Reference.entropy (n + 1) - Reference.entropy n ∧
+    Reference.entropy (n + 1) - Reference.entropy n ≤
       min (Real.log 3) (Analytic.mixingError n) :=
   by
     simpa only [entropy_eq, mixingError_eq] using
       WordCertDensity.Release.AnalyticExtensions.entropy_increment n hn
 
 /-- The actual full-group entropy has a finite monotone limit with an explicit summable tail. -/
-theorem entropy_limit :
-    Exists fun z : Real => Tendsto Reference.entropy atTop (nhds z) /\
-      (∀ n, Reference.entropy n <= z) /\
-      z <= (2 / 3) * Real.log 2 +
-        tsum (fun j : Nat => Reference.entropyError (j + 1)) /\
-      (∀ n, 1 <= n -> 0 <= z - Reference.entropy n /\
-        z - Reference.entropy n <=
-          tsum (fun j : Nat => Reference.entropyError (n + j)) ) :=
+theorem reference_entropy_tends_to_finite_limit_with_tail_bound :
+    ∃ z : ℝ, Tendsto Reference.entropy atTop (nhds z) ∧
+      (∀ n, Reference.entropy n ≤ z) ∧
+      z ≤ (2 / 3) * Real.log 2 +
+        tsum (fun j : ℕ => Reference.entropyError (j + 1)) ∧
+      (∀ n, 1 ≤ n → 0 ≤ z - Reference.entropy n ∧
+        z - Reference.entropy n ≤
+          tsum (fun j : ℕ => Reference.entropyError (n + j)) ) :=
   by
     simpa only [entropy_eq, entropyError_eq] using
       WordCertDensity.Release.AnalyticExtensions.entropy_limit
 
 /-- The normalized actual entropy and its positive-index normalized infimum both vanish. -/
-theorem entropy_zero_rate :
-    Tendsto (fun n : Nat => Reference.entropy n / n) atTop (nhds 0) /\
-    (iInf fun n : Nat => Reference.entropy (n + 1) / (n + 1 : Real)) = 0 :=
+theorem reference_entropy_div_level_tends_to_zero :
+    Tendsto (fun n : ℕ => Reference.entropy n / n) atTop (nhds 0) ∧
+    (iInf fun n : ℕ => Reference.entropy (n + 1) / (n + 1 : ℝ)) = 0 :=
   by
     simpa only [entropy_eq] using
       WordCertDensity.Release.AnalyticExtensions.entropy_zero_rate

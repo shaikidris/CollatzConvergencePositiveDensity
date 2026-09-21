@@ -20,7 +20,7 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
 
 /-!
-# Phase 1 WordCertDensity Challenge surface
+# Positive lower density of logarithmic-time Collatz convergence
 
 This Mathlib-only Challenge advertises eighteen selected Phase 1 statements and
 corollaries: common positive lower density above the reference clock, the named
@@ -32,6 +32,13 @@ admissible targets, entropy increments, its finite limit and tail, and zero
 normalized entropy growth. The Renyi-order right limit and complementary
 capacity comparison remain outside this surface.
 
+The ordinary map is `collatzStep`; `logarithmicHittingSet target c` contains
+positive starting integers that reach `target` within `c * log x` ordinary steps.
+`logarithmicConvergenceSet c` specializes the target to one. For a starting
+integer greater than one, reaching one also witnesses descent. No almost-all
+or universal convergence statement is asserted: the density is lower natural
+density, and only a positive lower bound is claimed.
+
 Every density formula is written out here in full. The fractional formula takes
 an existential paid residual `p` constrained by `W/2 < p ≤ W`. These bounds do
 not uniquely specify the production residual; Solution supplies that witness.
@@ -39,8 +46,9 @@ not uniquely specify the production residual; Solution supplies that witness.
 The scores `W` are existential and the densities are not evaluated. The surface
 does not claim effective cutoffs, optimizer recipes (`fmDensity`, `cFM`,
 `cFM16`, `ccomp`), the Renyi-order right limit, complementary capacity,
-amplified roots, or pointwise Collatz convergence. `individual_root` is a
-concrete witness whose density conclusion follows from `every_admissible_target`.
+amplified roots, or pointwise Collatz convergence.
+`collatz_canonical_root_reaches_one_with_positive_density` is a
+concrete witness whose density conclusion follows from `collatz_hitting_positive_lower_density`.
 -/
 
 namespace CollatzWordCert
@@ -48,24 +56,27 @@ namespace CollatzWordCert
 open Filter
 open scoped Topology Finset
 
-/-- Ordinary Collatz map on naturals (zero is totalized and excluded from good sets). -/
-def ordinaryStep (n : ℕ) : ℕ :=
+/-! ## Ordinary Collatz dynamics and lower natural density -/
+
+/-- Ordinary Collatz map on naturals (zero is totalized and excluded from the hitting sets). -/
+def collatzStep (n : ℕ) : ℕ :=
   if Even n then n / 2 else 3 * n + 1
 
 /-- Reaching a target in exactly the specified number of ordinary steps. -/
 def ReachesIn (x target steps : ℕ) : Prop :=
-  (ordinaryStep^[steps]) x = target
+  (collatzStep^[steps]) x = target
 
 /-- Existence of a finite ordinary hitting time within a real budget. -/
 def ReachesWithin (x target : ℕ) (budget : ℝ) : Prop :=
   ∃ steps : ℕ, ReachesIn x target steps ∧ (steps : ℝ) ≤ budget
 
 /-- Positive sources reaching a target within the specified logarithmic clock. -/
-def goodTarget (target : ℕ) (c : ℝ) : Set ℕ :=
+def logarithmicHittingSet (target : ℕ) (c : ℝ) : Set ℕ :=
   {x | 0 < x ∧ ReachesWithin x target (c * Real.log x)}
 
-/-- Positive integers reaching one within a fixed clock. -/
-def good (c : ℝ) : Set ℕ := goodTarget 1 c
+/-- Positive integers reaching one within `c * log x` ordinary Collatz steps.
+Here convergence means reaching the cycle containing one, not a limit of the iterates. -/
+def logarithmicConvergenceSet (c : ℝ) : Set ℕ := logarithmicHittingSet 1 c
 
 /-- Count members of a set in the positive prefix `[1,N]`. -/
 noncomputable def prefixCount (S : Set ℕ) (N : ℕ) : ℕ := by
@@ -76,27 +87,28 @@ noncomputable def prefixCount (S : Set ℕ) (N : ℕ) : ℕ := by
 noncomputable def partialDensity (S : Set ℕ) (N : ℕ) : ℝ :=
   (prefixCount S N : ℝ) / N
 
-/-- Lower natural density along positive integer cutoffs. -/
+/-- Lower natural density: liminf of `#(S ∩ {1, …, N}) / N`.
+This is neither logarithmic density nor an assertion that natural density exists. -/
 noncomputable def lowerNaturalDensity (S : Set ℕ) : ℝ :=
   liminf (partialDensity S) atTop
 
 /-- Reference-model threshold in the ordinary-step convention. -/
-noncomputable def criticalClock : ℝ := 3 / Real.log (4 / 3)
-
-/-- One lower-density constant chosen before every strictly larger clock. -/
-def CommonClockDensity : Prop :=
-  ∃ d : ℝ, 0 < d ∧ ∀ c : ℝ, criticalClock < c → d ≤ lowerNaturalDensity (good c)
+noncomputable def collatzLogarithmicThreshold : ℝ := 3 / Real.log (4 / 3)
 
 /-- Universal clock statement for a specified density constant. -/
-def EveryClockDensityBound (d : ℝ) : Prop :=
-  0 < d ∧ ∀ c : ℝ, criticalClock < c → d ≤ lowerNaturalDensity (good c)
+def CollatzConvergenceDensityBound (d : ℝ) : Prop :=
+  0 < d ∧ ∀ c : ℝ, collatzLogarithmicThreshold < c →
+    d ≤ lowerNaturalDensity (logarithmicConvergenceSet c)
 
 /-- Small-score domain of the counting conversion. -/
 def SmallScore (W : ℝ) : Prop := 0 < W ∧ W ≤ 27 / (2 : ℝ) ^ 27
 
 /-- Positive bound fixed before every permitted clock for a specified target. -/
-def TargetBound (target : ℕ) (d : ℝ) : Prop :=
-  0 < d ∧ ∀ c : ℝ, criticalClock < c → d ≤ lowerNaturalDensity (goodTarget target c)
+def CollatzHittingDensityBound (target : ℕ) (d : ℝ) : Prop :=
+  0 < d ∧ ∀ c : ℝ, collatzLogarithmicThreshold < c →
+    d ≤ lowerNaturalDensity (logarithmicHittingSet target c)
+
+/-! ## Explicit depth-eleven density bounds -/
 
 /-- Harmonic capacity times the fan mean. -/
 noncomputable def kappa : ℝ := (8 / 9) * (2 * Real.log 2)
@@ -149,75 +161,82 @@ noncomputable def fractionalRadialMassAt (p : ℝ) (m : ℕ) : ℝ :=
 noncomputable def fractionalDensityAt (p : ℝ) (m : ℕ) : ℝ :=
   radial (fractionalRadialMassAt p m)
 
-/-- One positive lower density before every clock above the threshold. -/
-theorem common_density : CommonClockDensity := by
+/-! ## Collatz convergence and fixed-target hitting theorems -/
+
+/-- A single positive lower natural density works for every logarithmic
+time constant strictly above `3 / log (4/3)`. -/
+theorem collatz_convergence_positive_lower_density :
+    ∃ δ : ℝ, 0 < δ ∧ ∀ c : ℝ, collatzLogarithmicThreshold < c →
+      δ ≤ lowerNaturalDensity (logarithmicConvergenceSet c) := by
   sorry
 
 /-- A positive small score and coarse level give the depth-eleven formula. -/
-theorem depthEleven_density :
+theorem collatz_convergence_depth_eleven_density_bound :
     ∃ (W : ℝ) (m : ℕ), SmallScore W ∧ 2 ≤ m ∧
-      EveryClockDensityBound (secondElevenDensity W m) := by
+      CollatzConvergenceDensityBound (secondElevenDensity W m) := by
   sorry
 
 /-- The reference threshold lies strictly below the printed rational clock. -/
-theorem numerical_clock : criticalClock < 10431 / 1000 := by
+theorem collatz_logarithmic_threshold_lt_10431_div_1000 :
+    collatzLogarithmicThreshold < 10431 / 1000 := by
   sorry
 
 /-- Every positive target not divisible by three has its own positive density. -/
-theorem every_admissible_target {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
-    ∃ d : ℝ, 0 < d ∧ TargetBound n d := by
+theorem collatz_hitting_positive_lower_density {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+    ∃ d : ℝ, 0 < d ∧ CollatzHittingDensityBound n d := by
   sorry
 
 /-- The same targets also carry the depth-eleven formula. -/
-theorem every_admissible_target_depthEleven {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+theorem collatz_hitting_depth_eleven_density_bound {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
     ∃ (W : ℝ) (m : ℕ), 0 < W ∧ 2 ≤ m ∧
-      TargetBound n (secondElevenDensity W m) := by
+      CollatzHittingDensityBound n (secondElevenDensity W m) := by
   sorry
 
 /-- Positive density holds precisely off the multiples of three. -/
-theorem target_criterion (target : ℕ) (htarget : 0 < target) (c : ℝ)
-    (hc : criticalClock < c) :
-    0 < lowerNaturalDensity (goodTarget target c) ↔ ¬ 3 ∣ target := by
+theorem collatz_hitting_positive_density_iff_target_not_divisible_by_three
+    (target : ℕ) (htarget : 0 < target) (c : ℝ)
+    (hc : collatzLogarithmicThreshold < c) :
+    0 < lowerNaturalDensity (logarithmicHittingSet target c) ↔ ¬ 3 ∣ target := by
   sorry
 
 /-- An explicit canonical root `r = (4^s-1)/3`, with `s ≥ 2` (starting at 5),
 visits one at ordinary step `2s+1` and has its own positive density.
 
 This is a concrete-witness corollary. Its density conclusion follows from
-`every_admissible_target`; no independent content is claimed. -/
-theorem individual_root :
+`collatz_hitting_positive_lower_density`; no independent content is claimed. -/
+theorem collatz_canonical_root_reaches_one_with_positive_density :
     ∃ r s : ℕ, 2 ≤ s ∧ 3 * r + 1 = 4 ^ s ∧ ReachesIn r 1 (2 * s + 1) ∧
-      ∃ d : ℝ, TargetBound r d := by
+      ∃ d : ℝ, CollatzHittingDensityBound r d := by
   sorry
 
 /-- Convergence to one survives a positive antitone loss tending to zero. -/
-theorem common_vanishing_clock :
+theorem collatz_convergence_density_with_vanishing_clock_loss :
     ∃ d : ℝ, 0 < d ∧ ∃ η : ℕ → ℝ,
       (∀ x, 0 < η x) ∧ Antitone η ∧ Tendsto η atTop (𝓝 0) ∧
       d ≤ lowerNaturalDensity {x : ℕ | 0 < x ∧
-        ReachesWithin x 1 ((criticalClock + η x) * Real.log x)} := by
+        ReachesWithin x 1 ((collatzLogarithmicThreshold + η x) * Real.log x)} := by
   sorry
 
 /-- Each admissible target keeps its constant under a vanishing loss. -/
-theorem target_vanishing_clock {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+theorem collatz_hitting_density_with_vanishing_clock_loss {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
     ∃ d : ℝ, 0 < d ∧ ∃ η : ℕ → ℝ,
       (∀ x, 0 < η x) ∧ Antitone η ∧ Tendsto η atTop (𝓝 0) ∧
       d ≤ lowerNaturalDensity {x : ℕ | 0 < x ∧
-        ReachesWithin x n ((criticalClock + η x) * Real.log x)} := by
+        ReachesWithin x n ((collatzLogarithmicThreshold + η x) * Real.log x)} := by
   sorry
 
 /-- A positive small score carries the order-three-halves formula at a paid level,
 with the paid residual `p` strictly above `W/2` and at most `W`. -/
-theorem fractional_density :
+theorem collatz_convergence_fractional_density_bound :
     ∃ (W p : ℝ) (m : ℕ), SmallScore W ∧ 2 ≤ m ∧ W / 2 < p ∧ p ≤ W ∧
-      EveryClockDensityBound (fractionalDensityAt p m) := by
+      CollatzConvergenceDensityBound (fractionalDensityAt p m) := by
   sorry
 
 /-- Every admissible fixed target carries the fractional formula, at a paid
 residual `p` strictly above `W/2` and at most `W`. -/
-theorem every_admissible_target_fractional {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+theorem collatz_hitting_fractional_density_bound {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
     ∃ (W p : ℝ) (m : ℕ), 0 < W ∧ 2 ≤ m ∧ W / 2 < p ∧ p ≤ W ∧
-      TargetBound n (fractionalDensityAt p m) := by
+      CollatzHittingDensityBound n (fractionalDensityAt p m) := by
   sorry
 
 end CollatzWordCert
@@ -228,6 +247,8 @@ open scoped Topology BigOperators
 
 /-- A finite word of positive geometric valuations. -/
 abbrev ValuationWord := List ℕ+
+
+/-! ## Reference probability law and analytic quantities -/
 
 namespace Reference
 /-- The geometric distribution assigning mass 2^(-(n+1)) to each natural n. -/
@@ -405,74 +426,78 @@ noncomputable def residual (W : ℝ) (m : ℕ) : ℝ :=
 end Density
 
 
+/-! ## Optimal allocation and profile density theorems -/
+
 /-- The exact full-group fan profile attains its hinge-dual allocation value, including zero and
 full demand. -/
-theorem profile_allocation (m : Nat) (p : Real) (hp : 0 <= p)
-    (hpaid : p <= (2 * Real.log 2) * (8 / 9)) :
-    (Exists fun w => Counting.feasibleProfile m p w /\
-      (Finset.univ.sum fun r => w r) = Counting.profile m p) /\
-    Counting.profile m p = sSup {a | Exists fun t : Real => 0 < t /\
+theorem fan_profile_eq_optimal_allocation (m : ℕ) (p : ℝ) (hp : 0 ≤ p)
+    (hpaid : p ≤ (2 * Real.log 2) * (8 / 9)) :
+    (∃ w, Counting.feasibleProfile m p w ∧
+      (Finset.univ.sum fun r => w r) = Counting.profile m p) ∧
+    Counting.profile m p = sSup {a | ∃ t : ℝ, 0 < t ∧
       a = max (p - (2 * Real.log 2) * Reference.mean m
-        (fun r => max (Reference.fan m r - t) 0)) 0 / t} /\
-    0 <= Counting.profile m p /\
-      Counting.profile m p <= p / (8 / 9) := by
+        (fun r => max (Reference.fan m r - t) 0)) 0 / t} ∧
+    0 ≤ Counting.profile m p ∧
+      Counting.profile m p ≤ p / (8 / 9) := by
   sorry
 
 /-- Every real fan moment of order greater than one bounds the exact profile from below. -/
-theorem profile_moment_bound (m : Nat) (p s B : Real) (hm : 2 <= m)
-    (hp : 0 <= p) (hpaid : p <= (2 * Real.log 2) * (8 / 9))
+theorem fan_profile_ge_real_moment_bound (m : ℕ) (p s B : ℝ) (hm : 2 ≤ m)
+    (hp : 0 ≤ p) (hpaid : p ≤ (2 * Real.log 2) * (8 / 9))
     (hs : 1 < s) (hB : 0 < B)
-    (hmoment : Reference.mean m (fun r => (Reference.fan m r) ^ s) <= B) :
-    p ^ (s / (s - 1)) / ((2 * Real.log 2 * B) ^ (1 / (s - 1))) <=
+    (hmoment : Reference.mean m (fun r => (Reference.fan m r) ^ s) ≤ B) :
+    p ^ (s / (s - 1)) / ((2 * Real.log 2 * B) ^ (1 / (s - 1))) ≤
       Counting.profile m p := by
   sorry
 
 /-- One positive canonical residual and one level supply the exact profile bound for every
 larger clock. -/
-theorem profile_density :
-    Exists fun W : Real => Density.SmallScore W /\
-      Exists fun m : Nat => 2 <= m /\
-        0 < Density.residual W m /\
-        ∀ c : Real, criticalClock < c ->
-          Counting.radial (Counting.profile m (Density.residual W m)) <=
-            lowerNaturalDensity (goodTarget 1 c) := by
+theorem collatz_convergence_profile_density_bound :
+    ∃ W : ℝ, Density.SmallScore W ∧
+      ∃ m : ℕ, 2 ≤ m ∧
+        0 < Density.residual W m ∧
+        ∀ c : ℝ, collatzLogarithmicThreshold < c →
+          Counting.radial (Counting.profile m (Density.residual W m)) ≤
+            lowerNaturalDensity (logarithmicHittingSet 1 c) := by
   sorry
 
 /-- Every positive target not divisible by three has a positive residual and one profile level
 for all larger clocks. -/
-theorem target_profile_density {target : Nat} (htarget : 0 < target)
-    (hnotthree : Not (3 ∣ target)) :
-    Exists fun W : Real => Density.SmallScore W /\
-      Exists fun m : Nat => 2 <= m /\
-        0 < Density.residual W m /\
-        ∀ c : Real, criticalClock < c ->
-          Counting.radial (Counting.profile m (Density.residual W m)) <=
-            lowerNaturalDensity (goodTarget target c) := by
+theorem collatz_hitting_profile_density_bound {target : ℕ} (htarget : 0 < target)
+    (hnotthree : ¬ 3 ∣ target) :
+    ∃ W : ℝ, Density.SmallScore W ∧
+      ∃ m : ℕ, 2 ≤ m ∧
+        0 < Density.residual W m ∧
+        ∀ c : ℝ, collatzLogarithmicThreshold < c →
+          Counting.radial (Counting.profile m (Density.residual W m)) ≤
+            lowerNaturalDensity (logarithmicHittingSet target c) := by
   sorry
+
+/-! ## Reference entropy theorems -/
 
 /-- The actual reference-law entropy increment obeys the compact mixing envelope at each
 positive index. -/
-theorem entropy_increment (n : Nat) (hn : 1 <= n) :
-    0 <= Reference.entropy (n + 1) - Reference.entropy n /\
-    Reference.entropy (n + 1) - Reference.entropy n <=
+theorem reference_entropy_increment_bounds (n : ℕ) (hn : 1 ≤ n) :
+    0 ≤ Reference.entropy (n + 1) - Reference.entropy n ∧
+    Reference.entropy (n + 1) - Reference.entropy n ≤
       min (Real.log 3) (Analytic.mixingError n) := by
   sorry
 
 /-- The actual full-group entropy has a finite monotone limit with an explicit summable tail. -/
-theorem entropy_limit :
-    Exists fun z : Real => Tendsto Reference.entropy atTop (nhds z) /\
-      (∀ n, Reference.entropy n <= z) /\
-      z <= (2 / 3) * Real.log 2 +
-        tsum (fun j : Nat => Reference.entropyError (j + 1)) /\
-      (∀ n, 1 <= n -> 0 <= z - Reference.entropy n /\
-        z - Reference.entropy n <=
-          tsum (fun j : Nat => Reference.entropyError (n + j)) ) := by
+theorem reference_entropy_tends_to_finite_limit_with_tail_bound :
+    ∃ z : ℝ, Tendsto Reference.entropy atTop (nhds z) ∧
+      (∀ n, Reference.entropy n ≤ z) ∧
+      z ≤ (2 / 3) * Real.log 2 +
+        tsum (fun j : ℕ => Reference.entropyError (j + 1)) ∧
+      (∀ n, 1 ≤ n → 0 ≤ z - Reference.entropy n ∧
+        z - Reference.entropy n ≤
+          tsum (fun j : ℕ => Reference.entropyError (n + j)) ) := by
   sorry
 
 /-- The normalized actual entropy and its positive-index normalized infimum both vanish. -/
-theorem entropy_zero_rate :
-    Tendsto (fun n : Nat => Reference.entropy n / n) atTop (nhds 0) /\
-    (iInf fun n : Nat => Reference.entropy (n + 1) / (n + 1 : Real)) = 0 := by
+theorem reference_entropy_div_level_tends_to_zero :
+    Tendsto (fun n : ℕ => Reference.entropy n / n) atTop (nhds 0) ∧
+    (iInf fun n : ℕ => Reference.entropy (n + 1) / (n + 1 : ℝ)) = 0 := by
   sorry
 
 

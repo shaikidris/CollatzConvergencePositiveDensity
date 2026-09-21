@@ -1,14 +1,13 @@
 # Expanded Phase 1 release contract
 
 Mode: `EXTRACTION`. This extends the committed E-L8 snapshot at
-`a71acad21b4fe8f0ba3315469ac8a4d821992c79`; its eleven declarations remain
-unchanged. The new local batch is not published or independently verified.
+`a71acad21b4fe8f0ba3315469ac8a4d821992c79`; its eleven mathematical statements are preserved under the descriptive public renaming. The new local batch is not published or independently verified.
 
 ## Frozen surface and owners
 
-Eighteen selected declarations: the original eleven plus profile_allocation,
-profile_moment_bound, profile_density, target_profile_density,
-entropy_increment, entropy_limit, entropy_zero_rate in CollatzWordCert.
+Eighteen selected declarations: the original eleven plus fan_profile_eq_optimal_allocation,
+fan_profile_ge_real_moment_bound, collatz_convergence_profile_density_bound, collatz_hitting_profile_density_bound,
+reference_entropy_increment_bounds, reference_entropy_tends_to_finite_limit_with_tail_bound, reference_entropy_div_level_tends_to_zero in CollatzWordCert.
 The seven signatures are frozen by research AX-S1; AX-I2 verifies their
 research producers and the original eleven-statement regression. AX-S2
 structural bridges identify the public law, coefficient and all derived objects.
@@ -44,4 +43,4 @@ Manuscript/metadata and final source hashes are reconciled by AX-R2 before freez
 Package identity: `WordCertDensity`, matching the existing Lake manifest and
 source library. This aligns source-matched modular cache identity; the
 former local package label was WordCertDensityPalomarE8. Repository mode
-remains EXTRACTION and dependency pins and theorem names are unchanged.
+remains EXTRACTION and dependency pins are unchanged; the public name migration is recorded in THEOREM_MAP.md.

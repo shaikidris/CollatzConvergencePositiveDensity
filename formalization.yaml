@@ -39,7 +39,7 @@ related_formalizations:
     cone and restricted AX-I2 entropy/profile extensions. See SOURCE_PROVENANCE.md and EXTRACTION_MANIFEST.json
     for exact content hashes and roles.
 status:
-  scope: Eighteen selected statements. The original eleven types are preserved. Seven companions expose
+  scope: Eighteen selected statements. The original eleven mathematical statements are preserved under public renaming. Seven companions expose
     the actual geometric reference law, full-group fan, exact profile, actual residual and complete local
     mixing recipe. Profiles cover exact allocation/hinge identity, each real-moment lower bound and existential
     paid-level density for canonical and admissible targets. Entropy covers positive-index increments,
@@ -53,7 +53,7 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
-  - declaration: CollatzWordCert.common_density
+  - declaration: CollatzWordCert.collatz_convergence_positive_lower_density
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -62,7 +62,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.depthEleven_density
+  - declaration: CollatzWordCert.collatz_convergence_depth_eleven_density_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -71,7 +71,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.numerical_clock
+  - declaration: CollatzWordCert.collatz_logarithmic_threshold_lt_10431_div_1000
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -80,7 +80,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.every_admissible_target
+  - declaration: CollatzWordCert.collatz_hitting_positive_lower_density
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -89,7 +89,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.every_admissible_target_depthEleven
+  - declaration: CollatzWordCert.collatz_hitting_depth_eleven_density_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -98,7 +98,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.target_criterion
+  - declaration: CollatzWordCert.collatz_hitting_positive_density_iff_target_not_divisible_by_three
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -107,7 +107,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.individual_root
+  - declaration: CollatzWordCert.collatz_canonical_root_reaches_one_with_positive_density
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -116,7 +116,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.common_vanishing_clock
+  - declaration: CollatzWordCert.collatz_convergence_density_with_vanishing_clock_loss
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -125,7 +125,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.target_vanishing_clock
+  - declaration: CollatzWordCert.collatz_hitting_density_with_vanishing_clock_loss
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -134,7 +134,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.fractional_density
+  - declaration: CollatzWordCert.collatz_convergence_fractional_density_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -143,7 +143,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.every_admissible_target_fractional
+  - declaration: CollatzWordCert.collatz_hitting_fractional_density_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -152,7 +152,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.profile_allocation
+  - declaration: CollatzWordCert.fan_profile_eq_optimal_allocation
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -161,7 +161,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.profile_moment_bound
+  - declaration: CollatzWordCert.fan_profile_ge_real_moment_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -170,7 +170,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.profile_density
+  - declaration: CollatzWordCert.collatz_convergence_profile_density_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -179,7 +179,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.target_profile_density
+  - declaration: CollatzWordCert.collatz_hitting_profile_density_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -188,7 +188,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.entropy_increment
+  - declaration: CollatzWordCert.reference_entropy_increment_bounds
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -197,7 +197,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.entropy_limit
+  - declaration: CollatzWordCert.reference_entropy_tends_to_finite_limit_with_tail_bound
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -206,7 +206,7 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  - declaration: CollatzWordCert.entropy_zero_rate
+  - declaration: CollatzWordCert.reference_entropy_div_level_tends_to_zero
     file: Solution.lean
     sorry_count: 0
     axioms:
@@ -238,7 +238,7 @@ automation:
   notes: AI tools assisted extraction and packaging. Idris Ali Shaik directed the work and accepts responsibility
     for all claims.
 fidelity:
-  divergences: The original eleven signatures are unchanged. Their depth-eleven formulas match production
+  divergences: The baseline mathematical statements are preserved under descriptive public renaming; the main density quantifiers are written directly. Their depth-eleven formulas match production
     closed forms; the original fractional statements use an existential p satisfying W/2 < p <= W, witnessed
     by the actual residual. The individual-root statement omits seed-pool membership and score details.
     The seven new companions expose the actual law and exact mixing recipe and identify them by structural
@@ -252,7 +252,7 @@ review:
   status: self-assessed
   reviewers: []
   notes: Author-directed local review of eighteen statements and their exact source cone. Research owners
-    passed. The final documented Solution passes direct Lean, the fresh eighteen-theorem standard-axiom
+    passed. The previous private snapshot passed direct Lean, its eighteen-theorem standard-axiom
     audit, semantic lint and explicit nonempty style checks. A proof-identical pre-documentation Solution
     passed Lake. The final aggregate Lake build hit bounded host resources; Comparator, NanoDa, clean
-    Linux replay, publication and registry actions remain pending.
+    Linux replay, publication and registry actions remain pending. The presentation migration passes fresh Challenge/Solution compilation, all eighteen standard-axiom reports, semantic lint and explicit style checks.

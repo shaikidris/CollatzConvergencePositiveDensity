@@ -26,8 +26,7 @@ the extraction does not import the former external primitive-decay theorem.
 The appended public reference-law definitions expose the same geometric word
 construction, fan and local coefficient recipe as the imported producers.
 Structural bridge proofs identify their recursive definitions without
-evaluating the enormous coefficient. The baseline eleven statements remain
-unchanged; seven new selected companions are described in formalization.yaml.
+evaluating the enormous coefficient. The baseline eleven mathematical statements are preserved under public renaming; seven new selected companions are described in formalization.yaml.
 
 
 ## Commit roles and snapshot authority
@@ -46,5 +45,8 @@ the historical commits above is the authoritative revision of this expansion.
 
 This clean repository was copied from the reviewed extraction using its file
 manifest. No research Git history, build cache, intermediate proof probes, or
-old manuscript snapshot is included. All Lean source files are byte-identical
-to that reviewed candidate.
+old manuscript snapshot is included. All 1402 production proof modules remain byte-identical to that reviewed
+candidate. Challenge, Solution and Audit have a presentation-only name and
+notation migration recorded in THEOREM_MAP.md. The initial private snapshot
+is commit `d98194f7565627b6eb34ac56a055380e28f81e8d`; the presentation
+revision has not yet been committed or pushed.
