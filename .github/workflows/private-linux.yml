@@ -1,4 +1,7 @@
-name: Private Linux proof build
+# Diagnostic only. For release validation, run palomar-full-preflight.yml first.
+# This workflow does not run Comparator or NanoDa; do not schedule it before
+# full preflight by default, as that duplicates expensive certificate builds.
+name: Diagnostic Lean build only (not Palomar preflight)
 on:
   workflow_dispatch:
 permissions:

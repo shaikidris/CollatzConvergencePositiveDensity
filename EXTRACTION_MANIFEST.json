@@ -7,7 +7,7 @@
   "files": [
     {
       "path": ".github/workflows/private-linux.yml",
-      "sha256": "c6755dd806518969d475ed1e8c082f166520e99b83b1fbc2419d5d87f33e44de"
+      "sha256": "4a008cf078b99492351d144208ced30e9b9355c46a56f294c7b8b7327224c521"
     },
     {
       "path": ".gitignore",
@@ -31,7 +31,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "62fdfcbb8b801b7f89715349cdb3614c5b1bc5f4a2e493e9dee179494750ac00"
+      "sha256": "4c494c584a0a92206edc76562371691e714b52eadfc0b304681c0cc224eac7d3"
     },
     {
       "path": "SOURCE_PROVENANCE.md",
@@ -5695,7 +5695,7 @@
     },
     {
       "path": "PALOMAR_PREPARATION.md",
-      "sha256": "5f2d2964e1779c582114a82701d3551801d3fe71c5cc5a43e61ab72359512770"
+      "sha256": "c39267ec0272ac6e403e2de855f4ccf1fde5f535699930b4b2ea90b75161b097"
     },
     {
       "path": ".github/workflows/palomar-full-preflight.yml",

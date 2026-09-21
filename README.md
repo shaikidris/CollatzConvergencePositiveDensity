@@ -48,3 +48,11 @@ See PALOMAR_RELEASE_CONE.md, SOURCE_PROVENANCE.md and EXTRACTION_MANIFEST.json.
 This repository contains only the selected proof cone, release metadata, current
 manuscript snapshot and reading PDF, and required third-party license notices.
 The research checkout and its history remain separate.
+
+## Linux release validation
+
+Use `.github/workflows/palomar-full-preflight.yml` first for a Palomar release.
+It runs the pinned complete mechanical pipeline. `private-linux.yml` is retained
+only for diagnostics; it builds Lean and reports axioms but does not run
+Comparator or NanoDa. Do not schedule both as sequential release gates by default.
+See PALOMAR_PREPARATION.md for the exact target and remaining intake gates.
