@@ -2,21 +2,21 @@ import Solution
 
 /-! Axiom reports for all eighteen selected Phase 1 declarations. -/
 
-#print axioms CollatzWordCert.common_density
-#print axioms CollatzWordCert.depthEleven_density
-#print axioms CollatzWordCert.numerical_clock
-#print axioms CollatzWordCert.every_admissible_target
-#print axioms CollatzWordCert.every_admissible_target_depthEleven
-#print axioms CollatzWordCert.target_criterion
-#print axioms CollatzWordCert.individual_root
-#print axioms CollatzWordCert.common_vanishing_clock
-#print axioms CollatzWordCert.target_vanishing_clock
-#print axioms CollatzWordCert.fractional_density
-#print axioms CollatzWordCert.every_admissible_target_fractional
-#print axioms CollatzWordCert.profile_allocation
-#print axioms CollatzWordCert.profile_moment_bound
-#print axioms CollatzWordCert.profile_density
-#print axioms CollatzWordCert.target_profile_density
-#print axioms CollatzWordCert.entropy_increment
-#print axioms CollatzWordCert.entropy_limit
-#print axioms CollatzWordCert.entropy_zero_rate
+#print axioms CollatzWordCert.collatz_convergence_positive_lower_density
+#print axioms CollatzWordCert.collatz_convergence_depth_eleven_density_bound
+#print axioms CollatzWordCert.collatz_logarithmic_threshold_lt_10431_div_1000
+#print axioms CollatzWordCert.collatz_hitting_positive_lower_density
+#print axioms CollatzWordCert.collatz_hitting_depth_eleven_density_bound
+#print axioms CollatzWordCert.collatz_hitting_positive_density_iff_target_not_divisible_by_three
+#print axioms CollatzWordCert.collatz_canonical_root_reaches_one_with_positive_density
+#print axioms CollatzWordCert.collatz_convergence_density_with_vanishing_clock_loss
+#print axioms CollatzWordCert.collatz_hitting_density_with_vanishing_clock_loss
+#print axioms CollatzWordCert.collatz_convergence_fractional_density_bound
+#print axioms CollatzWordCert.collatz_hitting_fractional_density_bound
+#print axioms CollatzWordCert.fan_profile_eq_optimal_allocation
+#print axioms CollatzWordCert.fan_profile_ge_real_moment_bound
+#print axioms CollatzWordCert.collatz_convergence_profile_density_bound
+#print axioms CollatzWordCert.collatz_hitting_profile_density_bound
+#print axioms CollatzWordCert.reference_entropy_increment_bounds
+#print axioms CollatzWordCert.reference_entropy_tends_to_finite_limit_with_tail_bound
+#print axioms CollatzWordCert.reference_entropy_div_level_tends_to_zero

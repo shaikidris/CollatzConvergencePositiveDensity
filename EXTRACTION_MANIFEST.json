@@ -6,16 +6,20 @@
   "missing_imports": [],
   "files": [
     {
+      "path": ".github/workflows/private-linux.yml",
+      "sha256": "c6755dd806518969d475ed1e8c082f166520e99b83b1fbc2419d5d87f33e44de"
+    },
+    {
       "path": ".gitignore",
       "sha256": "bc194a76c50612c09aa3ddf5fe27961ffd0a568595af073b8b3ce53c520e7d74"
     },
     {
       "path": "Audit.lean",
-      "sha256": "3d6421d345b3390b827d3a9aa5f11b8606db50f518e598fbf3f2d346e752f8c4"
+      "sha256": "ea59b7f5082c6142d9ddb43c1ed6bd62974149853d4a17ed515997f6067a5b19"
     },
     {
       "path": "Challenge.lean",
-      "sha256": "bfb18d7a5d9d997fc9483ea9ba117c40262458aa9a39d29f227b64584b0982cc"
+      "sha256": "15f55e8a8377c33e1afd63e73be002fe25baf4175be95cdc9ab87679fe01226e"
     },
     {
       "path": "LICENSE",
@@ -23,23 +27,23 @@
     },
     {
       "path": "PALOMAR_RELEASE_CONE.md",
-      "sha256": "65727d676baa62344e664fa7aedd05d248235eae3f17bbd7dd794b99b5c2ffad"
+      "sha256": "777e68132dbdb59aa7676b5a429573e49303881604e698d341c1de3431ec1dec"
     },
     {
       "path": "README.md",
-      "sha256": "36ee47dd8f27dd5158638a3f3eba9672821892d7436e9d814c8100c56519e439"
+      "sha256": "ee2dd0c0114ed77f56b090484dd5f78f4bb55af5f25662504e7cece09e2f89c9"
     },
     {
       "path": "SOURCE_PROVENANCE.md",
-      "sha256": "1057e34ba1db5178c6154ba642b43d24920c05b95127ffab2621e8b0847e15da"
+      "sha256": "2e57aa88ca5a225068704787110bd9fd9db8e581f720f4f28961b9e5d67fdb9e"
     },
     {
       "path": "Solution.lean",
-      "sha256": "3b7329267dbe35885ee0c432fe830df4a791e922d035a6d08308d6e0da6346b4"
+      "sha256": "8f31c7f0becc4684c3e5acc24667df615642a8660af03f46e5995c8fa48d1eba"
     },
     {
       "path": "THEOREM_MAP.md",
-      "sha256": "616e0fa14b7ff7408cb8c8b17adae9bbab1dd6b9cad6454694437b59d54722b8"
+      "sha256": "ae77ce7e67fa0fd0f0781fdcf6ebeea344f1615b70a1802394b426b57c319b99"
     },
     {
       "path": "WordCertDensity/Analytic/AffineTail.lean",
@@ -5651,11 +5655,11 @@
     },
     {
       "path": "comparator.json",
-      "sha256": "47a9bb1d8751a72bf314df52c9943991b0dfae5107229b10e34e4dd8127013a2"
+      "sha256": "d63a4004a928685c5d31110e441316f0da345d3f178f8c539b54e3a8f6d0f680"
     },
     {
       "path": "formalization.yaml",
-      "sha256": "21d5427214c9ace37b947f498210bec257bcd30271f0301b441b7233baea57fc"
+      "sha256": "4054e1fc6de4997567b3cc015c797f608d15a670c0726ae3504ebb6ed46e28b4"
     },
     {
       "path": "lake-manifest.json",

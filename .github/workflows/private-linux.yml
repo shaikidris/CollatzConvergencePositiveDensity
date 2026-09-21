@@ -1,0 +1,73 @@
+name: Private Linux proof build
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: private-linux-proof
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      LEAN_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Verify snapshot and selected surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/proof-evidence"
+          git rev-parse HEAD | tee "$RUNNER_TEMP/proof-evidence/commit.txt"
+          free -b | tee "$RUNNER_TEMP/proof-evidence/memory.txt"
+          df -B1 . | tee "$RUNNER_TEMP/proof-evidence/disk.txt"
+          python3 - <<'PYTHON'
+          import hashlib, json, pathlib, re
+          root = pathlib.Path('.')
+          manifest = json.loads((root/'EXTRACTION_MANIFEST.json').read_text())
+          for entry in manifest['files']:
+              assert hashlib.sha256((root/entry['path']).read_bytes()).hexdigest() == entry['sha256'], entry['path']
+          names = json.loads((root/'comparator.json').read_text())['theorem_names']
+          assert len(names) == len(set(names)) == 18
+          for filename in ('Challenge.lean', 'Solution.lean'):
+              found = re.findall(r'^theorem\s+(\w+)', (root/filename).read_text(), re.M)
+              assert set(found) == {n.split('.')[-1] for n in names}, filename
+          assert set(re.findall(r'^#print axioms (\S+)', (root/'Audit.lean').read_text(), re.M)) == set(names)
+          print('PASS: manifest and all 18 Challenge/Solution/Audit selections')
+          PYTHON
+      - name: Install pinned elan
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.2.3/elan-x86_64-unknown-linux-gnu.tar.gz -o "$RUNNER_TEMP/elan.tar.gz"
+          printf '%s  %s\n' df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2 "$RUNNER_TEMP/elan.tar.gz" | sha256sum -c -
+          mkdir "$RUNNER_TEMP/elan"
+          tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP/elan"
+          "$RUNNER_TEMP/elan/elan-init" -y --no-modify-path --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch pinned Mathlib cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake exe cache get 2>&1 | tee "$RUNNER_TEMP/proof-evidence/cache.log"
+      - name: Full selected-root build
+        shell: bash
+        run: |
+          set -euo pipefail
+          /usr/bin/time -v lake build Challenge Solution Audit 2>&1 | tee "$RUNNER_TEMP/proof-evidence/build.log"
+      - name: Fresh axiom report
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean -DautoImplicit=false -DrelaxedAutoImplicit=false Audit.lean 2>&1 | tee "$RUNNER_TEMP/proof-evidence/axioms.log"
+      - name: Preserve private evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: private-linux-proof-${{ github.sha }}
+          path: ${{ runner.temp }}/proof-evidence
+          retention-days: 30
+          if-no-files-found: error
