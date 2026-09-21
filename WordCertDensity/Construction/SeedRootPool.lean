@@ -132,6 +132,10 @@ theorem persistentSeedMark_le_later {b root j : ℕ} (hb : 32 ^ 5 ≤ b)
   unfold persistentSeedMark
   exact max_le (by linarith [(abs_le.mp h).1]) hn
 
+private theorem residual_mass_lt (a c d m z : ℝ)
+    (hm : a * c < m) (hs : m - a * (c - d) ≤ z) : a * d < z := by
+  nlinarith
+
 /-- Persistent marks retain the original startup conductor cap. -/
 theorem persistentSeedMark_cap {b root : ℕ} (hb : 32 ^ 5 ≤ b)
     (hr : 16 ^ b ≤ root) (hodd : Odd root) :
@@ -167,6 +171,6 @@ theorem seedRootPool_persistent_mass :
   change (2 * (3 : ℝ) ^ (q - 1)) * seedStartupResidual b hb < _
   change (2 * (3 : ℝ) ^ (q - 1)) * (24 / 25) <
     ∑ x ∈ seedRootPool b q, physicalSeedMark b N x at hm
-  nlinarith
+  exact residual_mass_lt _ _ _ _ _ hm hs
 
 end WordCertDensity.Construction
