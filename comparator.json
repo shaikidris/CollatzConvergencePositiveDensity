@@ -1,0 +1,31 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CollatzWordCert.common_density",
+    "CollatzWordCert.depthEleven_density",
+    "CollatzWordCert.numerical_clock",
+    "CollatzWordCert.every_admissible_target",
+    "CollatzWordCert.every_admissible_target_depthEleven",
+    "CollatzWordCert.target_criterion",
+    "CollatzWordCert.individual_root",
+    "CollatzWordCert.common_vanishing_clock",
+    "CollatzWordCert.target_vanishing_clock",
+    "CollatzWordCert.fractional_density",
+    "CollatzWordCert.every_admissible_target_fractional",
+    "CollatzWordCert.profile_allocation",
+    "CollatzWordCert.profile_moment_bound",
+    "CollatzWordCert.profile_density",
+    "CollatzWordCert.target_profile_density",
+    "CollatzWordCert.entropy_increment",
+    "CollatzWordCert.entropy_limit",
+    "CollatzWordCert.entropy_zero_rate"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
