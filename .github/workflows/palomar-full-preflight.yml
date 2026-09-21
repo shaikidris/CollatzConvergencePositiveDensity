@@ -4,12 +4,50 @@ on:
 permissions:
   contents: read
 jobs:
+  guard:
+    runs-on: ubuntu-24.04
+    outputs:
+      commit: ${{ steps.validate.outputs.commit }}
+      pipeline: ${{ steps.validate.outputs.pipeline }}
+      request_id: ${{ steps.validate.outputs.request_id }}
+      options: ${{ steps.validate.outputs.options }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          path: source
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: PalomarRegistry/PalomarSubmission
+          ref: 3561d237dcc4b28482558ad28a64d767d7cc8615
+          path: pipeline
+          persist-credentials: false
+      - name: Install pinned validator dependencies
+        run: python3 -m pip install --require-hashes --no-deps -r pipeline/requirements.txt
+      - name: Validate exact source and replay inputs
+        id: validate
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+          SOURCE_COMMIT: ${{ github.sha }}
+          SOURCE_REPOSITORY: ${{ github.repository }}
+          EXECUTION_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          python3 source/scripts/test_palomar_guard.py --pipeline pipeline
+          python3 source/scripts/palomar_guard.py --source source --pipeline pipeline --commit "$SOURCE_COMMIT" --repository "$SOURCE_REPOSITORY" --run-id "$EXECUTION_ID" --receipt "$RUNNER_TEMP/palomar-guard.json"
+      - name: Preserve successful guard receipt
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: palomar-guard-${{ github.run_id }}
+          path: ${{ runner.temp }}/palomar-guard.json
+          if-no-files-found: error
   verify:
+    needs: guard
     uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@3561d237dcc4b28482558ad28a64d767d7cc8615
     with:
-      repository: shaikidris/CollatzConvergencePositiveDensity
-      commit: 9f15b521bac3a9a319d0be7d0935efa5683e899c
-      pipeline_commit: 3561d237dcc4b28482558ad28a64d767d7cc8615
-      request_id: cpd202609210
+      repository: ${{ github.repository }}
+      commit: ${{ needs.guard.outputs.commit }}
+      pipeline_commit: ${{ needs.guard.outputs.pipeline }}
+      request_id: ${{ needs.guard.outputs.request_id }}
       mode: full
-      options: '{"comparator_config_path":"comparator.json","authorization_relationship":"I have approval from a responsible author or maintainer"}'
+      options: ${{ needs.guard.outputs.options }}

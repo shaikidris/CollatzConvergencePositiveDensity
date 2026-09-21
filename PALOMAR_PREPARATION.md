@@ -42,3 +42,16 @@ and independent replay, requiring another build cycle. The full preflight now
 runs separately at https://github.com/shaikidris/CollatzConvergencePositiveDensity/actions/runs/35593969242.
 That run is not restarted by this documentation update. Its target remains
 9f15b521bac3a9a319d0be7d0935efa5683e899c. Repository visibility is now public.
+
+## Mandatory automated guard
+
+The full-preflight workflow now runs the guard before any expensive replay.
+It checks clean source and pipeline commits, the pinned upstream request and
+metadata validators, extraction hashes, and theorem selection agreement.
+The full job has `needs: guard` and consumes its exact checked inputs. The source
+is the dispatched GitHub SHA, not a stale handwritten target. Request IDs are
+derived automatically. Successful receipts bind source, pipeline and metadata.
+Regression cases reject embedded ORCIDs in either person field, malformed IDs,
+missing authorization, dirty checkouts and mismatched commits.
+This guard is not Comparator/NanoDa or a promise that later stages cannot fail.
+Run locally: `PYTHONDONTWRITEBYTECODE=1 python3 scripts/test_palomar_guard.py --pipeline /path/to/pinned/PalomarSubmission`.

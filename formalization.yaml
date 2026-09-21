@@ -9,10 +9,12 @@ project:
     existential. Full optimized formulas, complementary capacity, the Renyi-order right limit, amplified
     roots and pointwise Collatz convergence are outside scope.
   authors:
-  - 'Idris Ali Shaik (ORCID: 0009-0009-9699-9712)'
+  - name: Idris Ali Shaik
+    orcid: 0009-0009-9699-9712
   license: Apache-2.0
   responsible_maintainers:
-  - 'Idris Ali Shaik (ORCID: 0009-0009-9699-9712)'
+  - name: Idris Ali Shaik
+    orcid: 0009-0009-9699-9712
 classification:
   arxiv:
   - math.NT
