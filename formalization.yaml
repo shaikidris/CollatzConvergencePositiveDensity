@@ -1,0 +1,258 @@
+version: v0.4
+project:
+  name: Word-Certificate Density for Collatz Hitting Times (Phase 1)
+  description: A Lean 4 extraction of eighteen selected Phase 1 statements on lower natural density for
+    ordinary Collatz hitting times, exact finite fan allocation and real-moment comparison, profile density
+    for canonical and admissible targets, and bounded actual reference entropy with explicit tail and
+    zero normalized growth. The baseline includes the exact target criterion, individual-root consequence,
+    vanishing-clock-loss variants and accepted depth-eleven formulas. Density witnesses and levels are
+    existential. Full optimized formulas, complementary capacity, the Renyi-order right limit, amplified
+    roots and pointwise Collatz convergence are outside scope.
+  authors:
+  - 'Idris Ali Shaik (ORCID: 0009-0009-9699-9712)'
+  license: Apache-2.0
+  responsible_maintainers:
+  - 'Idris Ali Shaik (ORCID: 0009-0009-9699-9712)'
+classification:
+  arxiv:
+  - math.NT
+  msc2020:
+  - 11B83
+  - 37P99
+sources:
+- title: Word-Certificate Density for Collatz Hitting Times
+  authors:
+  - Idris Ali Shaik
+  id: local:manuscript-source-2026-09-21-b45f544d
+  type: paper
+  location: sources/manuscript-source-2026-09-21-b45f544d.md
+  relationship: formalizes
+  note: Source snapshot SHA-256 b45f544d320f4cc780d3aaff369417b2fff6b712501b313ef7a6d6ff7917b87c. Eighteen
+    selected declarations are supplied by Release.PhaseOne and Release.AnalyticExtensions. Existential
+    and individual-root differences and excluded wider manuscript claims are described under fidelity.
+  license: Apache-2.0
+  author_endorsement: participated
+related_formalizations:
+- id: local:WordCertDensity-research-tree
+  relationship: builds-on
+  note: EXTRACTION from collatz/approaches/WordCertDensity, retaining the accepted local primitive proof
+    cone and restricted AX-I2 entropy/profile extensions. See SOURCE_PROVENANCE.md and EXTRACTION_MANIFEST.json
+    for exact content hashes and roles.
+status:
+  scope: Eighteen selected statements. The original eleven types are preserved. Seven companions expose
+    the actual geometric reference law, full-group fan, exact profile, actual residual and complete local
+    mixing recipe. Profiles cover exact allocation/hinge identity, each real-moment lower bound and existential
+    paid-level density for canonical and admissible targets. Entropy covers positive-index increments,
+    a finite monotone limit with explicit tail, and zero normalized growth and positive-index infimum.
+    No complementary-capacity comparison, Renyi-order right limit, deeper certificate, optimized recipe
+    or amplified-root family is claimed.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: CollatzWordCert.common_density
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.depthEleven_density
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.numerical_clock
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.every_admissible_target
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.every_admissible_target_depthEleven
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.target_criterion
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.individual_root
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.common_vanishing_clock
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.target_vanishing_clock
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.fractional_density
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.every_admissible_target_fractional
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.profile_allocation
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.profile_moment_bound
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.profile_density
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.target_profile_density
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.entropy_increment
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.entropy_limit
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: CollatzWordCert.entropy_zero_rate
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+automation:
+  methods:
+  - method: agent
+    models:
+    - Cursor Agent
+    - Codex
+    framework: Codex/Cursor with author-supplied mathematical research and Palomar harnesses
+    tool_setup: AI-assisted Lean proof assembly, explicit public-definition bridges, strict dependency-cone
+      extraction, statement/proof packaging, source-boundary reconciliation and metadata preparation.
+      Local kernel checks use a shared bounded compiler slot; source-matched cache reuse is recorded separately
+      from clean independent replay.
+    cost:
+      wall_time: multi-session research and formalization effort; not separately tracked
+      spend_usd: subscription-based; not separately tracked
+      hardware: local macOS workstation
+    prompting_notes: The author supplied the manuscript and approved the modular analytic-extension and
+      Palomar EXTRACTION plan. Agents implemented and checked the restricted entropy/profile proofs, preserving
+      the baseline eleven public types. The author retains responsibility for mathematical and release
+      decisions.
+  spend_usd: subscription-based; not separately tracked
+  notes: AI tools assisted extraction and packaging. Idris Ali Shaik directed the work and accepts responsibility
+    for all claims.
+fidelity:
+  divergences: The original eleven signatures are unchanged. Their depth-eleven formulas match production
+    closed forms; the original fractional statements use an existential p satisfying W/2 < p <= W, witnessed
+    by the actual residual. The individual-root statement omits seed-pool membership and score details.
+    The seven new companions expose the actual law and exact mixing recipe and identify them by structural
+    equivalence proofs. Profile density specializes the fixed-level paper theorem to one existential positive
+    paid residual before all clocks, for convergence to one or each admissible target. Entropy uses the
+    full compact-envelope tail, which implies the printed power-tail bound; the zero-rate infimum uses
+    positive normalized indices. The Renyi-order right limit and complementary-capacity branch are not
+    selected. Deeper tables, full optimizers, coefficient-size comparisons and Appendix C amplification
+    remain outside this release.
+review:
+  status: self-assessed
+  reviewers: []
+  notes: Author-directed local review of eighteen statements and their exact source cone. Research owners
+    passed. The final documented Solution passes direct Lean, the fresh eighteen-theorem standard-axiom
+    audit, semantic lint and explicit nonempty style checks. A proof-identical pre-documentation Solution
+    passed Lake. The final aggregate Lake build hit bounded host resources; Comparator, NanoDa, clean
+    Linux replay, publication and registry actions remain pending.
