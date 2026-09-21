@@ -82,6 +82,13 @@ theorem sum_seedRootPool_reciprocals_lt {b : ℕ} (hb : 1 ≤ b) (q : ℕ) :
   have hpos : (0 : ℝ) < ((16 : ℝ) ^ b)⁻¹ := by positivity
   nlinarith
 
+private theorem two_mul_inv_sixteen_pow (b n : ℕ) (h : 4 * b = n + 1) :
+    2 * ((16 : ℝ) ^ b)⁻¹ = ((2 : ℝ) ^ n)⁻¹ := by
+  rw [show (16 : ℝ) = 2 ^ (4 : ℕ) by norm_num, ← pow_mul, h]
+  rw [pow_succ, mul_inv_rev]
+  have htwo : (2 : ℝ) * 2⁻¹ = 1 := by norm_num
+  rw [← mul_assoc, htwo, one_mul]
+
 /-- The actual unchanged score satisfies the manuscript's strict binary domain. -/
 theorem persistentRootScore_small :
     persistentRootScore < ((2 : ℝ) ^ (134217727 : ℕ))⁻¹ := by
@@ -90,12 +97,8 @@ theorem persistentRootScore_small :
   have hp := (seedStartupResidual_le_fraction survivalSeedSize (by rfl)).trans (by norm_num : (24 / 25 : ℝ) ≤ 1)
   have h := (seedAllocationScore_le_reciprocals survivalSeedSize hq hp).trans_lt
     (sum_seedRootPool_reciprocals_lt (by norm_num [survivalSeedSize] : 1 ≤ survivalSeedSize) _)
-  have heq : 2 * ((16 : ℝ) ^ survivalSeedSize)⁻¹ = ((2 : ℝ) ^ (134217727 : ℕ))⁻¹ := by
-    rw [show (16 : ℝ) = 2 ^ (4 : ℕ) by norm_num, ← pow_mul]
-    change 2 * ((2 : ℝ) ^ (134217727 + 1))⁻¹ = _
-    rw [pow_succ, mul_inv_rev]
-    have htwo : (2 : ℝ) * 2⁻¹ = 1 := by norm_num
-    rw [← mul_assoc, htwo, one_mul]
+  have heq : 2 * ((16 : ℝ) ^ survivalSeedSize)⁻¹ = ((2 : ℝ) ^ (134217727 : ℕ))⁻¹ :=
+    two_mul_inv_sixteen_pow survivalSeedSize 134217727 (by norm_num [survivalSeedSize])
   exact h.trans_eq heq
 
 /-- Both the positive score and the order-4096 small-score guard hold. -/
