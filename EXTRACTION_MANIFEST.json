@@ -4847,7 +4847,7 @@
     },
     {
       "path": "WordCertDensity/Construction/SeedScoreDomain.lean",
-      "sha256": "77dff83a978967fc72cc5851c76f60f905df031b2aab9600528db365f96f7434"
+      "sha256": "05d84b6f7287c1aebe7625c035568026ca30aebe0ae8689d305ec14876b66875"
     },
     {
       "path": "WordCertDensity/Construction/SeedStartup.lean",
@@ -5555,7 +5555,7 @@
     },
     {
       "path": "WordCertDensity/Sources/TargetPool.lean",
-      "sha256": "d5faadf9fc91b521e1ffb64fe876fa9b61f6a9f961a19a62746c2ce2b1482ade"
+      "sha256": "4a61c87675e87a290b0008b9e02235fc3446018a2995e1f16b0bcfbcedaf8fa6"
     },
     {
       "path": "WordCertDensity/Targets.lean",
