@@ -4839,11 +4839,11 @@
     },
     {
       "path": "WordCertDensity/Construction/SeedRootPool.lean",
-      "sha256": "85a3a7c5b0841ba673c3db12b2bc33d530e37d48a626042ddc8d50d057968ca4"
+      "sha256": "bda05ee20c34c75c48c52186fb1baedfd760519e5d04892f7934ce2d97e99922"
     },
     {
       "path": "WordCertDensity/Construction/SeedScore.lean",
-      "sha256": "982a4a10fd5f90716ba57c0580829b45672f3ade169a346933736219532b69b2"
+      "sha256": "9defcd4ba5b7a1c8b85d9da4343e025a66d6bc8846d5af4f59c0370e2e0e30ff"
     },
     {
       "path": "WordCertDensity/Construction/SeedScoreDomain.lean",

@@ -78,6 +78,35 @@ theorem persistentRootScore_pos : 0 < persistentRootScore := by
     (seedStartup_spec survivalSeedSize (by rfl)).2.2
   exact (seedStartupResidual_le_fraction survivalSeedSize (by rfl)).trans (by norm_num)
 
+private theorem seedScore_le_marks_of_mass (b : ℕ) (hb : 32 ^ 5 ≤ b)
+    (hmass : (2 * (3 : ℝ) ^ (seedConductor b (seedStartupIndex b hb) - 1)) *
+      seedStartupResidual b hb <
+      ∑ x ∈ seedRootPool b (seedConductor b (seedStartupIndex b hb)), persistentSeedMark b hb x) :
+    seedAllocationScore b (seedConductor b (seedStartupIndex b hb)) (seedStartupResidual b hb) ≤
+      ∑ x ∈ seedRootPool b (seedConductor b (seedStartupIndex b hb)), persistentSeedMark b hb x / x := by
+  classical
+  let N := seedStartupIndex b hb
+  let q := seedConductor b N
+  let p := seedStartupResidual b hb
+  have hq : 0 < q := seedConductor_pos (by omega) N
+  have hp1 : p ≤ 1 := (seedStartupResidual_le_fraction b hb).trans (by norm_num)
+  have hv : (fun x : {x // x ∈ seedRootPool b q} => persistentSeedMark b hb x.val) ∈
+      Roots.allocationFeasible ((2 / 3 : ℝ) * 2 ^ q) ((2 * (3 : ℝ) ^ (q - 1)) * p) := by
+    refine ⟨⟨fun x => persistentSeedMark_nonneg b hb x.val, ?_⟩, ?_⟩
+    · intro x
+      have hx := seedRootPool_height (by omega : 1 ≤ b) x.property
+      exact persistentSeedMark_cap hb hx.2.le hx.1
+    · change (2 * (3 : ℝ) ^ (q - 1)) * p ≤
+        ∑ x : {x // x ∈ seedRootPool b q}, persistentSeedMark b hb x.val
+      rw [Finset.sum_coe_sort]
+      exact hmass.le
+  have h := Roots.allocationScore_le (fun x : {x // x ∈ seedRootPool b q} => (x.val : ℝ)⁻¹)
+    (by positivity) (seedAllocation_capacity b hq hp1) hv
+  unfold Roots.allocationObjective at h
+  rw [Finset.sum_coe_sort (seedRootPool b q)
+    (fun x : ℕ => (x : ℝ)⁻¹ * persistentSeedMark b hb x)] at h
+  simpa only [seedAllocationScore, div_eq_mul_inv, mul_comm] using h
+
 /-- The actual persistent vector is feasible and therefore pays at least W_*.
 This is the weighted inequality in R.graftinput, with one fixed pool. -/
 theorem persistentRootScore_le_marks :
@@ -85,29 +114,6 @@ theorem persistentRootScore_le_marks :
       ∑ x ∈ seedRootPool survivalSeedSize
         (seedConductor survivalSeedSize (seedStartupIndex survivalSeedSize (by rfl))),
         persistentSeedMark survivalSeedSize (by rfl) x / x := by
-  classical
-  let b := survivalSeedSize
-  have hb : 32 ^ 5 ≤ b := by rfl
-  let N := seedStartupIndex b hb
-  let q := seedConductor b N
-  let p := seedStartupResidual b hb
-  have hq : 0 < q := seedConductor_pos (by norm_num [b, survivalSeedSize]) N
-  have hp1 : p ≤ 1 := (seedStartupResidual_le_fraction b hb).trans (by norm_num)
-  have hv : (fun x : {x // x ∈ seedRootPool b q} => persistentSeedMark b hb x.val) ∈
-      Roots.allocationFeasible ((2 / 3 : ℝ) * 2 ^ q) ((2 * (3 : ℝ) ^ (q - 1)) * p) := by
-    refine ⟨⟨fun x => persistentSeedMark_nonneg b hb x.val, ?_⟩, ?_⟩
-    · intro x
-      have hx := seedRootPool_height (by norm_num [b, survivalSeedSize] : 1 ≤ b) x.property
-      exact persistentSeedMark_cap hb hx.2.le hx.1
-    · change (2 * (3 : ℝ) ^ (q - 1)) * p ≤
-        ∑ x : {x // x ∈ seedRootPool b q}, persistentSeedMark b hb x.val
-      rw [Finset.sum_coe_sort]
-      exact seedRootPool_persistent_mass.le
-  have h := Roots.allocationScore_le (fun x : {x // x ∈ seedRootPool b q} => (x.val : ℝ)⁻¹)
-    (by positivity) (seedAllocation_capacity b hq hp1) hv
-  unfold Roots.allocationObjective at h
-  rw [Finset.sum_coe_sort (seedRootPool b q)
-    (fun x : ℕ => (x : ℝ)⁻¹ * persistentSeedMark b hb x)] at h
-  simpa only [persistentRootScore, seedAllocationScore, div_eq_mul_inv, mul_comm] using h
+  exact seedScore_le_marks_of_mass survivalSeedSize (by rfl) seedRootPool_persistent_mass
 
 end WordCertDensity.Construction
