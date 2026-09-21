@@ -5699,7 +5699,7 @@
     },
     {
       "path": ".github/workflows/palomar-full-preflight.yml",
-      "sha256": "04de5713b117db8b3aed5b439134dadef8bc615819e3c6aa8371fb16f8ed45ae"
+      "sha256": "8fd23ddf1036407bdff552b69a9a7b8402499a16f8aced1811594ad188f08c9f"
     },
     {
       "path": "scripts/palomar_guard.py",
