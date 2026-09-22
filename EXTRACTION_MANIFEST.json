@@ -1,10 +1,14 @@
 {
   "schema": "wordcert-density-analytic-extension-extraction-v1",
   "source_manuscript_sha256": "d4cf2a4be67dff8934cd67c68fe9055eaa2a99ad3a760bbaf84b8644d160778e",
-  "project_modules": 1402,
+  "project_modules": 1404,
   "external_modules": 0,
   "missing_imports": [],
   "files": [
+    {
+      "path": ".github/workflows/palomar-full-preflight.yml",
+      "sha256": "8fd23ddf1036407bdff552b69a9a7b8402499a16f8aced1811594ad188f08c9f"
+    },
     {
       "path": ".github/workflows/private-linux.yml",
       "sha256": "4a008cf078b99492351d144208ced30e9b9355c46a56f294c7b8b7327224c521"
@@ -22,8 +26,16 @@
       "sha256": "15f55e8a8377c33e1afd63e73be002fe25baf4175be95cdc9ab87679fe01226e"
     },
     {
+      "path": "KERNEL_OPTIMIZATION.md",
+      "sha256": "514f4e194db4c76e3f6937496b0ba91eb313f57b89e08e096a64a9d5e4803c80"
+    },
+    {
       "path": "LICENSE",
       "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "PALOMAR_PREPARATION.md",
+      "sha256": "d892be574fd1f143cf3aefa337c05f3b0717e4ad661273e4307bd3585d3ff6f8"
     },
     {
       "path": "PALOMAR_RELEASE_CONE.md",
@@ -546,6 +558,10 @@
       "sha256": "195ac4266a5d7533560d81a0bdaf3ed02d1cf51463ff435b758566e93507c052"
     },
     {
+      "path": "WordCertDensity/Certificates/Data/LevelElevenFast.lean",
+      "sha256": "803b4e6215504cb29dfc02ce756f3f44cf766fab43277c564b23a628c3ff09b8"
+    },
+    {
       "path": "WordCertDensity/Certificates/Data/LevelElevenRoots.lean",
       "sha256": "e779cc4c62b445c7efaa44d0c02eb33f0b7e7814cf81e1212ea01fddeec781bb"
     },
@@ -699,1387 +715,1387 @@
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock0.lean",
-      "sha256": "cc1ec347767ac4105e4dc4030a9447a209630ef3b9d3c691ccbb16364fb41725"
+      "sha256": "ca637c9f3b2ca2e800cb48b19795815ab9514cfdd0baf43bb2ee406cf29272aa"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock1.lean",
-      "sha256": "220c33e632aa5f083aa7cd77f51f3eff4192a46c3cb1befbe3be8072e8281c26"
+      "sha256": "068b1074c9ad20f98cfb2345fd3e287a9d2ee2801e48877f765ea4377ff83d67"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock10.lean",
-      "sha256": "07738703b777b2697afe215b112dc7372ad1e00b2b5a4ec258a5caef24f2c6f9"
+      "sha256": "8744b4be2d2bf7b931cd5c275e3dbef209303177ac507fdab31bf8680917b551"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock100.lean",
-      "sha256": "625b671ca3da2a17fd0e35725fd30f5a9893fec21ebcaf53ab08bd610604b1ea"
+      "sha256": "baff1d735fc85a423b092962aeb08a8cb367675a6dc4c0e39cf9917d389dcad5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock101.lean",
-      "sha256": "fac97de23e13e0b895eddf0fc6f7f14a2f8a674665330441e1f63fb9dbaeca51"
+      "sha256": "5c32e45aeaaf198b7f020c21f1faa7bb91e938a45948424d7d0c4cf7bf3724ca"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock102.lean",
-      "sha256": "f2aa2695efe02df4de2cf4d74a41bfa088f162cbc6bcba0fdc34088893aeabf1"
+      "sha256": "df65d6fb350452ef7a1ddcfae9b229dc77916807036e0c570ac669c84877b55e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock103.lean",
-      "sha256": "2b32519078f07e2ffb3400f8cf18d90bfa3042ca081138b613539ce7dc554fd5"
+      "sha256": "3c9116975064fed671282dba5fe9d360cece9ebe83cbbc67bd511abcd1d61610"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock104.lean",
-      "sha256": "6f3dec9640354f1fcd78cfb9a943178db2d93aab11bc7f6b1424b91d13be0662"
+      "sha256": "e6c8539f126de6bf54c67cc99c4f02b88fcff839a9b93e414d64b716de62102d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock105.lean",
-      "sha256": "b65ea11e1e7cb57a81b6d5dbb59a91e760579aca72bde825c5ecdc8f240f6e43"
+      "sha256": "d610d33442f55e79173884e2c326ae3d4509742d54fde3fa007dd93da2c0eb46"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock106.lean",
-      "sha256": "d72da8f00a67a6464fb8af27be126ff5f489177eb7bdccfae7f0b1153cc9613a"
+      "sha256": "137f8156e006b710e30f9ee933d02c9118c54d81ccb59109663a71898cbe9366"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock107.lean",
-      "sha256": "a143fb3d450c42fd726b8b52ee88f53ac33eff3cc7f3f6c34cfa56857d7a9382"
+      "sha256": "a124dfd44c14858db556df4f30592f25e6f8736c9341bc7500911883e8d7de4c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock108.lean",
-      "sha256": "9b660800a1cf80271cb85f4be0dfe69c9d7a829e5c17a2244fc6a4bce5e00ca2"
+      "sha256": "5f8d85c9494a69c7ab0071e78137e242186d643db0941282abed2b9ff23a397e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock109.lean",
-      "sha256": "a1d8e82bfbc12cc69b7150524fecff7f9625328dcb401800130855b7001a2f10"
+      "sha256": "80a9d1e4bb6dbeafd009b8c3b2374ababb1030d487267aed8a58259e462ed46e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock11.lean",
-      "sha256": "71dfd799ba3e73ebc7c753d6a79e7f0d619516ef639637c4dd2dd9f5d7f6f08c"
+      "sha256": "40336daf8ed468cf33c486fb072422e338a1029e871827cb7d55872b978d53a6"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock110.lean",
-      "sha256": "57bb92f87e6895bf40b6cd0d4c8b366b57f4a97db608b53e50fdbb06cda52dc7"
+      "sha256": "79b1c54c7bcd0999d5be90599ede0660f7b8ccafaaee92a79a8ee58fa48ea12a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock111.lean",
-      "sha256": "312819926572015a4aa91b5965c039de8c91eed0e34244cb02453b2d7e456028"
+      "sha256": "95f87b3717f000f8b74e0a3c8519f40ab5103fe22477106cf9563c62e1847b6c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock112.lean",
-      "sha256": "9d01ff09e8ef93e9fab3842f5770178c809e844af689e675f9d008ec0f8eaad2"
+      "sha256": "51f15d778566f147dc1d9888f530233b3705d9b359a5d4a723746753890a3d09"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock113.lean",
-      "sha256": "405ad423d0ac9d89d3ee8e24486d6786eae5c86a4765901912053d7540f9e867"
+      "sha256": "fcfa84ce11c2e6cc11e0fe1b8a60eca84d00e08b0ea08e781d197756f6c401e5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock114.lean",
-      "sha256": "c64c10c4ea9b617c6199eb012025cb3505c144189e587c87bc5490165273d11c"
+      "sha256": "8a69bf2826a848b2ada8d23b09ab223fdd70a88d4318fb4ac266cc50adebb57d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock115.lean",
-      "sha256": "5614e07b7a905ffe892e0fcebc4f9feced7641225b91e62de5d8dadacf41fab5"
+      "sha256": "a8aca249b207a7266dd74096535f617bac5ad107084c4b20f4eb906c71a74e63"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock116.lean",
-      "sha256": "43b5e6a0a05e7acabfb26145ebbae7752a70127d7dfb4d8c0616687ff21fb917"
+      "sha256": "4bb48d0cc25b169bea79160db5e9785e29de84b66f312299e313126ce3f14412"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock117.lean",
-      "sha256": "4543625931f0624dfba726eb31afb80dc7240cb2e1661f233180150e2ed33193"
+      "sha256": "7bb88873d1503182ab1c4bf1dfc3fc9f3dc34e86c015611b9717a620d3743434"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock118.lean",
-      "sha256": "77765b14bc70f334133c73730e328673ff55670cdac0da7c0af68ebfb5127b47"
+      "sha256": "d99f344de36eccaed2bcb253ffa12bb5f308acc77e45662de5dbab733e9650ad"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock119.lean",
-      "sha256": "6f08856fd7cbbb845849f18117918d5260119b53267b177872f1c8ffeb320762"
+      "sha256": "e02e16bcbd4ce80fe1fd14b1a9fcc2a10ae47b825cb7ed5b5d945c3a3b18ec99"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock12.lean",
-      "sha256": "7de3d15ecefa330ec9ac953bd96da4023b486b07a35265991d55e439a8b21b43"
+      "sha256": "e0cd159cf6d65620a7de65f0bce4a79bf8f63d2fd94c500cab916872c24c77c9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock120.lean",
-      "sha256": "34aa630c40a2f973e2f08004884db7c0491ccbdd8248497ef37716706d891c31"
+      "sha256": "471ce61f473bd0f9a2f206e90ebecb70c3d4f0c744c6eddb13602dffa73cbe77"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock121.lean",
-      "sha256": "b93310382ffb21b158ed9f35799e4eee5cb0680dfab2a89e3678cb930bd41dec"
+      "sha256": "fd94e522725d10044797f1ccece44c2df355b71295e6dd41499f97a9679764f9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock122.lean",
-      "sha256": "6cf760c2e2ad54a86b004d75eddf06ebdc93b4436c1fd290cfcd789a57f8ca65"
+      "sha256": "48e14ddc05adaeec3fb7b998535a8838c2b50f252c43c0873ebb41f727394007"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock123.lean",
-      "sha256": "fcb44ebf8b7bf1d2bed95769a51e519d4138ff54cc1248d85c972e6f066c23fb"
+      "sha256": "a12abfc035ceaee4938f2622bc0fbc9260c80009917142fcfd07819dd7bf278e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock124.lean",
-      "sha256": "b10229b3b1b8f681d7190d8a1022bc25054615e56ed3628b34512db90c4e42f4"
+      "sha256": "281205951db173a99a318846a31f9e4bfd28c33ba3d598447fa78d7393d801f6"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock125.lean",
-      "sha256": "152539be8b225de3daf910ddd535e6bfd738b96bd77dfcb95dbbc33204bd86f1"
+      "sha256": "0c099aa7db86b01b26c7fedf96b8fb0616d297b2572da2dea37965988d822e53"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock126.lean",
-      "sha256": "74215cd68cb4ae8fd61f0c52e17bcc699a3163907d3dadb29bfae406560f243f"
+      "sha256": "dff1f1e6f870f9d1f8b6e2a547296bb08bab07610cd33aa8960bcd63be90a9eb"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock127.lean",
-      "sha256": "b55c9916c75e077211d6631c29b738031551d873af734d74e3a2c44f82ceef32"
+      "sha256": "1996c7dbaab7f5674c9172c23f23f2625090a70e28fca2be6c1a143e1ecb7119"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock128.lean",
-      "sha256": "95c27de7faea4047c90ffb7014031b4497ce120b0cb965a3921a8de55f9519e1"
+      "sha256": "069730bc77d012b0f91158228a4ccc08656811935350a7bc1daa54a7ae43dd02"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock129.lean",
-      "sha256": "4e8edb0624761e88cb5a06fb26e25f29442d289c8005c8aefcf0b4cfd0829b88"
+      "sha256": "8884407b427ab10b994972826c6c1b284346c441565f2385c8551716492c38cc"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock13.lean",
-      "sha256": "905ecd73718bed637da4e21ef83db22d3251f1f19b952fb23cc4d4b22ab1c306"
+      "sha256": "bdf2d2a6c62af06d1ccf581621f554ba89e1645052919fc5dc3d34348c67dba1"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock130.lean",
-      "sha256": "d5b8b1c43bd5ce8cb0deee380b19bb0777441c222c66303253ec893bd88a7982"
+      "sha256": "ef58f434de9740c1570f9dc8f192fff2a2280256feee06619ae5e704d5f8d16d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock131.lean",
-      "sha256": "8215074f868098357a64de6a3a6a34dc4e5f155ff6c55177c50c8f4f41056a3d"
+      "sha256": "92520bfaa7c6a7ace72d509fbecdc02a02562772666c34e152cc8ab4389764bb"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock132.lean",
-      "sha256": "3f23610034da8d8ce0e14e0ce0ffe9e4b967b892588cf60ac5e95aef4e5be719"
+      "sha256": "05aea72955a8de92aaf4287d7156cfc5baf41f9623c5963cdcad08f215fc7937"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock133.lean",
-      "sha256": "01177a13f4bf06fff0742d72398b4abef79b77efb22055759a25887dd0fd86ab"
+      "sha256": "f892cd7b166d77a9f74883096d549db3bfc3fef86d425b46e5544055b1a463db"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock134.lean",
-      "sha256": "3f7a4b8476fe9b3e980980d2c1175c25e3f31ef1b4751a61e8525bdef78965ba"
+      "sha256": "4c22762585a1384f4b67459b87802b3f33396ca54fd046bc9d42ff0b047b8364"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock135.lean",
-      "sha256": "aea0d1fdcc530a2c8130a856d272d64e0924906ca6f462b741e22d5f0553de2f"
+      "sha256": "f8687c99b3c272ded07e7e910c48dcf92fed921369d4ac3de3cc07e7ff2e8b27"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock136.lean",
-      "sha256": "ae72cc5ad9b6e0695dff9413e3afbea5d9a777d4e66999187450b45bf11cc0bb"
+      "sha256": "a1963caba19f81df0eccd11ee5ead8188dff0d72c4c99d206be24c3a76e5a029"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock137.lean",
-      "sha256": "b2f2138c0c2efa08c1cbb86bce04cd42f3f27f87ec3c517b59ee8fc443abd4f2"
+      "sha256": "65fd1d727948c5070f276400151639aa928a9c6be0e52361e875faafe1be1fda"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock138.lean",
-      "sha256": "61990733d67f608c93d7c30b85726d98c252f522eb1d850ec341aaecb2dd06fd"
+      "sha256": "86d3283a975bc1747ff8c863d9b4bf04b4b71da69fb2b9f6e795123763bf5311"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock139.lean",
-      "sha256": "d1cf91c7d76461bb4d390624dbfce7a438c7ae63f8541e68b92bcb981e9c3340"
+      "sha256": "c50453fc4af5cfc64c820b791dd285b8c083a05cf421c882b0d6d2e8a31fcad4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock14.lean",
-      "sha256": "7017b46c344be7ead14430d6541bec9427378cbc5bdf2cc82a490dc0d430738a"
+      "sha256": "4104ad128a41bfe176c391219653c4373f1424c7b1c34beb87d382622675629e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock140.lean",
-      "sha256": "b0c75605ee9e52fe723d3c5b634acd0c7beb880d57049f493e5c4383e17d624c"
+      "sha256": "96c5d5df48d29990fbc39fb941a03fd09347f2223b13780d16042941277e5d5c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock141.lean",
-      "sha256": "1ddc4cbaf24a2c3151eba52f0841d4e64d1bbbd26787f4ecf459c2d32de85bcd"
+      "sha256": "cd2f0f1c79b8af99daf93326422a59cb12947639c4f3df847c9df4128b29415d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock142.lean",
-      "sha256": "8cdaff1b936e7c59411d72d2960bf58ba63b0874173e0b787c7eb7ccec558d55"
+      "sha256": "3f71a9ad176ba48a58ec29512f634a0a1f49d2ed3a0a4c9e923de81029485c24"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock143.lean",
-      "sha256": "666899be24408a2d077bad9a1fea06e579cf18bb8f520b78781f415fe0c98e6a"
+      "sha256": "257c9f99d39260f365d93c4fc39a86345a0a969a83ff59de487592f788217668"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock144.lean",
-      "sha256": "b8cc5000cb312716d17657b8ab3ad537c13c586a4911f7ff5b985c3b42a8438c"
+      "sha256": "d79a22445e44938d26c055c4e876f8283cd1b4d04158747dbb7878c3fc4e3a07"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock145.lean",
-      "sha256": "1dc4c8139e222e779a08f4af2d782a564a034910a9d8bcbbb1a5ae0aab8545c9"
+      "sha256": "a35f329324bbb60c675e1807c4cedb32f432d2f452f55a77a3704c1f2d320a0d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock146.lean",
-      "sha256": "0d81ce3f40b561f02fc6de09a89ca1c39d606f3eb9b9c91a85417fef29d6325c"
+      "sha256": "71aadf24c29f558f39492f5248ff4dbce3a76235871baed5ab2a0b299ecd3e7e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock147.lean",
-      "sha256": "d78617afa06f575bbf298445ace1111a1748dc5a628cf39f352ae89e7ac13a95"
+      "sha256": "1905605f05daabb270f97ece4dbd11d49cd00a62fea4fe7025b867834eef0e5b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock148.lean",
-      "sha256": "8258c7e60aa1100166cd0489f55f504247dfbe0fd4c8647f73529a998b2a7a58"
+      "sha256": "ef31721349596f4d0fe2faea7306998c6b2cf3ddfd6f036c17d61ae856f0edc6"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock149.lean",
-      "sha256": "86fb41220ab2b374150ab7c96a446af1eb588a84640a0468b34c8ff5b69de1f9"
+      "sha256": "32e6ec8909d50a18f816089ff57033288f73ba8d910e79788c2408ab64b619bd"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock15.lean",
-      "sha256": "e5a6f1c54e6374a708d18c65f64bbdaf364dc8ee7e04e83d20b828991c8e7ce2"
+      "sha256": "c5e712c425d2675630fb0ff5cc0b2c0e0dc652350d2fb2c3c1b185302910b74a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock150.lean",
-      "sha256": "162a65564de4cdf392c4f2ba830c2e0414554bbb5f84774d27c4af3775b2f601"
+      "sha256": "78c5cc9ba8dba4038d1a48ceabf73f76dd15e472ee92d8a94fc2082a7f0ba9e5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock151.lean",
-      "sha256": "04f0f029ccddd5a90a671e9d6cba66c4fb18fc9346900020802241816a9c30cc"
+      "sha256": "2013c57367d5c97ac9297587c1bf98eb6793d2d75bd84fc6aafe1d70ddad7be1"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock152.lean",
-      "sha256": "ee276a0e833abea65f1d63e1570a286748c3cbde945820bf39e4c76e52c3ab72"
+      "sha256": "c26bf72e8e70e752338a2617f5793415658006848df2fe9c4ab6de6a9aa43587"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock153.lean",
-      "sha256": "3a99a996336c11c1b80a23e0577b6a1d8b7744a7cfa95e9bcf0ee0af521a19ab"
+      "sha256": "d460ef70aa96affd7466eb4ece52a6fcea22fdb020baa565e99a17d922fa8598"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock154.lean",
-      "sha256": "61076e5ede986f702c19c2b41a5769513626f3e12f71df28497739699fbc44ff"
+      "sha256": "4ecc4c3a181e70853b747e5921bbdc6f38195ec9526d4d9c8f08b90a9b396d52"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock155.lean",
-      "sha256": "8f8a6915d00b21ba02253ce6c1a1e6ec8578bd42614f19ec128623753185f4f7"
+      "sha256": "830fed1cbe1d2af36f6734a65ed73c506f4a28b27bb3e00956b9bfa1612ce161"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock156.lean",
-      "sha256": "f7777b55d75571d02501aedcc3382acadf9e613086ac813bcb4bc3519ac882dc"
+      "sha256": "f79236ea7bfffd4f8f41047e5881bc812ae296bf6c0c8e1e2c0f7d328dd2e0c0"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock157.lean",
-      "sha256": "e014c7cbae1a2bd5156e428b380dcddde7ceb997bc0964cc4c61bf926530c843"
+      "sha256": "135fd8c7f03e1f8b4764199932b43a8661f08112e1ba5361c25bbff7fc857d43"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock158.lean",
-      "sha256": "98717b5927cdb06087fd136da1a602480306be7c5d19f2f6ffcc6c4ec238b278"
+      "sha256": "1af881698d8c80abb389e92b805cc1fd613fe84f5367c2579571cda8e0e8bb73"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock159.lean",
-      "sha256": "78a089ac3ba2644e35409e4860293de1df2c957bf81188967ff249c96af52045"
+      "sha256": "c60a6a1f2f42d30b1e20e1d7cb5b738337564b554e4a98532060b07c51fcc584"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock16.lean",
-      "sha256": "25b04be25380e0252ef513b83a6620f07c06302b10e3094c52e20c78bcc7991d"
+      "sha256": "248e1268e1379f4605ecec09a9110341a169ba92732df79ef202c3a6ec154311"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock160.lean",
-      "sha256": "c385dc967ed4b0c4f217d3e5819490a643123447d451b5ff1248a451ab8633e8"
+      "sha256": "67e737bd58d04dd5f4d8c3fb54dd6378d3060f9024d2305ff111b6bdaa9b3aff"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock161.lean",
-      "sha256": "b401ef258438a0a20a85937728d519fe6793a50c11349a5535bd88289df78bc1"
+      "sha256": "3da04bfbd7ac9f97da73d65362377b70392f20ff0c6018f00f62ef44ef776d75"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock162.lean",
-      "sha256": "30a929e722a90916d3a432d48601ca1c9100172028414c8e63a7ab50415b48b9"
+      "sha256": "40622d4c55020b0cd26da4a4d79f246b04ddfec8bfdd4e274a7005c781e64d89"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock163.lean",
-      "sha256": "35d2cdd78fc01615c9b08b179d8edbe4367dfb9a097f1cb16a956710eb332daf"
+      "sha256": "05dfbe3ef6b6f6d0236525afaba96396f5acc469cf73898b70bbfaea23c73983"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock164.lean",
-      "sha256": "422556cba31bd9f0ad864e9d11f39e4e799863bcba5c5b61c7d744a93afbc399"
+      "sha256": "f4bf119992e9aa9eb5dd2c5f87e121ea07e6ea9bf8a97265dd2024f04fb5efe9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock165.lean",
-      "sha256": "ef4f1606f29cebccbc82c2c0dbcf6057caab08b7318ab3a3376fdd78b56b667c"
+      "sha256": "64b66a7f660b1c042e79cd5c18090094a569bd6fcc13272e4229bfc9d3f80ae0"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock166.lean",
-      "sha256": "0136123ed9933440e4d048f24ff430724813fb587269e963cbada97551ca527e"
+      "sha256": "e924e62ecd1d1f091ec4169a26a9961c9e580ed6b6f3ff0cebebd3ac6799dd90"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock167.lean",
-      "sha256": "d6bf6615d7595e1e98dce8f100b7889a377505713ffecb07c7d657f266e7c8f1"
+      "sha256": "07ba6c33e9f1cf69b65709eac8d860d6fa7b1f799f3b8bdbc939f148118013d8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock168.lean",
-      "sha256": "f7fd04d29e9e0e5bbd0047b530f9993aea949d5c68ce68987bb04fc01bb8c6b5"
+      "sha256": "49d54fdee41d6f31af65bb88b17d9eb4ca61ee6102dfb6ac69e6f5f2bbba90e3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock169.lean",
-      "sha256": "5f91a2847ab00667bc5d403e3f4f112abc947e2f757338d95164be903789d21d"
+      "sha256": "22fee66e64ba1c0063f9586bfe500ca4419b101b664ee87a18a0859ce841eade"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock17.lean",
-      "sha256": "cb57fad64b66b69fe738ed2dc9a4e9c8972e376febbf4869f2b39fb058ca7413"
+      "sha256": "b2a4a194f7ca45b59a8efb22be9d4756c0502628dd76bc39a343b8a934b86bc4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock170.lean",
-      "sha256": "e0fc0ba2dc5b2c710ae5caed812d78a0c484247667e22773e22f77ff6d6dd209"
+      "sha256": "2186751e61e174cd2e2e6f1c9989cfd3d578a26761c65b6fe1df6e41556fe953"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock171.lean",
-      "sha256": "8235e6a58f020b871a68da1527a98bb163c01d497878e6fce97598a26c0fa72e"
+      "sha256": "9a7cb4a8b0c47ee70f85b065d0011fde4a56a6cc0934fefffd141ef825c0dc13"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock172.lean",
-      "sha256": "84302bd9fc0ff46b77d072a7b457c0b34db6f687879413e6a4d8473a3987274b"
+      "sha256": "4fa480a8777d7655a26f141c8cbc8a9aa1159855d7a3283d05884e66a7313d8e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock173.lean",
-      "sha256": "2ce9b7523438f4451eb85a6346a30e4a5c2c938bfca945a09384e21c75c9430b"
+      "sha256": "72e8177274715642a1827ea61c417bd105befab374c5eae39cc8aae8a3971a9d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock174.lean",
-      "sha256": "dd2feb1c9fffe41ae8e61729af796c6b4e88255c16a26f88b323d4bf64a31044"
+      "sha256": "07fab33a06fcca1515ae60b47a6fd05b7f0a83bbf52dd389538eb8cf20411410"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock175.lean",
-      "sha256": "840c7641766bf7255261c8563629294a8e8a017dc1fbdc8ea02c70ae2901ce94"
+      "sha256": "dc747d8b658696528f1f50a9635f446a70ad49c9fc8bbe5ae03e8357115e251a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock176.lean",
-      "sha256": "1e87c9b261100a409fd7930c3384e9487e68146be208bfcd9f6835b210f5a155"
+      "sha256": "5ac093a626c04808a819397961b3fe816d1ef45b42c5afc8fb7d0e70dbd5d77f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock177.lean",
-      "sha256": "ccbd71d90b3b711581debf59b8a70a73892d1519c58fd6e89e886bc3e7a731f9"
+      "sha256": "b6e2c0b3fdb785ecc628eaf41ba29210afdb724f56048d4a3dc606975306f7d5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock178.lean",
-      "sha256": "5bf899234b1fd1fbca9a784d7fa4b4cc3faa34dcd8e60e2140cc2bcb9873df71"
+      "sha256": "a08ae9d14ef813e9c073245006cc4c97f39c270cb3fc8f33d200c12c40b4792b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock179.lean",
-      "sha256": "c86a662938adf915e001d9ec9027323c2d08c45dc5653dd72b347ace74f06e4c"
+      "sha256": "35ccd02e6484b604d2f98af487363a24bcdb986efb1da8b40ccb07728acf9569"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock18.lean",
-      "sha256": "e6f6316208bb7119ff802ba2703bfa029cf366e366e75907eb57ff548defcdec"
+      "sha256": "b590254ca08982d816af3dc27d60605fe0c7a4895b7b642c0ba947a923061090"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock180.lean",
-      "sha256": "a6dbdac44077f7078bda694bd5ef0601b0691ed3585d03bd8ab37edd9bc43a9b"
+      "sha256": "fd18e199358128add1292f8ea5941ff988eae5d7bd9bf8781b79b9fd306568d2"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock181.lean",
-      "sha256": "62a80e64be38e7b9491d255c509ce88773bb28d6b4dc0a158445efcb12cab81b"
+      "sha256": "abe022ddda762f581a16d6b627b0ead5d2bc0d5c8bb3d8e85c4b24c504c5c59a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock182.lean",
-      "sha256": "01e049e3772195b2a22f9d690fa128e9c1563d443162b08e9d483e13abb8f84c"
+      "sha256": "ed34f7e0cdea3257868347cc7e939512343d264f556a57dd5871d678ef09abb5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock183.lean",
-      "sha256": "a74ae9ef3aa7b4dfb647c0e4422af1d6d872923ad0f088b7af903ddc7316f04a"
+      "sha256": "e506bac33ba58d3727c185482a241c3514f17de1e99367d5e363dd0917eb6e77"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock184.lean",
-      "sha256": "e53bb98c49688f687d2f2982f78d21456b5ab08eb7e53d56befc203477ecdf7f"
+      "sha256": "095f50a2aa554a6a6e4fd0dc440eab53cfee8148859083160e439714638b44cd"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock185.lean",
-      "sha256": "9dfd1274f5c47eb470507d79cffb2da800771c375601551b51d904f6e5fd15b8"
+      "sha256": "03cb934e79211e2a9f7849747980284c50d00f68bd7f1c84269e9ab83d0928f9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock186.lean",
-      "sha256": "952a447cda9fc011127627e6f3335b0a1e98db75f7643241f0197de7cc4a0559"
+      "sha256": "b70d183259700cc2b514bae7909bb68afc78a2eef4f08e1c54acaae0368259b1"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock187.lean",
-      "sha256": "7aff128e1ddbe252243ef00310114f4fb5b27f17a68977ccdba981b912fb8ba0"
+      "sha256": "89771d44d0f1922ece15076aed2bab32f0f7875e7d9a49e3622f16640005ee68"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock188.lean",
-      "sha256": "56690cf7262b44a9d8d06998c23fdd4d1904768351fee7a824dfbc9cdbe874fb"
+      "sha256": "27b9040bd2f0bab8336b51ca3ab714e616fb7ba18c80ecdaba4e42839cad376b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock189.lean",
-      "sha256": "b4be57346484281b7e47eabe6a491c2ba061f4864996a7093dc35db10f232da4"
+      "sha256": "71c4f2ad2e3b7965ecf58e86c6b4fa966bae0aafa2a35ba410a27ccab46f24d4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock19.lean",
-      "sha256": "c9f9481a102fd02c98701a294a118b5a4004a7df729c148a3d1cbfcfeb2d5459"
+      "sha256": "b616a3de4e961a5c687502262aa60a4127b628278afa5ea5c33944b7fd3ebf66"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock190.lean",
-      "sha256": "7b55e44107e797bdd97d38165eb1eb866a75846fb499f0557a9c43928b0a9efe"
+      "sha256": "a7db6b89cbb9a2087b7a7644fc2c7fed74d50f012c40a0a992faa3c06079a65d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock191.lean",
-      "sha256": "4a2de6f933d1c8c6ede435c0664798037aede7ee745a44a23f98875943e1fbc4"
+      "sha256": "7e46ae66177a69269a6b2468fb4cf1daf5ba11f3979c48f2d1ee65f16751f5a7"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock192.lean",
-      "sha256": "f1117a15a89873725a6739c19b158bd38a724464d9a681de53db2d1bdaf112ed"
+      "sha256": "eff57990cf7a8ad6e81f780c26ee9e2cdabb8ade359eb112872978097399e69f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock193.lean",
-      "sha256": "4ab1c04da594ccd31b869fed50900adf8d7decbde7033818b743f5b928e45f65"
+      "sha256": "a2e58a97099637f488328f9d6723d39bc7afc23786137609fa643d3c5df71c53"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock194.lean",
-      "sha256": "63186653c83a2d6cdf305ffbbfaa58031650728673a6a268305c9a0e75f228e4"
+      "sha256": "5a4a2892673f5bb9ac227d53b9ddbfc4d6e3ffc045dbd7c489deceb6c0cd44b0"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock195.lean",
-      "sha256": "a4a0f47901d19a9dac0830f0ef59b9a18a7227ff5d4c41d4820a0f90aa32484c"
+      "sha256": "8ed3f44b3e1b1a79127e621864dfa399c2c51c3a0423038be26be17297cd0c0a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock196.lean",
-      "sha256": "6b77d10b7c716cb1fbbe360a542628e29e7d2017ecfddca435ad10403bf3830d"
+      "sha256": "3f0557c952961d2cba9dba7bd56c00a7798f9f9d19f65e0aa408dab7e381716c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock197.lean",
-      "sha256": "c22eeca27c911eed8a6a6cb0e24524de3190914896d2e69b8b33a9fba7c70716"
+      "sha256": "a964391c5dc385a8b101d8c97ea0932dca50c7419b0e8a1c01b931b472d868b8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock198.lean",
-      "sha256": "b0a2da598b4747eb34f37e82d749db8dbc65008083aa2e7608a5fb44db5dc798"
+      "sha256": "4288c28ea36903e6e4554a91fe52b8201fa04135b2f502ae0801a9aa54f91e0e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock199.lean",
-      "sha256": "ad6a871511cedb581044e8258d4381700a92fb23a93b4b13fe64f9230ce64786"
+      "sha256": "341e9da951d5ab86222461f135f8011c4682bd612fe0f3d5f3701f1cb26007f3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock2.lean",
-      "sha256": "b7e2a47a6e6b634b9a5316737fee52a052298663a0559b078e32bc472846e4e2"
+      "sha256": "c1d1c692e65a137cad279b204bc88e86cebc8a6f594f23e446008c182365d13d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock20.lean",
-      "sha256": "d922bef1a38dba17178adaa6e300150fe72c3399d223fd004e8540fc8af7ce72"
+      "sha256": "e038571fbb08850b97e7d531c1da8c690558890e513ea4c8d8198438a8cdab95"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock200.lean",
-      "sha256": "3947fcb42afae41def3c80965b38c57b5a8108cc6a293a08d0e80ef7e59c7a52"
+      "sha256": "ceb5ea2fc082ea4f40b5bee92861679fbbeb4d3ad855916e86f82cdbf5b9f527"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock201.lean",
-      "sha256": "bdd23ec77ff1407e35bb3a58ee16a351cd59d908741dd65eef6c55ea13f5f8c6"
+      "sha256": "14ad67d486e626a752a8e012256fd2969102fdc0e5661925ce3d9860aa6b9c06"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock202.lean",
-      "sha256": "79bb6481c35f88c00a343f1c9929f01a9eb10bad29b31394c461913be0802e5e"
+      "sha256": "a70a277f05e5a77ed7e8dc13308fa2c4252588735e02dff9bec04fb7562d42ce"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock203.lean",
-      "sha256": "f9df2708b17e984bde193ddbb1cbebedcba34975da0b0b833255abcc6b494d53"
+      "sha256": "882a6dd09564ea1df23378b103578b7d6a47c07314f58aadf0d3e727f7a71672"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock204.lean",
-      "sha256": "73a9f437d244f5832aeef37d355d3dda6d0afe62c402a8e8e754cef2f31002cd"
+      "sha256": "a28be5726fd3c8e31848d0fe805c0ab736bb2e801e1e435407d3912bd03411bf"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock205.lean",
-      "sha256": "6fbc7e8689a4e8ef99ae8915e7dc842fd47ccd9ab380d560e969941f274e2128"
+      "sha256": "41145d0e24961a06022199b6ea13b37904cec2bb947944d43fcac1a108f8d186"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock206.lean",
-      "sha256": "598a99843a36d531c2c884a78197d3630bc687d5067d9785c061805117524b15"
+      "sha256": "1d96bce9d0453be450a0b5157bc29ce4e0b905ae90a7b79d940e28f8bd87894a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock207.lean",
-      "sha256": "83e16bc69b3a00c49384a69e35012ec6b814e6b81b3154d539f4d5cbf9bddd88"
+      "sha256": "6bb3c204ee5cb8998ba61ce915d42bbb6a53004062930089095aa3ea0edf5056"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock208.lean",
-      "sha256": "a780317ac74ef0b1cfc73aa90137846e01a1e51fd31dd43ad5fa253394369132"
+      "sha256": "12d9f12590c9eacc2f61e63c1f0dec67a2682a7d0f8dcab3dd565f75d33a10bc"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock209.lean",
-      "sha256": "c3a100bd8797ab3768edabfdafaaed77fbfee6644d0091711da597476d694e6e"
+      "sha256": "c707ae71d5d7a7077e24106fe3c6bdb72d1f8d16109cc88ec3dc1c615bfe0ced"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock21.lean",
-      "sha256": "e46d1e55557d19795906419d0d830266a3ce2156e1783ff4343e664a78a85b0b"
+      "sha256": "5c4cc6da9fecf67dfca933b13c8ef1460c5c0f56b4f535fd032bd5da0c57e93c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock210.lean",
-      "sha256": "c9adb087cfc86e451fbb9b1fac50ed644374ebeddcb06ed8b84c055f45ffba85"
+      "sha256": "ce77f419a4f3812269e293934c9021fdf70fe1209f97559d7c6b4ac02bcfe3d5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock211.lean",
-      "sha256": "f203167ba0c4158524cbe3efc9021057635bfa9a47ada415a590fd481cae344b"
+      "sha256": "812c176ca0bed26d2170d55dd021152081cdc03a758ab0dd625a98ffec6b83ae"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock212.lean",
-      "sha256": "452c1d03d663068cb4f1ed5f536ee85ee5cce7d0bb24150c40fc134c21757795"
+      "sha256": "8a546fea31fe1488064ef1a96bb862fa0bcf2240c599db9da228efefb43896ae"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock213.lean",
-      "sha256": "aedc4cd3a7e1c9b772dcd8294b8a2df206d7b00c00ba3cc693ad81511e95fb43"
+      "sha256": "b39d811dd866ea15d043443571366acaa3c708f6b4b12c1e35ba34b0c61c6a8b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock214.lean",
-      "sha256": "cc382485d3a8b0dab585f9d9324d578c877432d6018cfbbe5d2b9009ff183f60"
+      "sha256": "45e7535cda6f279617344f8d02b4827073d318cb64f2ec90790da17aed2f4eb2"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock215.lean",
-      "sha256": "26a0cf5bdb6285556d6efaefcf2d748f7d12271969f7c5cfb09a26bf843e0c1b"
+      "sha256": "7cb4fecc2cc64982d5041f50996144947d07bac16e8fafca1636a7b8038a9fc2"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock216.lean",
-      "sha256": "cb27a914a9e16b5b7bdadf7b61489fc5bcb4b3e249f3e9828486c81276cff7c3"
+      "sha256": "ba051fdc0087adf1acce15bb907a8cfbfac5d9c8514729bccdfad9165b2832d9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock217.lean",
-      "sha256": "cd6e5492eb655216cb5af1efe20cad8639ec559e49fd0156610545f60292bcf9"
+      "sha256": "0a4f1765e99d108286ccaaef1e5dcf1dea1a484ce5ac24f66a46ea5c43782e45"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock218.lean",
-      "sha256": "9604140dab241d83ffa78a0662f86c8d1e1cefae964dadf3d6bb2a2e5137909c"
+      "sha256": "88431c14f77cda726823244363e008088726080a4a1935916389dcd241fc4e5b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock219.lean",
-      "sha256": "e8c664a900c29f5148791a226cdea9bcb938560c58b5047fb6d85f0934bf62f9"
+      "sha256": "e8be2c8e3435852f415500d79d3e5e73a72f60c628e423c900fca3778d6f18ab"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock22.lean",
-      "sha256": "bb7457e0283761bade1ac1c309cf25e9af8d6c984b50a333841d0b26d76a72cb"
+      "sha256": "8f1edc9ad265e350e22993dfd5439c8b1e8a868c93eed60924d7dc9ae73c1bfe"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock220.lean",
-      "sha256": "19c3733a0180b2ccf5b2d66e72ccaf1e1b7aa4e0182d5e9a1f0e1b6ed1eed6bf"
+      "sha256": "b95162b087fa64052cbc65ce621d878a3f8ce87dfe28a6c80a341b9b7b6cffa9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock221.lean",
-      "sha256": "0c3f6bc8a0f67a5b396aa595c0fc9bc61f8fafc305defdc96606fcbdcf6af62a"
+      "sha256": "9ca8302fe0d44ecad2febc98d8bd4061ceadbbd100e0ba8b37b81fe41733ed5e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock222.lean",
-      "sha256": "aa3b98312c3f27802daa84e99bc2ac3369aecd04212fad13817ebe79b47f9be0"
+      "sha256": "0537e604bca8413d30445011db6c4f23612d57d02ef1b4887d8871f277bb0787"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock223.lean",
-      "sha256": "b78d33cfe179b655acb0f840ec6a466a2acfc4c9965c73a7ac9ed44209c2aa15"
+      "sha256": "134db3e50bb269e836320c48b73e5b6000a86350cc8f2f79b4870b9e8b833d1b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock224.lean",
-      "sha256": "b38cba4c0f928a1d8b68623605a1d9aaefefbe29833844cdc8514b5e3d222c32"
+      "sha256": "b717c2c49e21c40a77d8dfe1e078c0d436435f719ec05c4f9c44dc1fea50501d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock225.lean",
-      "sha256": "27765d2bbf86a1981b149fac9c65cdda664b529a87aa5e4a48006c25f8624155"
+      "sha256": "ca7c556ecf0e91fe6b74db21bcc9e36a0ab2b5e62c13473d9491b508d027f3b8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock226.lean",
-      "sha256": "6b9313f688c708e271ffa1ca00b23592518f971b5c812722ba4fc78bc6890d0c"
+      "sha256": "977171356d3d036ae7200e86c30233738a5da33a58dfb636a2b67fe887e33568"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock227.lean",
-      "sha256": "bb62e80147e5c9dbbcd1d4ff9e2b7f2611be3c636e4cabbc8e18da831dc97545"
+      "sha256": "1ebed28e55b78aedbdb08318536e6a9d2dfe69b8518f11973781b4c17c5a4988"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock228.lean",
-      "sha256": "b5fd0069b4185446f697c0c7fa1222faeec0c9a307208ccefc3b53e200fc71b2"
+      "sha256": "f8f2eeed5d18334ecceff00b36740917b6033616f807dfb1ed73171a012be97a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock229.lean",
-      "sha256": "217e047544f67b81438eb399b9c27c622ec90f79f8c15e3a417ff8ef66a943ca"
+      "sha256": "317b488f052a68ea073bf6cf4e950f2ab6832b960926960768d3452e85bee334"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock23.lean",
-      "sha256": "893506e502053bbb02daa9c1cbfc7642572876ff90b24e5a2c5512228fcf9182"
+      "sha256": "0612707eb77260f927e19b3d4b120c902c4fb9cfb1d3828d471b23a5487a7541"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock230.lean",
-      "sha256": "c357abe872774ce41cdc67985345e076d195e437b9e202af0954a4f8c34272d1"
+      "sha256": "100f97c579c0b09ca0392ed8057ce95f5a7b9b6e535dd957908a3053071dde94"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock231.lean",
-      "sha256": "ec91079e0557c4f3520082f29b03bb6eed0ed7b162e4ec062197b9f427c7ef85"
+      "sha256": "62ee4e40d5d19bf6f6972467465e6de2b6224be340aff67c3960d2f9bfc6c270"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock232.lean",
-      "sha256": "eeac62d1942ecece7f860497cb596092d53abfaec889dcce563a4edba85771d1"
+      "sha256": "5d793a3bbd7beb2957457fe6bfc850f0f539ac73a176b591184f6035f6bce681"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock233.lean",
-      "sha256": "7c756415ea6c61a2b3374d8473b9d218c0e99f8ea23d7ea6f3c6f93d2bcfe530"
+      "sha256": "69cb2c2fc953bdba3fee50cbe49e51dc7842cce6e72a441bb45d948f18724dc7"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock234.lean",
-      "sha256": "85adc78839d695b4555b886562624db8e3cd3e749b2b1a87713fef1e2fc5cac9"
+      "sha256": "6d121bd0df7768b15dfd542c7e56591d6e0abf2cf21bce764672a5077c7658a7"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock235.lean",
-      "sha256": "9f2f2fea970c655486f26bde993a925a1b95e1011abce178217761fb1cfaaba3"
+      "sha256": "fa95c7d0b6b5939443836287be3f9823e389c62e3c6058fae8b6e56c2f3878be"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock236.lean",
-      "sha256": "b2718f880eac63da61663cb38c8f2f7e0aee2e09e934e78c1ed7ffb15bc9a145"
+      "sha256": "ced905ec002b6d4bf029826684a162b380f5a178c7b34a445098847c6cbca18d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock237.lean",
-      "sha256": "06170a651b5794f72f3306a118f4de54268f07bf6544cbc664c0985e167e478a"
+      "sha256": "fc75badf8873e751fe7671fa95eeaf29f26243b1a2814f570bfec5caf99699f7"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock238.lean",
-      "sha256": "5385447ca780648754b549e29983a94c9dd14ce19fd6c7a126536071e30657b6"
+      "sha256": "f0f46afd6e033d75857792f3c21a04d460828e590743db1cf934ee5b633a05c4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock239.lean",
-      "sha256": "d0340f11c44cd2620c4c9e2d41d2bd55917c83253fe0bf05565d2de57eec0907"
+      "sha256": "7afc56a6d5bbee8923103cc5ccb5683b6cb0b84840ec13c28ea24a86160b02dc"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock24.lean",
-      "sha256": "962251ff0f5f8c9d9bd08764cb64ef3e0e0c60eeda11b41eb43def492b63a065"
+      "sha256": "48018d08b128e90307f3080106a03bed6934d96f10d1745da3ec6842de831561"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock240.lean",
-      "sha256": "89d184af6b4b55e53e6cdc187c62a07b3ada6aaefce4ad052bcd64565f7eca26"
+      "sha256": "8ac28fcdf428de43826b9a335d2a78953454809361499dae0a1499a764312f4f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock241.lean",
-      "sha256": "69d6eea0c6c93337e1d64d8d10df426fa00d84061995a44aef19d0a7a4f19812"
+      "sha256": "15dd0563a02ac3f898be597aa5dbbfa8cdc042a3cc43be186b214cd4e090c16a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock242.lean",
-      "sha256": "c48c66abbf35b3880e0ce3651c26bb51e5d4504ce437f1805f0211e7e552e291"
+      "sha256": "7fcf264612a2de76695166c20593f44e19a5617e2385be8ab917e077375c6103"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock243.lean",
-      "sha256": "994bbe1466d89e9c6a2fd3db76809bdf07e72e07b59f9be25d309a10c1ee63b7"
+      "sha256": "cd877719051d16d09d9d0260e0092afa5da2a8aa773dde9ef5578a36bd2ea911"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock244.lean",
-      "sha256": "5d74c50f0ae7d6f83664473f95833818783c6b460e2e0a9d33ec8d56b7ba677b"
+      "sha256": "bc92314ac2dcdb6e7d78f76451d62fcc1b437300644cb944c60f88ff4b99c499"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock245.lean",
-      "sha256": "c85143854e99c85e8052eeb72a12bba3a3f8d1486358ea15c90614cb96db2c42"
+      "sha256": "8858917f160ae4339851b55a846a04c30ab7a1530569ac1205985dc699ddc541"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock246.lean",
-      "sha256": "65ee82cd5ff2286f4fad9afadc1385c34d78d9c6da4fe048ad8ff1a4131857c1"
+      "sha256": "b0b5858de4af63d78c64391723f5dd2175dfb2ce2864c501dfe34ea7a9575d58"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock247.lean",
-      "sha256": "f89240809f6344ac1dbd36ebf98f7b34504ede18c1eee25d1efe858285b34a10"
+      "sha256": "5b4d1d0197b841eb5d6151771d9685c6640b010b85fdb038464c3803a126347e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock248.lean",
-      "sha256": "f758c2bccc7c9d631763154aa72fc2d10649f4b134804d93bffadc31275cf306"
+      "sha256": "094c1b3614f18fb9feeb01a878c5ade92feaf28271fb604eb6a9e058d7c7d5bf"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock249.lean",
-      "sha256": "43e2d7a914fd91ea93ad60ee7995e70e0a34867ef790518df656e26ca131c83d"
+      "sha256": "943374439a5e91a8471bc3928e2a1039c16d77969ab68363503acf31d37b7120"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock25.lean",
-      "sha256": "6fbb83fee059f29127a55c5da7b348f74d264dd0d81cebdb9918c57fc3fc97cf"
+      "sha256": "38f4c2325bacfd832aedff76be21d50c0ba9e22f35f118adabc9b707a8c1c0fc"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock250.lean",
-      "sha256": "1f4af72a7d49c489ca477dcee8d056eb7c28e42c76a607b823a08aaefdbf0bcb"
+      "sha256": "3f9c4e48e2959f96ba8af4b4187f9e6c73b44a2d48060c30391154fe8c5e91c8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock251.lean",
-      "sha256": "7d82eb1a5952d53019d332d4ddc6f4cfa2de80c3dd5df37188d38dd62ed836fc"
+      "sha256": "9dc587b98cafa233f0b9cb997ce2f858e3866e2d9c30ecab3fee0706db626f43"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock252.lean",
-      "sha256": "b8323466687870c3acd188be0b070f99eb184b714027ef59858ddc25c91c1d8e"
+      "sha256": "329c351d99a1551a8242a79e36bea8bc6093d3e11ae26e0ab2ff2293c6aad04c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock253.lean",
-      "sha256": "7ae546b8d3de7ab14360cc938456242ce527af4f2227426f006e5ef11b7c6134"
+      "sha256": "4b35d7ab529db45c4d975d6423ee5fe3ce456b6d84793cafbd3a5adeda619e33"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock254.lean",
-      "sha256": "832d3b3dd1929678c6b4358e01a46e51786c210c136f6a6e49c0f28218d54f3c"
+      "sha256": "b59d90bb37bea756fccd8ccf6a604a2e63edc08864b018135fa14437de4df5ad"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock255.lean",
-      "sha256": "b176c96d8edf3a7dfaa085dafc40adbe431ba6e9a5d21734c488b46e1299797b"
+      "sha256": "c2d4304660a9447b3a51744616125c37a284253849a96a10ea1317e2af4a5f26"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock256.lean",
-      "sha256": "acbfa5e0e728d2565658f760551e9c030c7e39ace366d130ab06401fa5db6cc1"
+      "sha256": "e9cea94327beb994bb12df79b338cbd7c3c1f3ff560850e3b3a452a1f87468f8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock257.lean",
-      "sha256": "ca44ea2e9d28e05ee09a3dffe742c0e5c2109274c71a31b810a728d0cebc8a28"
+      "sha256": "81b694ff03becfbd8dddae18ccb6da69a0f6c7c685e861d3217bce47cb38d40e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock258.lean",
-      "sha256": "2c7876aefda5a55c3cfb6161390e9617411d394eda41b683eae4f8e6cb2beb0a"
+      "sha256": "a6498002d75436bfeebb41f892eb05c39a4a355ebb32e24a0bac8557fb306b7d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock259.lean",
-      "sha256": "57929b776d80ea0a6223b5f288b3e0da8ec972d0a1c202df1edbb41f5ccb5e04"
+      "sha256": "4a8406c559e58030a6d7289794fe9abdbdaec94f698d14b5f98a21c822d7d2fa"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock26.lean",
-      "sha256": "797d75db5b8977cd0459d1cf1f8b54e3ba5cd754238e7bdee7425064c31d5d21"
+      "sha256": "dbb21bfeebbad2a97e7c402a30ea245df7937931b5abb085f4ac4d29ff5b96b5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock260.lean",
-      "sha256": "c2256c327e345d474226e39a67810ce8ff9d0e38b70353fde803f406f630a4df"
+      "sha256": "f74f74d6e4278895ed43e103d300d6e1db2c4aa2967ca12ccc75e22eb4fbd765"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock261.lean",
-      "sha256": "757eb9f778315e533952b58928c58934a0c0674e5ffb5785e92fcac1612034ce"
+      "sha256": "db1eff616fbd3d40a4450a8fc6de420fcce3445796cdf839e574af103954f7a6"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock262.lean",
-      "sha256": "d23ac73c758948e0d9b2e1cafe83ebd953cdb1cfd0625e6b8f0b35fa0d0a6661"
+      "sha256": "ff40a0ecb72b20c96225e8a3db49de249dd074525960a6f27d0f62b84d54457c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock263.lean",
-      "sha256": "a84cf7e89224797a6f166e2e2440419b4c5be017193a248622e402592c53b524"
+      "sha256": "790dce9e8a8c13340b0a1a8c9808da4afed9e23568c7ff716ad67063bd7eaa4b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock264.lean",
-      "sha256": "0c91dac63174cd9cf318dad0113ff094ee3c6d5ee24d7a076f6f22c1964dc8c9"
+      "sha256": "34e3c816cddd3d925f615516cb2966e8a17264910ff173fa57de70026cfcff69"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock265.lean",
-      "sha256": "05e3fcacb92c497e9ededeb4b256a7cd427c48d541ef1993398b65d59d31218b"
+      "sha256": "317724f35a4a4f80db6b76b524cef7094df4d4922469cca33f499975f8c2a573"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock266.lean",
-      "sha256": "78d510577282d3702b113b2b104c2ed7c1a62260ed0ef1e1d051db0810fbc514"
+      "sha256": "b338a1c956cfd043372f213c535ff10edc9be77bd68fc657a79f486f7f5507db"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock267.lean",
-      "sha256": "999ddec5f6d2ab27680108230afe720b3c11b34d8d6e70e0340e5f8d725bd200"
+      "sha256": "b2ad4f0b2afc0867181d37f5eaaebfd32a59fadab42aa61a023c3df5064e0470"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock268.lean",
-      "sha256": "7326e542d9d32079a5570272b2be6df2e0338cb801fe6195473533c9b78ad308"
+      "sha256": "7967cc9889da519117550965230f35203e30efc512821f5c9250cb767c052807"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock269.lean",
-      "sha256": "dda7697a74a21638a54a241eb37ca977ea8651a5fd3d91593ca0898b8d7b1772"
+      "sha256": "70003252663e29e0cd10478bfa1cdc4181c9f0b70ee924abf2bb7504dac8b416"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock27.lean",
-      "sha256": "091435da700c57b504667ca16e70891caa7f501d5e39443661cd678622e5b4ab"
+      "sha256": "aa196501cd3e781812cd23d3389880627581f195001d820bc257633dca2c22b3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock270.lean",
-      "sha256": "395e8cd1eeacf785f4f6eadf2da013cae6f324046a490595b4b760a0cee2038b"
+      "sha256": "d556c3693a0f1631ac2315f260cea93988c8e674dd3cb921a0366579765ae5ae"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock271.lean",
-      "sha256": "1aaa05212d66b8b086da0d123843d72e2a76926a4020d09647ddbf3ed13c2a87"
+      "sha256": "5f0be343b7f9571a7db4b5537550dc239223751123b8b39b0bce32d3919cbedf"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock272.lean",
-      "sha256": "e885223ad29967335dd3a7b55e80340aee217aff90393a9a323e526a6bad696c"
+      "sha256": "1f546ac3a5f3336229f0faed2351e111bf5e86110acece6e6bda727621791491"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock273.lean",
-      "sha256": "20c46db0925cef9f25a42b40734945825a5a3cb9b865bc440e7a18dbfe507127"
+      "sha256": "c094f3b4f3a1e36895cdb875a2073cfdba2073cbe423cb0803ea33a56695fd6f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock274.lean",
-      "sha256": "b5c3f506768b611b74a9c82242339013f33b887e6c0743ce298766a364059269"
+      "sha256": "f1b5312d8c0f3cde2bf262b0569c26c9c55a6ed6d7260c8c3e4e00b2453054af"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock275.lean",
-      "sha256": "db7624eb43378d3c47b867ceff33ed587257358c9c365b2abf3152c252092687"
+      "sha256": "fc7fbb0ee99ef1143f26a25718359630c5dc862dfce138fc605a34586e1d3d95"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock276.lean",
-      "sha256": "7f4cb64156a400bbed7f672247cfb00a8d4586a389a10d309e282319baf00946"
+      "sha256": "cb425e03f55e521c3070f2492e644002f1357015764b14ceb88958b51776a8ac"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock277.lean",
-      "sha256": "832095653faab9a02defed6c09ffea8a977c0565f39fdbb1b4eb07cc7171d338"
+      "sha256": "476b1075a8e82cd27a041b440ba3bce3b3720eaf3e1bf566c1baed481d2e3366"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock278.lean",
-      "sha256": "22dd9644290121fc485718726fafbe0b34832399b860eafe1f46f130df73b82a"
+      "sha256": "0fe72d1ceb42d7931bc40c88c03b63a58e6e96f85c443e50c6a3a164b8dabf16"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock279.lean",
-      "sha256": "89b0a12b7b8b7d713efed78744eeb2c3ec3226160b8095566166ea16aaee3a41"
+      "sha256": "9168ce1901b8cad10042a088f2422373a44a5c71c776432c23912ad76907ce74"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock28.lean",
-      "sha256": "2f5c99f90ec58c5b60a4f1ba018ef7e56ad55242ad965a4b12a8f2cc4f349432"
+      "sha256": "aac93b5ab9e8ae419552ab16394f93fb8ee1b44b0dd9bf2cf96d8d83d533e72a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock280.lean",
-      "sha256": "d76b84cc51c9f7554f0929ff2a3495e1b30e7f45854a349e066c548674131a47"
+      "sha256": "7371b88b467cbb20a374a52069c8af6040eb3384d6c7ab76e0e96fad7ec7300c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock281.lean",
-      "sha256": "cfb35d0e9325573c9df97bfd1221a474351377b3c6d5a653e7258cdff7c746a4"
+      "sha256": "e526c4a857eb4ae067809bb34a3c85d538b20be55a43f9f78a5522c1bdcd665b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock282.lean",
-      "sha256": "913b44b0490cecac3731aaf9abee76c9b9f9e5bba028e1f016adb1ab73b59f5b"
+      "sha256": "5f120ac86f4345d8c62ec5029dc294be34373cca6e810a90fdc8697b66585d87"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock283.lean",
-      "sha256": "1c0587481bde3972c937ec3bb02723d4a4cdbaac85e6f7ac07b679002c81747b"
+      "sha256": "2f68daaba74b40a81faf58b93e0cfd76a328301bd86d751f350bab171e64542e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock284.lean",
-      "sha256": "e5bb2ca8330e3c983cc6628780c336e0037e0acc50a7754f78603d34f92a1996"
+      "sha256": "0ef0b326933048c2c033e0a8db99f4bd371f893b7b63a45ea7e8b7dd90ee6f84"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock285.lean",
-      "sha256": "60c864f1882a54fccd1cca86a34fa4dce75cf45e9a7ccc71a865ffa21a0d7cf2"
+      "sha256": "e3a9d1dc6e61c24be937dae726888bb2ad4a6f612f5933ed17c5f0a3c190ebd8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock286.lean",
-      "sha256": "2159848763244a27b8eedb92f030eb6ab2fd2c244569ce527f11f516c70b8b13"
+      "sha256": "1bef3443e644bea3634c466f8821b856137de7f1de4f76f2f68a0f75294e4771"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock287.lean",
-      "sha256": "ab09d9aeeee683fd069028e3218b82927696db987098881f9ec6f672eb13c627"
+      "sha256": "1f9af22c80c5b6be692e05318b241695c002dc980d4da159bf514a217298d736"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock288.lean",
-      "sha256": "606f3d235d38d5ffedad98c74ba14e8bfeed7fa3098c3ae258f704ab1136ef54"
+      "sha256": "746e7bd8b00ad1b8f57c0cb81b579bf859473caf658123c11a379ce62e597947"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock289.lean",
-      "sha256": "1f5eb208646e72bd2506e9efdc3b65bfb27a2514232be0259074e16756e8067f"
+      "sha256": "89f7665e92abe073d758f87853633e67917158b00631c83da44556f0927e53d2"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock29.lean",
-      "sha256": "24c95e480a6742d37906184f93ae263d2b906a42160811bea0cffa5b139dabfd"
+      "sha256": "600198051ab9ecbcfff73494a0779811ffa0fe2a3106af5265e01fc4bcb4697c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock290.lean",
-      "sha256": "883a6695df31592c0062cd28259febf084c72eb6b626e040cbbffb723ce15aaa"
+      "sha256": "bff5ba61c7ac64ac2e559f9ca92d3d9af22b537c65fd65086a61a624045cdf5c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock291.lean",
-      "sha256": "89058d6625df7cac714908ea8a694b3bc557bb2cd6fe915c285236ff9fca45c6"
+      "sha256": "621036097123b546fd24896eadc41bb7ca3bab341446d44e1c8795e9c9e87f04"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock292.lean",
-      "sha256": "96e407ee388a22f2052dacd4b424d0a7edf227120263c4d633dbb733a26bafbd"
+      "sha256": "10a415cd30c5e0706bde884bdb0b91abc698795f7f7875b8fbeec4afd5f12322"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock293.lean",
-      "sha256": "751abea9c599d86216b9dd52eb5d1e297d20cd659bfd05954cfbdd129391d893"
+      "sha256": "1db4113f1a301d1af32e96a81c1aacb7259b017735c9b535014dfe2d70ec7c1c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock294.lean",
-      "sha256": "37faf5f42ebcf7690acb7bbb686963d604c4ce61db1eb90331d0fed5b0dfbe8e"
+      "sha256": "6a0e10e538561621c89d59c5308ee6b835f9878f27358715430e2adeb0b868b8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock295.lean",
-      "sha256": "dd1f16666461e525a6f4623d3f03586103766f0dab17408839a21fdd578147cd"
+      "sha256": "2c21724439f9a0644acb259cf350bf1d9411ba9c87491c0dd5a5ae1ef04a8f28"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock296.lean",
-      "sha256": "702e77f71e528523f0213db1129b95f4901ff5a2a1be5c370c50d96d2bb03160"
+      "sha256": "b4132fd2ac5b158d7417749645364b8f98a1dae9bd18d1a7ad9fb967ea15c270"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock297.lean",
-      "sha256": "09161073e314fb2cfe12adc9172c080c9d8cc5cdcd5a5188d7b1e5257d7d5b3b"
+      "sha256": "bd4e374bfe7bffa10af9f04dfe8de085bce70e943bd4684f4876a448c90b20bb"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock298.lean",
-      "sha256": "ab30b603366a434861e3500e2bd48f20339d84f0fc188574fb7be8fc7711b711"
+      "sha256": "cde9d71849046af8680cb06fbfb13746c1b29d1a418d1e2f5ec0835f914d7812"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock299.lean",
-      "sha256": "e722d5efac838e1f6baf54d23335408e841eac925bb9aa4dc66bdac5cdb2db3b"
+      "sha256": "3704cb8575631bde4f7111d93caccb7ee37f104f27ca264a4ed425077cd61c4b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock3.lean",
-      "sha256": "e336ca562eddf0c1ca501c84ad1ad75adeb07964458ad37ab41954308b7cdcad"
+      "sha256": "2225c0839094852040b726a20e5e3bf0f57122a4a71f07c747d4faa129fd9cff"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock30.lean",
-      "sha256": "a21204dbb3b84881030c58975a3e497343cc4270c58c8e4d3ab92b887ceefd61"
+      "sha256": "dd0a6f9005c12ea89cea2d828869043f2b85f7838f43ce637e30a935fdb23b49"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock300.lean",
-      "sha256": "900982b38d662c536f1e59341b84523c1ad2b24f2b178725826774b151dbb805"
+      "sha256": "c51cbdc61e63d1f29b08bebdf193c8365a3f277f11d737e4a893c44b4b4e4faf"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock301.lean",
-      "sha256": "7e0e786fb914f8784ac4fee6f49d0ed23f41c8513e8bb8096af18983bc37c420"
+      "sha256": "1aea5c7e8959501febef3752c7716f2ad25c9527903aed01fdee3a4262f164bd"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock302.lean",
-      "sha256": "4631a447d9520dcce867c4a6c3253b1c8e906500f022b1dde746d07c11c1cf17"
+      "sha256": "de0287032f8e867e593812ef7bece58390ae10b26b4cd0987b7dafc6f3d71848"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock303.lean",
-      "sha256": "e66e7b5275e841e65d9184155f4027236445a1f1cc9dc1bee0dab23b57f5d168"
+      "sha256": "2e126d06a1f15e18df942c7b4609e6c0d04ee2937404d15a240d609fb97a7503"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock304.lean",
-      "sha256": "e8c75c2f7690e9abbf9fee40247d3bb38bd2a46b602b730ac0c91b24d125606d"
+      "sha256": "a673eb2d7e86118e647d58365b26e62c6730a32aefd80a2aa56ceb63fb5b580f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock305.lean",
-      "sha256": "cb9801a41eee09b36a1240403a71c438d25ac06f001c67eda8af4ca85582933f"
+      "sha256": "274d974feb1bdae9fa0c274ae153bb48fec2995702b44aef9a9fdf4bc9a74b5a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock306.lean",
-      "sha256": "fb78d9cc13c8d437917b843557c904d8515130e5e3af8808d34b45a541c61407"
+      "sha256": "ba14d0e2e47bb96b458f28ed7733c4cb934495b30685d4779697be38c4dd16f3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock307.lean",
-      "sha256": "39766e31837943121726b49030304682a528da769614f09303d6a9a6d82e5a15"
+      "sha256": "860ed1ff0a12d77e1e673f58814b9ee9ac2d1e2f68159ad0357a2c176f139994"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock308.lean",
-      "sha256": "2cbd0394781097216df3cfa94b30967c46ac583de372fbcff1216a428f42d568"
+      "sha256": "40f893c2ad3146610972f46022f6f0241d942079ea8860bd15812547f600ccbe"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock309.lean",
-      "sha256": "e52a14b5ca1d8a0f0cfdc811dfa240a4cce5edb08b1fa59635b235b9d6294ed9"
+      "sha256": "0295d41da3079ff162728b1204de8af19660aea0bdf17d77580d6bae5d3e06a3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock31.lean",
-      "sha256": "03802804a475a97488b7556251bc4e172ff4f43aa10e58e2d2e72fcff8574d6d"
+      "sha256": "7930eb35709d6cf95b030f5476807680a120134541ae2f9c7463839b66f5e39e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock310.lean",
-      "sha256": "c2918a80afd04ce94a0509d1e10d23f33b62dae09736ee69bf8605f65a8405e7"
+      "sha256": "4089c3fbbf08e215597ca9e082b6aacef1ead75b11018201fe5f510a06f2a75f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock311.lean",
-      "sha256": "1a9470294d5f4a3bf248479deedc3d784e3f06d7d77037e6942e7084e36810ba"
+      "sha256": "0bc9d7ae1e1a6850b83addc3c9d54bbf90952a3ec883b5bbaaa8a4f933d57716"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock312.lean",
-      "sha256": "a36b872fe7e19ddef3bc2ba26ffac8483f61b7032caeea07fda3a68ebef37c3c"
+      "sha256": "05cb3e93856c7580cc753fc576f9f59d06e3f308aea6568324370d7d1e1b6604"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock313.lean",
-      "sha256": "9d54bdfaeca78a01fc7bdd11f22bbf300aea4bcfc59e6c9f3d9b18cb61c58f73"
+      "sha256": "fd9fc4cedea9c03622d71199fe09cf6ce1e9165e18ce021c1dbc07fcb725e225"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock314.lean",
-      "sha256": "561ab1ddbe391fb51d3e1bc539c3a110a2e770ccc02547e94988775a4a2a955e"
+      "sha256": "1980db9e09794c7224f66e2f0c1d0af3ab3dcb749a3fca89534053b5b6b248dc"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock315.lean",
-      "sha256": "572bc50bc99cfee31dc5dfbc442d75ea28553def6aac4e29149f1deafa51f7d6"
+      "sha256": "6d8be1755d7c3264a4f5b9d070db7e669bcb69a6a01b1e2a985399fc047b1bc9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock316.lean",
-      "sha256": "5d3f351ff2046a4c8557b8d054bef93d5909cb34ed47e93260bde86dfb356e45"
+      "sha256": "fb2b8cd128512d6d856f90a3fb741a723abb5c6005a7b9ec99a2b7416d485ed4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock317.lean",
-      "sha256": "baec3fe90b43a18fa5b190055fb43ac161e0d0880b1ae6a8c6a999b1472116c0"
+      "sha256": "b58726c1d6c6e00d1ce60f463c3e4571995a447984f9ed7a87b563b87fe0c346"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock318.lean",
-      "sha256": "43276f79bdacf63a104f9cb94d928f2c356f9b2bc5d6656657c92a20011e70d5"
+      "sha256": "87193433976c677242105bac1348598fd025c0ca0e36f768ab69663087109591"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock319.lean",
-      "sha256": "7e71a6a7afc070f89c89aa8695f5afae52a4fe1ede84ed74ebd4798547401251"
+      "sha256": "ea849554d6aea1494e77e2252a0610e153524ad776bf12d82e73cfa13eebf10b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock32.lean",
-      "sha256": "3e7be7f5a1cc40aea806ec1b7556782064620f682038c3d9e49ea93d3c50f8d1"
+      "sha256": "5cd18d91d194f2ba54691a4789dd73c17fa32a08c05a82dc225e257c583777d3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock320.lean",
-      "sha256": "c59011728dce7b58de59963215b228c6aa1feef2bef620f375ac818d56593e62"
+      "sha256": "2f1ef1d6dca5011a6ecf7511de722280ca3585ba12a08de05e9fb135a4235393"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock321.lean",
-      "sha256": "d6fb2eb52b26652ff93fe7d7851a7812d39c2f1d172f0dd0df2ea7948c53bb75"
+      "sha256": "4499d553c59adc07ac5244d67b334776966e9a6138025f0caebc2d56ec487c0a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock322.lean",
-      "sha256": "cfd0449c670131394aa6f7e58271878bd76d557ee1348ac1e0e5f3fd98aa52d1"
+      "sha256": "a062d2f93775a46d6d3665ccb70a7e8fc3adbbdf90b3f58ef4580512eacc272c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock323.lean",
-      "sha256": "2ed0dd4200e20a936e07683af05876907067f86b2c2a73c3bfcbddfbccecde47"
+      "sha256": "c7d0e126ce3103df785e0634ecf629effce42a4dd5e70188c566e8a672e8a902"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock324.lean",
-      "sha256": "de746c747fc502103b8af6fdde4451f37e08b91c8d9f1dc84bd3ed0ff14abcc7"
+      "sha256": "2f65801b68c3ed4d5999430ffc286b7e9100b788dbf627953c10fc0e0463b5e5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock325.lean",
-      "sha256": "032088278d495321d4089c953b5c6a03de35c05f473f70f60f4d24a51d73f5e4"
+      "sha256": "3739708e63aafeef09b6d42bfeb5b6206f8d76555608ed68f7fe0c189ec3fcad"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock326.lean",
-      "sha256": "800feec2fa9be4706b8379e1747734e8d514e0e1b43cd5197379905f071525e9"
+      "sha256": "1e999caebe189806d251498bbac15d1136fb3a3f0652949ad87217845e14c8c2"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock327.lean",
-      "sha256": "3d3c9ad893283b49af74a8cee84fb817d371e9a36377ac6c2135945b33fc8e3f"
+      "sha256": "d82be9f2033c22a1c4512e09d39045f0cec9ae8517c9916a06947769fc360f79"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock328.lean",
-      "sha256": "df43e7e7d89dcbece6e7d96af8fb9bc0335ed374feaf518497793469267c7ec4"
+      "sha256": "259f6b31659d54bfc76a589ea2d34a21299d362459346f05c9b57c483d8d0330"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock329.lean",
-      "sha256": "278a9d6e8400f6d10a1dfed0dbc826c7407b0c38e7e5cbf4606b241611bb4862"
+      "sha256": "8054aa81b7e079a17a0ff67cac85c3ff52873f950b79d9916b4c53b1abeec80a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock33.lean",
-      "sha256": "c88ac551d7dd6940fd1ff36150006554dbf7556f4816734b30d31c1a3377ddcd"
+      "sha256": "a041bf41af6a270ba964fe46db975fe4e744120210abc6831fa0e26513cea310"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock330.lean",
-      "sha256": "33fef02d6d62dcb01ba437326010e6588ebfc76102a1d21464f80cc2375a69de"
+      "sha256": "aa5f95a22a5350433a013e72809c551fc31f209db9df14e951c8fd22e46918b2"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock331.lean",
-      "sha256": "46642689d1f84f7395679e03cfd9fe33f4e88e133d2eb1934f1165db676f3365"
+      "sha256": "e881a4e8aa4476eb0f02eb4c061fa3fe142b42eeaf3e13678d1429169b3a7ea8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock332.lean",
-      "sha256": "c7586957bfb0d6ea3f20046d0311a30d9b5db7bdbf585115033a5aae451e4233"
+      "sha256": "bc71082070d2a3e9d3dbae792421a172d8565bb32a955e9bb062d46b795d2f8f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock333.lean",
-      "sha256": "8f0e49793fcf6f3e741de14f41c93b335a4a6314ba8148d065c481e6f4d5a82f"
+      "sha256": "04a66c72722fe0c647abf6ca861856083e0e835f2a260fdd7c11fa562b0db27b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock334.lean",
-      "sha256": "5a1b835e2037f392b725a1146c328a4d342182f0a4f77af1b9b892a1ea591db9"
+      "sha256": "c56b34642ce413965b255f6a96ca0d2329ccbb083fc1cf29031f0307a41ac2d5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock335.lean",
-      "sha256": "abd1f6c220ca5b9c2356b4a29a92ad23ec325f5d84d51e27cadb9770b46cd7bf"
+      "sha256": "08bb3821953ca9a1f7598627110328d7362dcf1798ba12f7ef8216dce527c6b9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock336.lean",
-      "sha256": "c322d66d0627d79e3553f5892f9f9151eacf3589b5efe9da186f1ab67d42f713"
+      "sha256": "8c2ad08025efbcf1fd2080e9da1be92632294698374f3fac7bdfcc4f9f04f699"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock337.lean",
-      "sha256": "8b505441aea2ccdc2cfb4d69eb4cc087583fbcb8cde4f6d1c412a254ca9b557a"
+      "sha256": "374d5a17e0e38cbc68e9760097e7633f3bc28401c45d5d6b349f3edffaaee021"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock338.lean",
-      "sha256": "aea207bb84f3fd0396643d8ce170f1b75eb740ec15bca037dcfdaeef6da471d3"
+      "sha256": "071907acdb53f778dec27739ea9c53a57bb95c4ca187fc10178f642ca89bd3ab"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock339.lean",
-      "sha256": "4997aaa87a463f411082beda92c3aade28970565980747dc14c1ce29aa471f6d"
+      "sha256": "3b0285e13d4973d12bf069bf402636c65f7a9236d11d4009092cf3e287dd19ab"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock34.lean",
-      "sha256": "ca61e76e2af2b1876ca20a89c8df4f6b0b745adac958312630b062d918f3192b"
+      "sha256": "6c6448787e8be8dc04b54bd609e8fdc6cc575d9457ecfc9652a137381e88d8a0"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock340.lean",
-      "sha256": "fd33087f545da4214f80fe3f6b6a31b95e8615c5a33d102fc7dd1bd348b2f37d"
+      "sha256": "4d62443c49ff15cb5a37b527071f9e927aa0c9cd31db7e65193f58e530a7f317"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock341.lean",
-      "sha256": "94153954de212d811a8ab77a6f3ca3c38667266bb08721f92e591b7e250a31f2"
+      "sha256": "ecd53401a476e5711e324de4026002b49e353022d227de87ed68903647a2339e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock342.lean",
-      "sha256": "24cba6fb28f03c6c6d70da663be9b2bbde7169bd07a89f459a4bd608a89bdd67"
+      "sha256": "9846a14698363ba61871356707f903862ba4dabe83980a595cf88c1723da422a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock343.lean",
-      "sha256": "d4278510da1fb681fea17c5815b7ed58ac96af8e1d23b23c34cc5605aa2b852e"
+      "sha256": "a0afe2007b7ed71d804342b4ea9b5a9222b1eee80199c0a5aa6dad49697cd87b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock344.lean",
-      "sha256": "c2b1a68595dbefdb916996f57172093dced1f35d7ade859d36b5365661333cc2"
+      "sha256": "e0085e082c15eaf4d5039eb0f2b35724373da5c2cdfef2755c9a1826a15db751"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock345.lean",
-      "sha256": "b4b8c5cce568908d8dd3ae96e3769bdc7a69c129d88c173c4188c35d0385466d"
+      "sha256": "420ba8981ed04f17988e5d3a33d0d8037c437a513916301e3e237e9cc86c131b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock35.lean",
-      "sha256": "db3e08e71ec049ddcc112cc9c677526a04ac7fe607a4a9ba4f5af652106a2a3a"
+      "sha256": "8db92c1f2fc8af7606c16b8c2d637fc555641b5d4ccdf922cb94ca979698345c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock36.lean",
-      "sha256": "7806e8337e9cd5c69befa4e9f2ee89e2e9d6b6eb09a7bd6fb664064580a4be1c"
+      "sha256": "1a5a42986d5fa7157a2282b0342b7079267de08dc8a786f4e2640a3d506602ad"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock37.lean",
-      "sha256": "4007a5cafc8b9f281704ea4d6e1a32a67fc1b45f91c590f387b4b72d92523a6b"
+      "sha256": "103d0be8e041429bec816c84e89e9aca5237152fd2a73b8171044aaaca38420f"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock38.lean",
-      "sha256": "f8d0e2256c5fff887d75c151b67689d19f9a5b79e8145a7a74426cb1c37bc899"
+      "sha256": "050addf8cb2cc3ef8a7cbbd4400676d20f534709f2fb024adc07d6ba19e3e71a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock39.lean",
-      "sha256": "60a44c8255448ebfa8305606f8d18a4333274e963ab89d444466e6b9c9bef831"
+      "sha256": "72aae0a2eb64479162565439d600372241860ad42b91be30a5a998b9bdd815ac"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock4.lean",
-      "sha256": "88ab0d500df4e9063cbbc87630d4a1cb3cc0af4595268a10714a5248209e83d0"
+      "sha256": "a318f25bdd369f5b01e8f5083738270facdea1b443e56b3b9ffabdeee1d4a653"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock40.lean",
-      "sha256": "9b378e4dada664b80b72b205da71c57f7bbbb13a5a12220d2d34903144b641f6"
+      "sha256": "e0f9c20c6908d895cdeadbcea4e49c335974b9a2c8b91a4d8cf5411cf61eed50"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock41.lean",
-      "sha256": "a17ee132f527a41107fff7037ed94b628158ab21736edcd140890591aa7f9a16"
+      "sha256": "0e330ba73b78aaed2bbdfe6e2eb42b9f1c31dcd7820e05ec8e3e9e0993536421"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock42.lean",
-      "sha256": "7970817ad706d364ca8c3a946f714aadc5b59b1b3384123dc5cc62da0e6e5e17"
+      "sha256": "1ac252c5c37646c5d3b3d617f9cb00016b625a3be17b05cc6d7d5d26e02bbafb"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock43.lean",
-      "sha256": "ada05af87b3b347fa7911306437a1be8cb4633bab51825c67dbd8505dc1446b2"
+      "sha256": "ecee771cacfdbf77a3fbca94987bc176c1840e2908f1257443373ec9d1970b89"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock44.lean",
-      "sha256": "f56da0eb58ebe8846d09881cc5d5f1914ce8b7775876b03bb73eb571f769ae23"
+      "sha256": "c6e49b20187d9746be28d1ac5eda16d7c0d0a1cc45df8caeb3f8b2d0ee58c6ab"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock45.lean",
-      "sha256": "2c18df760daebc3bffb6998fc5a0ea3e4fb13abe7870ec959e93584c016bbd59"
+      "sha256": "108fce9a1fd284a2f37e291a79c7642501f27c1c9b640974cf91650f14c56a01"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock46.lean",
-      "sha256": "ffeb96a441d6fc62b092dab44168d505a088ac166151681a6d440393fb1c9783"
+      "sha256": "f2760594dacc939b78f52864c7aafde73582f373d71ccc5ecf4e53cbafe70171"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock47.lean",
-      "sha256": "85f4149b9195322448469cefb780c3702718712068bf1974a74ce7def6504bc2"
+      "sha256": "4e4d8395086174cdaaaed3046312742631af4a07a63b833afa5fccd5938918e5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock48.lean",
-      "sha256": "f8983d4937685c299fd383bcd1a80c7799c48d90edeba5afcdbbc08afb4bb0bd"
+      "sha256": "f5136612ce1a169a88ad4bbd764f808bffdf22b35c03c45fc433908d9d0ea9c8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock49.lean",
-      "sha256": "a62af324f1ba4afa5bd9db53fbe29133a4fe219e0051b464bfeb050dba6cc9df"
+      "sha256": "a686b1b18c78f19a7eb60e3e881a7e1eee65ae4d2694f82c35e06237edb1ae76"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock5.lean",
-      "sha256": "3a7936ed4cf3142f288f988566c0d73234d1fe75d9e1b9e8e2413cab005214c6"
+      "sha256": "e201cc9000230f444e2b27742a8553ed4cd78e0eeba8eb8e4e2a32568203189e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock50.lean",
-      "sha256": "95974c84e8885b7ca7f346708ca538d3ecaa33ff08b6db61b0ad73466ac1322e"
+      "sha256": "7708a7ae7362977fb9a666c801e319150023f4b9f08fbb0876fa0406a092b51d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock51.lean",
-      "sha256": "16530d72b2773f7d7d85f44b7ba921d8d8589a4707b09deb9e847187d036ec42"
+      "sha256": "290043dd20e21ca34e7e63294e9186a53311bb5cf416c5f5df1e32b072b6a77c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock52.lean",
-      "sha256": "444e4990eb9064c89d822d6913c92622b90c86693b18e8d6b70e66430ebbbfc3"
+      "sha256": "9be3b7e5d84674902a842af568a02143ab06d64bca9d5b0b5d9850cc737e0ce5"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock53.lean",
-      "sha256": "497c1e630f67cdd734b17a0951bdc325df2f1e3565a59f5a24035cc006c0d5a2"
+      "sha256": "d3cbc33f9b4b775f939b5477306e3e644d13a03d25c0bd4a2e2cc758b1a73c59"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock54.lean",
-      "sha256": "afd05bcc1802219dd67a77a793fbc0798493e26c79aa4a1089219732d740100f"
+      "sha256": "02151a9619e02fd77f45068918f4a61f55c76b7be5d028931aa3872e2ced3c99"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock55.lean",
-      "sha256": "6dc35dde32d94ee4916ed559fa0e080eb6459b8b82b58cbe307bc7b5131aed82"
+      "sha256": "46217e7498514d3cf24a4dd348c31d60f74b71b2e9731fc5ac29d82b33dec491"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock56.lean",
-      "sha256": "4cffe207401271857a1e7a8ba7111ecd91dbc7ae0372bf7d782a6e4b607fb8be"
+      "sha256": "afa1700842d9beec30631450f513fef0015320f8f571c68af3a64bbda399839c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock57.lean",
-      "sha256": "bbafa0e62431fad6dfedc9e115425d893abcfd0891901e874ef75f78384b6de2"
+      "sha256": "797dfc15adee74329f5b4ed267898e0df586007ce54753d5a9544683046c8720"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock58.lean",
-      "sha256": "39ece653be624616d6503269e4f3ec50ba910e7b895851841ab9e37c5dc15136"
+      "sha256": "f223fc93c8882925001dff2e2a37166d3a8dad59b60b30460c0f89b31c11adc4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock59.lean",
-      "sha256": "4713a6263ccd18f2c78b10c104788c9413757a3f5fbf5c0e733875db80fb6693"
+      "sha256": "b296508d954a5a43dc409a2df1ff75610cc7593c2aaaec62baeae974c51636cc"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock6.lean",
-      "sha256": "b4be8e0476980182794f97fd2eb0d390e620b05725c9997605a90bd1dc469e60"
+      "sha256": "c8acb6b51ff135dde210dfdd07394a4488ac992bc815d3c0a562e11e36a68942"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock60.lean",
-      "sha256": "baa4727a3858477733d48d1141b7520c83845f94fb84a141c880fc4881a8ff91"
+      "sha256": "8491dae8b2160490c4e079812b64e21525bb5640f51c313f8c16a7ab6f51b5f3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock61.lean",
-      "sha256": "9c4a7a459767c4293b6d30b98efc25da9e452a754870d5675de2ddf76ed06dbc"
+      "sha256": "fb456a63f14663e61db0c423f7bb59c786fa9979d786ff145cfd2ab666204717"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock62.lean",
-      "sha256": "52b5afe241fcb8f96ceac14889685379b18fab475e1887feded45c2ca40a3817"
+      "sha256": "3b4c4d44f7bd762e282637ad6e41c7cd359f4a49db4b4b52ebd82db11900264c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock63.lean",
-      "sha256": "3542bdc45b6d29a6dbbc1649ca64d18e5eddcc8ed7976d4dc3f1ed5b5389ce50"
+      "sha256": "8ca00c29f86f46568c0a5fb3a4275a42d7c534c6ebb2f12766503731d9fd2b30"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock64.lean",
-      "sha256": "f02836f9c20f845f9d17bea82b5a72e60dfdaff07f42a61a36247081e5074fb0"
+      "sha256": "c7296eb1070d962a242ff34be2221fa9502ca5c81538096b93d107ba5208123d"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock65.lean",
-      "sha256": "151fdc4f5d8aa75152801393dfb7332e7fbe592573f30f1d7fa77b3e755aadf8"
+      "sha256": "6cde605ec393c1c1abeb942866323c5ecb7eff4da9e8fa574b2a146f1167298c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock66.lean",
-      "sha256": "31516ad11e819ce2d9091eb0c510da9fe14358a911d071a39b2c4d1b67e1825f"
+      "sha256": "80f3b1486e389c1e0a66195e2feeca540039ca0ff09913fe9769f60bc790b64a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock67.lean",
-      "sha256": "411d2d74a3b8e02a5b3880f4bb7ba6de991b51c62aaf6ce94350aa97ca20a23f"
+      "sha256": "07546d1339dbf11f6091069f7ba1849769575824c1a621104caf51e33f5abb75"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock68.lean",
-      "sha256": "49c60839506a5851e6612b83cbbb56245d7b1362898c8f5a36097f611a4eab61"
+      "sha256": "cdd4269bcf01e0f8f99b8b348df2e79f1c9b9ffb7e29192e3977fb256527434e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock69.lean",
-      "sha256": "d9132a25cda53679374fa9d285ba751750799d1d267e72a2ac2c886ccb3f0b36"
+      "sha256": "7eda7d61dc3aff1d0a44bdcd7bc36d48c41c57fda70866155acf1c664bc02203"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock7.lean",
-      "sha256": "45fca978676a3c31dbc08423ce5de863480d9995f0bdfb290bb5c76a7599472e"
+      "sha256": "a115e1262dec09ae989d5b0413c8f393f9bb86c6f89bf38e777ac6447bcb36bb"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock70.lean",
-      "sha256": "590548530dae3bf46a954bf9fc8479c4ac7e3816828bedaeea78cbeebb409ece"
+      "sha256": "bf0b0df216bf64e1ea0faf23b87c1b18474298ea3c6b52b680cff5ae68cbe5bd"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock71.lean",
-      "sha256": "eabdf26f954b55dc7737baa4c66c2ba93e9860dc84b48d4cbda3301affee3edf"
+      "sha256": "f385750873718a146196e37925be24f93165bc2347841b26bbb4fec6d560807c"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock72.lean",
-      "sha256": "17feef9660e31c053066907084accf2f28c417ea6a98dec0316b87aa55ab73c3"
+      "sha256": "879f23df2aa538ce9f52612cb427e2f594eb38225f9e138d932a23e9ff37026e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock73.lean",
-      "sha256": "e580b5ef4108db4d58b7f9335d4f349b1e5456ed35c3a6a8a045825f6defd2d3"
+      "sha256": "5ec6f8bb596bdecdb08ab7c842e83920c8d5f4fb944a7e294c73bd3121ed85a8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock74.lean",
-      "sha256": "2988380811425e534e8e97a15ea7c154f97d3928f0ec01204cbf477fafff30ef"
+      "sha256": "747952b73c196b4607fe5031aede7c2bc8693e8bfa30a6df4507f925eae98dea"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock75.lean",
-      "sha256": "3f632c321e0f209e8f68a1afaa5c3c5e830293d7498714703fc5c732f57b1ceb"
+      "sha256": "356ab4570d06944c8ca4b7a68e4075c55ee151f7681f8fea94983a6a7262a949"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock76.lean",
-      "sha256": "73b301647fa43d40ea0793a51942c1c7c482c9280226039177cde44336458c46"
+      "sha256": "c04431fd2cd30da9849e758d38aa07ad535ad25a45e2ea47ce80fc6810a051e0"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock77.lean",
-      "sha256": "bf89ef37de6d2ab61570f70506e403182f82e9d73d9c986fac0f4b97b4fb41b8"
+      "sha256": "b0ebc01ede353cd597feda5a6d86430dbb36abbd0478ffaa2f071e371cb3d1b8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock78.lean",
-      "sha256": "1642b42ee299181bf13ed1875caf6681c144eeca0427f11f66c08c1c374b23cc"
+      "sha256": "990a95b28c54e50bfaf3a8a926e2ffd9bf0d747b83e0e1e705fa3a4a4141cbe8"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock79.lean",
-      "sha256": "842a81033361995fe03f017f701d3decd181ab01630d3e2028057cac4b304d7e"
+      "sha256": "afbabd096483caa13f0cbee80dcb085b4a5b39d4f8921f0a0c0dcdabbdbe1cad"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock8.lean",
-      "sha256": "83e9d006a6be981e2a6e7121b52444516828f6f0a168815d92a376020c44bfaf"
+      "sha256": "66d8366fdf0d865344650acfc55df37f74f6be42cd8defda50b4acb482f49166"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock80.lean",
-      "sha256": "e02c162d344d02f212386a53a1abd2aa1492b6b1b1e9960c796a72477467fffd"
+      "sha256": "8d1c9f04c747cd59cb032c5175fb8e1ff2508e4fc5a5c59dd2e52585af5bad4e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock81.lean",
-      "sha256": "0d6d6f95ae4031913fdfe3a08f53811420aa74f92bf6d9007e11687d3436d2b5"
+      "sha256": "d1c5e1720eabd7fb8ef4fd56764fdd0ad958979a8e80511250b77029351b4ac4"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock82.lean",
-      "sha256": "478f96f9fc1eb40cbad4da8ff06df2ed0c313aad9dcfc39f1e51d31e451e605a"
+      "sha256": "7e0d5b2847b20c9cf39412f51fe7c9394889c24a15921752a9f07d785bd55091"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock83.lean",
-      "sha256": "c5eafac4f9db2caf7b30834f0ccac733e592e8b7bf8d45bed7d8fc20e7550d0b"
+      "sha256": "29e02f43d2c0d67ce462149122b60a637b918dcdf768f4a8fafc9e0b3b885f6b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock84.lean",
-      "sha256": "8ade682fb4ae3e4c394ae3383b1d0790d78042643c05bc3124c3cdb56016edff"
+      "sha256": "65222a099e79441260240905ce743486b91de4180250c0d17a6f53b2519818c9"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock85.lean",
-      "sha256": "af55a9db485239d57bf8302a3e502b5c52b43ff91227e851d8ae0c32a67479e6"
+      "sha256": "987064150c5874f7ad12ea401087842076e69a04894d77ed7f6a406a3a609293"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock86.lean",
-      "sha256": "425d30e55d069409727a322857c89feba6c45934d4872ad239d0a8873b9f3a77"
+      "sha256": "516bf30c5d6f810824cd734691957ec5bd21e1fcde3cb45d9f293146457d54c1"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock87.lean",
-      "sha256": "fe5dbebec93cbeb54689b69566d793833de12500c6cfc1c5f108da8b60753e1a"
+      "sha256": "b04e65ee61e9c7cedb845267800190a8e9c5ff64ea9eb158ae2b6b050c0f25ea"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock88.lean",
-      "sha256": "7300247ec3d4ca4fe37cc73d74b2b4969ec74d47871b840bbae1c6753dc0cb07"
+      "sha256": "9551abb35b3ba31681dad0d3d4daadd2db5edc2a6b14ad88eac001c34a161897"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock89.lean",
-      "sha256": "0b1358f1b2e362fc2ed369106286241f5569987cfaaf81190b3266dddadccefa"
+      "sha256": "1ce2455ca736df0c1471cd6bb1b822d0c7f81bf1c803b8fec335b642955b79ed"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock9.lean",
-      "sha256": "cb26e54af2d20b748b8fe99b5bce04a96979717e6850d288338b4a976a7e4af1"
+      "sha256": "6c5ca8c8e1a29ca7ae373b0e3819c785bb234f5b62b9a8e532c235b91b99e587"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock90.lean",
-      "sha256": "1874292667c34673523f69bf8c891678561c3e59089b30fa2b96134d1421505b"
+      "sha256": "40c2cd7fb822e9457cb7d2527456611f1ab4b551c85f0b3988b6db4912591e50"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock91.lean",
-      "sha256": "10871ec0ddc0656adfd6fffc3a5917a4ffb927838d870ea86ecaf8573b811bc5"
+      "sha256": "143065586f350ef0a05e332cd18a0b710845782909d6fae94119152fd5d1693a"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock92.lean",
-      "sha256": "fcbfcbfa4607542c1802af89aaa6ffe00cff89e179e6df91b948cca99fb78eea"
+      "sha256": "7563bfbad8901f77d2bc19971b54ca68bbc8e35040f9544f139e26d012d2dba3"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock93.lean",
-      "sha256": "c9aaa97950b2d06dc2b343176a06d236a4848b436eaa38e384a49e85adc0603f"
+      "sha256": "92772873c674e9bfcdab97c10f02e0960b1c484bb1095fd1fc11b04d43c1b601"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock94.lean",
-      "sha256": "a9b145e1e50ea7b308c6276f3c18e87e760c23769d8a528a50a21c303cc7ebd0"
+      "sha256": "20c527cbea3bec1449a78d2885047065c16c47b4d31416c2700f284042c19a0e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock95.lean",
-      "sha256": "72932a86367396673e281e1ab86d9c2058ad03ace30f55a0b3be33cc68004158"
+      "sha256": "f0a5700218e28c51ddd2d7e14fe23547c952c7873dcb084a62e7aec38d2b7dd1"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock96.lean",
-      "sha256": "e516804143760227a6e4a9e3894db4defdf1d44eca3e18466ee5e739dcf32dbf"
+      "sha256": "938323f7cd142b48e3fbbf457c3f463003eeb933c5f79f8295d550b80443930b"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock97.lean",
-      "sha256": "45f52e5b345b745056f09b57db1552db5259c0274577cd09fe17ffbec43655bb"
+      "sha256": "7f9f55acdff941ee64cb92a9e6a148ff7499912f38f426e26af010e4c65f91f7"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock98.lean",
-      "sha256": "2f6479014e53f26c2b4a7656e8b5c9137c5e44e679b5171b07b810efe2945ff6"
+      "sha256": "3b6d2a99c63e5b64fcd39cc53799f69b083b8c568071c0b27982473a389e55a0"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/CyclicBlock99.lean",
-      "sha256": "908790cb76e6eceec6b3a5b438b864adcfb688eb3ee3e128424f8e8932e87c75"
+      "sha256": "4e65ab1dfad21de51426be8fb712355dd3d38ea5092f76f268a19d97264c476e"
     },
     {
       "path": "WordCertDensity/Certificates/DepthEleven/MomentBlock0.lean",
@@ -4450,6 +4466,10 @@
       "sha256": "36c1635ae5b0fdb374ac03b61a469e3807a21afb20251df36425bcd11026405a"
     },
     {
+      "path": "WordCertDensity/Certificates/PackedLookup.lean",
+      "sha256": "f91b4063107a93d4911dbeda41618bd4ab798f87c595910da0eb00892576b1e1"
+    },
+    {
       "path": "WordCertDensity/Certificates/PackedTree.lean",
       "sha256": "54f0db74a6f7399733a0d7ff88002b342b08f53ae45b125459351a69724acaf6"
     },
@@ -5674,12 +5694,16 @@
       "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
     },
     {
-      "path": "third_party/mazur/LICENSE",
-      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      "path": "scripts/palomar_guard.py",
+      "sha256": "d36506b70545ed2c28323356f67d39d946e41e5615321d68d42ef3557dc3d998"
     },
     {
-      "path": "third_party/mazur/NOTICE",
-      "sha256": "a42c24fb15a8cde899a4b76a0ca3f9ace85b1e085dfd48eebc57baedba647319"
+      "path": "scripts/test_palomar_guard.py",
+      "sha256": "d3bbd03a07fd3ce4aa87948d4de56c2c5b10b964c50c9892aaa6949bde22f80e"
+    },
+    {
+      "path": "sources/README.md",
+      "sha256": "a0e1aa0548fe9bd8065e7f4bde531ed4d0c167701a5e43ea0a9e1a93825e01ba"
     },
     {
       "path": "sources/manuscript-v1.0.0-d4cf2a4b.md",
@@ -5690,31 +5714,19 @@
       "sha256": "f5473445f19e7fd97a57c3a1a2011dcccf59d5542b3c602b0e0434ec7058e742"
     },
     {
-      "path": "sources/README.md",
-      "sha256": "a0e1aa0548fe9bd8065e7f4bde531ed4d0c167701a5e43ea0a9e1a93825e01ba"
+      "path": "third_party/mazur/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
     },
     {
-      "path": "PALOMAR_PREPARATION.md",
-      "sha256": "d892be574fd1f143cf3aefa337c05f3b0717e4ad661273e4307bd3585d3ff6f8"
-    },
-    {
-      "path": ".github/workflows/palomar-full-preflight.yml",
-      "sha256": "8fd23ddf1036407bdff552b69a9a7b8402499a16f8aced1811594ad188f08c9f"
-    },
-    {
-      "path": "scripts/palomar_guard.py",
-      "sha256": "d36506b70545ed2c28323356f67d39d946e41e5615321d68d42ef3557dc3d998"
-    },
-    {
-      "path": "scripts/test_palomar_guard.py",
-      "sha256": "d3bbd03a07fd3ce4aa87948d4de56c2c5b10b964c50c9892aaa6949bde22f80e"
+      "path": "third_party/mazur/NOTICE",
+      "sha256": "a42c24fb15a8cde899a4b76a0ca3f9ace85b1e085dfd48eebc57baedba647319"
     }
   ],
   "selected_declarations": 18,
-  "status": "PUBLICATION_METADATA_PREPARED_REPLAY_PENDING",
+  "status": "CYCLIC_DECODER_INTEGRATED_FULL_REPLAY_PENDING",
   "unreachable_modules": [],
-  "source_snapshot": "Byte-identical Lean sources from reviewed WordCertDensity-Palomar-E8 working tree; fresh repository with no inherited Git history.",
-  "local_lean_lines": 138342,
+  "source_snapshot": "Extracted WordCertDensity proof cone with subsequent reviewed proof-only replay optimizations; current files are bound by this manifest.",
+  "local_lean_lines": 140567,
   "source_extraction_manifest_sha256": "ef91a7281906e196e7caf1f8fe04aaf21261831b0618bc3096d9e2298e597b5e",
   "excluded_archival_files": [
     "sources/manuscript-source-2026-09-20-2b5bf909.md"
@@ -5737,14 +5749,15 @@
     "release_preflight": "PASS 2026-09-20: exact exporter exists; read-only canonical Mathlib ancestry, pinned manifest closure and toolchain checks. Comparator/NanoDa not yet run."
   },
   "validation": {
-    "scope": "Metadata-only publication synchronization; all Lean, Comparator, dependency and CI bytes unchanged from 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b",
+    "scope": "Proof-only packed cyclic decoder integration; all selected statements unchanged. Prior validation fields retain historical evidence; full replay for this revision is pending.",
     "linux_build": "PASS: run 35577519347, commit 52f2559e0475d80d3f1fdefa4e7d6f17f796b38b, 4893 jobs, full build 2:48:33, fresh 18-theorem standard-axiom report passed. Metadata commit 9f15b52 preserves all proof/build inputs.",
     "comparator": "PENDING",
     "nanoda": "PENDING",
     "registry": "PENDING",
     "metadata_schema": "PASS: https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/v0.4.schema.json SHA-256 25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
     "protected_files_unchanged": 1410,
-    "palomar_metadata": "PASS: strict load_formalization_metadata at pipeline 3561d237dcc4b28482558ad28a64d767d7cc8615; author and maintainer use separate ORCID fields."
+    "palomar_metadata": "PASS: strict load_formalization_metadata at pipeline 3561d237dcc4b28482558ad28a64d767d7cc8615; author and maintainer use separate ORCID fields.",
+    "cyclic_decoder": "Isolated complete cyclic family passed Linux Lean and NanoDa; see KERNEL_OPTIMIZATION.md. Production full release replay pending."
   },
   "publication": {
     "title": "Positive density of Collatz convergence at every rate above 3/log(4/3)",
