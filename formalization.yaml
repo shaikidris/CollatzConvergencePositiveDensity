@@ -1,13 +1,17 @@
 version: v0.4
 project:
   name: Positive density of Collatz convergence at every rate above 3/log(4/3)
-  description: A Lean 4 extraction of eighteen selected Phase 1 statements on lower natural density for
-    ordinary Collatz hitting times, exact finite fan allocation and real-moment comparison, profile density
-    for canonical and admissible targets, and bounded actual reference entropy with explicit tail and
-    zero normalized growth. The baseline includes the exact target criterion, individual-root consequence,
-    vanishing-clock-loss variants and accepted depth-eleven formulas. Density witnesses and levels are
-    existential. Full optimized formulas, complementary capacity, the Renyi-order right limit, amplified
-    roots and pointwise Collatz convergence are outside scope.
+  description: >-
+    A Lean 4 formalization of eighteen selected Phase 1 statements, led by a single
+    positive lower natural-density constant for the set of positive integers reaching
+    1 within c log x ordinary Collatz steps, valid for every fixed c > 3/log(4/3).
+    It also covers fixed-target hitting, the exact target criterion, individual-root
+    consequences, vanishing-clock-loss variants, depth-eleven density bounds, exact
+    finite fan allocation, real-moment comparison, target profiles, and bounded actual
+    reference entropy with explicit tail estimates and zero normalized growth.
+    Density witnesses and levels are existential. Full optimized formulas,
+    complementary capacity, the Renyi-order right limit, amplified roots, and
+    convergence of every positive integer remain outside the formalized scope.
   authors:
   - name: Idris Ali Shaik
     orcid: 0009-0009-9699-9712
