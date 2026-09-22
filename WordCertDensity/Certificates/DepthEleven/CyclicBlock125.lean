@@ -4,7 +4,7 @@ Authors: Idris Ali Shaik
 -/
 module
 
-public import WordCertDensity.Certificates.Data.LevelEleven
+public import WordCertDensity.Certificates.Data.LevelElevenFast
 
 /-! # Depth-eleven cyclic supersolution certificates -/
 
@@ -14,7 +14,9 @@ namespace WordCertDensity.Certificates
 
 /-- Complete local inequalities for this block. -/
 theorem levelEleven_cyclic_block_125 :
-    levelTen.cyclicCheck levelEleven 11 64000 512 = true := by decide +kernel
+    levelTen.cyclicCheck levelEleven 11 64000 512 = true := by
+  rw [← FastPacked.fastCheck_eq]
+  decide +kernel
 
 /-- Complete cap inequalities for this block. -/
 theorem levelEleven_cap_block_125 :
